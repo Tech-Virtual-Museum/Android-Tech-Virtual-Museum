@@ -24,6 +24,14 @@
         android:theme="@style/Theme.TechVirtualMuseum"
         tools:targetApi="31">
         <activity
+            android:name=".resetPassword"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".homePage"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -115,7 +123,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".splashScreen"
             android:exported="true"

@@ -84,6 +84,9 @@ dependencies {
     //libreria escaner QR
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
 
+    //calendario
+    implementation 'com.github.mahimrocky:EventCalender:v1.0.0'
+
 
 
 

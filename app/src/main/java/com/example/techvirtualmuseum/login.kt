@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -18,7 +19,7 @@ class login : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         auth = Firebase.auth
 
@@ -33,7 +34,13 @@ class login : AppCompatActivity() {
         val loginBtn: Button = findViewById(R.id.loginBtn)
         loginBtn.setOnClickListener {
             performLogin()
+        }
 
+        //listener que nos redirija si olvidamos la contraseña
+        val forgotPassword : TextView = findViewById(R.id.forgotPassword)
+        forgotPassword.setOnClickListener {
+            val intent = Intent(this, resetPassword::class.java)
+            startActivity(intent)
         }
     }
 

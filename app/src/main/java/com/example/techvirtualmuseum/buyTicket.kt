@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8e1bca71173cc7e825734b06ea11a4d0dcd616739daf66be3893cfae064770b
-size 397
+package com.example.techvirtualmuseum
+
+import android.app.usage.UsageEvents
+import android.graphics.Color
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.skyhope.eventcalenderlibrary.CalenderEvent
+
+
+class buyTicket : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_buy_ticket)
+
+
+    }
+
+
+}
