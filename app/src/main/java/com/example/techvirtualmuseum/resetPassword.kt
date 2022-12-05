@@ -1,9 +1,11 @@
 package com.example.techvirtualmuseum
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
@@ -32,6 +34,13 @@ class resetPassword : AppCompatActivity() {
                 .addOnFailureListener{
                     Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
                 }
+        }
+
+        //listener que nos mandara a la pantalla de inicio para salir de esta actividad
+        val backHome : TextView = findViewById(R.id.backHome)
+        backHome.setOnClickListener {
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
         }
     }
 }
