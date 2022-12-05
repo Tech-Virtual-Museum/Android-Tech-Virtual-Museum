@@ -1,17 +1,31 @@
 package com.example.techvirtualmuseum
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.regex.Pattern
 
 class register : AppCompatActivity() {
+
+    //creamos el patron que debe seguir la contraseña para ser considerada valida
+    private val PASSWORD_PATTERN: Pattern = Pattern.compile("^" +
+                "(?=.*[@#$%^&+=])" + // minimo un caracter especial
+                "(?=\\S+$)" +  // sin espacios en blanco
+                ".{6,}" +  // minimo 6 caracteres
+                "$"
+    )
+
+    //creamos el patron que debe seguir el email
+    private val EMAIL_PATTERN : Pattern = Pattern.compile(
+        "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+    )
 
 
     private lateinit var auth : FirebaseAuth
@@ -36,6 +50,8 @@ class register : AppCompatActivity() {
 
     //Funcion con la que se crea en el Authentication el usuario
     private fun performSignUp() {
+
+
         val name = findViewById<EditText>(R.id.nameEditText_register)
         val surname = findViewById<EditText>(R.id.surnameEditText_register)
         val email = findViewById<EditText>(R.id.emailEditText_register)
@@ -54,9 +70,16 @@ class register : AppCompatActivity() {
                 return
         }
 
-        //comprobamos que tenga al menos 6 caracteres
-        if (inputPassword.length < 6){
-            Toast.makeText(baseContext, "La contraseña debe contener 6 caracteres o mas",
+        //comprobamos que la contraseña introducida cumple con el patron estipulado
+        if (!PASSWORD_PATTERN.matcher(inputPassword).matches()){
+            Toast.makeText(baseContext, "La contraseña debe tener minimo 6 caracteres y un caracter especial",
+                Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        //comprobamos que el email introducido cumple con el patron establecido
+        if (!EMAIL_PATTERN.matcher(inputEmail).matches()){
+            Toast.makeText(baseContext, "Debe introducir un correo valido",
                 Toast.LENGTH_SHORT).show()
             return
         }
