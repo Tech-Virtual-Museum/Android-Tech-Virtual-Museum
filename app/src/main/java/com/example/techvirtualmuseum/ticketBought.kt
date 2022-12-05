@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ac7c97103e2881fb3d34e71186b8125a8c2c8ac1cd06ca59d901a46d07245f1
-size 670
+package com.example.techvirtualmuseum
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+
+class ticketBought : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_ticket_bought)
+
+        //listener para el boton que nos lleve a la pantalla de inicio
+        val goBackButton: Button = findViewById(R.id.goback)
+        goBackButton.setOnClickListener {
+            val intent : Intent = Intent(this, login::class.java)
+            startActivity(intent)
+        }
+    }
+}

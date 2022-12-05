@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c84fe6e4bce7083af9bc9b1736d6862a9ba82842d56597f972238649f0b36e4
-size 1388
+<resources>
+    <string name="app_name">TechVirtualMuseum</string>
+    <string name="subtitulo_home">What´s new?</string>
+    <string name="nombreApp">Tech Virtual Museum</string>
+    <string name="descripcion_home">Discover what’s new in our museum. These are the items more clients scan this week.</string>
+    <string name="ticket_home">Don’t have your ticket yet?</string>
+    <string name="descTicket_home">What are you waiting for? Visit us now to start your immersive experience.</string>
+    <string name="ubicacion_home">Where are we?</string>
+    <string name="ticketBuy_home">Buy Ticket</string>
+    <string name="dateTime">Choose date and time</string>
+    <string name="hoursDisp">Available hours</string>
+    <string name="ticketBought">Order purchased succesfully!</string>
+    <string name="visit">Enjoy your visit at</string>
+    <string name="goback">Go back to main menu</string>
+    <string name="selectTickets">Select your tickets</string>
+    <string name="orderSummary">Order summary</string>
+    <string name="descripcionLogin">Glad to see you here again. Login now to see what’s new at Tech Virtual Museum.</string>
+    <string name="signUpDescripcion">Sign up now to get the full experience of our museum.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

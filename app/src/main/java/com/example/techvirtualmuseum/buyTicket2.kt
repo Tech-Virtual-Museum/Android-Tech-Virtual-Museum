@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5edcfcd78a1fb06c8ac3566db58637980ea359f00a6fbd94679a4738a8918fb0
-size 367
+package com.example.techvirtualmuseum
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+
+
+class buyTicket2 : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_buy_ticket2)
+
+        //listener para el boton que nos dirigira a la tercera actividad de compra de tickets
+        val buyTicket3 : Button = findViewById(R.id.buyFinalTicket)
+        buyTicket3.setOnClickListener {
+            val intent : Intent = Intent(this, buyTicket3::class.java)
+            startActivity(intent)
+        }
+    }
+}
