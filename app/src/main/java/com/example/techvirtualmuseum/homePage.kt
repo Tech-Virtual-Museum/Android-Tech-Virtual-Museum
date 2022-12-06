@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class homePage : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -32,7 +33,7 @@ class homePage : AppCompatActivity() {
         imageSlider.setImageList(imageList, ScaleTypes.CENTER_INSIDE)
 
         //listener para el boton que nos lleve a la pantalla del perfil del usuario
-        val profilePage: ImageButton = findViewById(R.id.profilePage)
+        val profilePage: ImageButton = findViewById(R.id.profileImage)
         profilePage.setOnClickListener {
             val intent: Intent = Intent(this, profilePage::class.java)
             startActivity(intent)
@@ -41,7 +42,7 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, upcomingEvents::class.java)
+            val intent: Intent = Intent(this, products::class.java)
             startActivity(intent)
         }
 

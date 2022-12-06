@@ -11,6 +11,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="292dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/progressbar3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"></ImageView>
+
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="43dp"

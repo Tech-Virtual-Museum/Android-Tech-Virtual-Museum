@@ -15,7 +15,7 @@
 
         <!--Image view for displaying our image-->
         <ImageView
-            android:id="@+id/imageEvent"
+            android:id="@+id/imageProduct"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
@@ -26,65 +26,31 @@
             tools:ignore="ContentDescription" />
 
         <!--Text view for displaying our text -->
+
         <TextView
-            android:id="@+id/nameEvent"
+            android:id="@+id/nameProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="120dp"
             android:layout_marginTop="20dp"
+            android:padding="3dp"
             android:fontFamily="@font/roboto_bold"
-
-            android:layout_toEndOf="@id/imageEvent"
-            android:padding="3dp"
-            android:text="name event"
+            android:text="name product"
             android:textAlignment="center"
             android:textColor="@color/black"
             tools:ignore="HardcodedText" />
 
-
         <TextView
-            android:id="@+id/dateEvent"
+            android:id="@+id/descripcionProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="120dp"
             android:layout_marginTop="50dp"
-            android:layout_toEndOf="@id/imageEvent"
             android:padding="3dp"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/calendarveinte"
-            android:text="date event"
+            android:text="descripcion product"
             android:textAlignment="center"
             android:textColor="@color/black"
             tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/hourEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="80dp"
-            android:layout_toEndOf="@id/imageEvent"
-            android:padding="3dp"
-            android:drawablePadding="5dp"
-            android:drawableStart="@drawable/relojveinte"
-            android:text="hour event"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/priceEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/transparent" />
-
-        <TextView
-            android:id="@+id/descripcionEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/transparent"/>
-
-
 
     </RelativeLayout>
 

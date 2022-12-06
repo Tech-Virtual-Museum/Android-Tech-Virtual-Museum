@@ -44,7 +44,7 @@
                 android:textSize="24sp" />
 
             <ImageButton
-                android:id="@+id/profilePage"
+                android:id="@+id/profileImage"
                 android:layout_width="37dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="300dp"
