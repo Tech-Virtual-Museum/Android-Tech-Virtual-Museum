@@ -31,6 +31,7 @@ class productDetails : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //boton que nos lleva a la pantalla de ver video o escuchar un audio
         val playAudioVideo : ImageButton = findViewById(R.id.playAudioVideo)
         playAudioVideo.setOnClickListener {
             val intent : Intent = Intent(this, homePage::class.java)

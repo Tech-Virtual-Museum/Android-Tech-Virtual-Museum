@@ -3,6 +3,7 @@ package com.example.techvirtualmuseum
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -41,6 +42,13 @@ class buyTicket3 : AppCompatActivity(){
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             val intent : Intent = Intent(this, buyTicket2::class.java)
+            startActivity(intent)
+        }
+
+        //boton que nos lleva a la actividad anterior
+        val buyFinalButton : Button = findViewById(R.id.buyFinalButton)
+        buyFinalButton.setOnClickListener {
+            val intent : Intent = Intent(this, ticketBought::class.java)
             startActivity(intent)
         }
 
