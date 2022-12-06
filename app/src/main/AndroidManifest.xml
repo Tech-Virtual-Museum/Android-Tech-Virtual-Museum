@@ -24,8 +24,9 @@
         android:theme="@style/Theme.TechVirtualMuseum"
         tools:targetApi="31">
         <activity
-            android:name=".productDetails"
-            android:exported="false">
+            android:name=".buyEventTicket"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
