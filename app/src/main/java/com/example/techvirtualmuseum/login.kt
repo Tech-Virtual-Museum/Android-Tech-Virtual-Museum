@@ -62,7 +62,7 @@ class login : AppCompatActivity() {
         auth.signInWithEmailAndPassword(inputEmail, inputPassword)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent: Intent = Intent(this, buyTicket3::class.java)
+                    val intent: Intent = Intent(this, homePage::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(

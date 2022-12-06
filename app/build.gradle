@@ -92,6 +92,10 @@ dependencies {
     //stepview animado
     implementation 'com.github.shuhart:stepview:1.5.1'
 
+    //bottom navigation bar
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+
 
 
 
