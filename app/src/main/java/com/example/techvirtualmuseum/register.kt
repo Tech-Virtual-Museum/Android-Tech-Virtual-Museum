@@ -43,15 +43,11 @@ class register : AppCompatActivity() {
         signupButton.setOnClickListener {
             performSignUp()
         }
-
-
     }
 
 
     //Funcion con la que se crea en el Authentication el usuario
     private fun performSignUp() {
-
-
         val name = findViewById<EditText>(R.id.nameEditText_register)
         val surname = findViewById<EditText>(R.id.surnameEditText_register)
         val email = findViewById<EditText>(R.id.emailEditText_register)
