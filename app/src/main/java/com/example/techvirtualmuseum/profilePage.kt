@@ -35,7 +35,6 @@ class profilePage : AppCompatActivity() {
             userEmail.setText(it.get("email") as String? )
         }
 
-
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             val intent : Intent = Intent(this, homePage::class.java)

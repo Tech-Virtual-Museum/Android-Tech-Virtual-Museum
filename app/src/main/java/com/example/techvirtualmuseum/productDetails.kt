@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 class productDetails : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
@@ -27,6 +28,12 @@ class productDetails : AppCompatActivity() {
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             val intent : Intent = Intent(this, products::class.java)
+            startActivity(intent)
+        }
+
+        val playAudioVideo : ImageButton = findViewById(R.id.playAudioVideo)
+        playAudioVideo.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
             startActivity(intent)
         }
 

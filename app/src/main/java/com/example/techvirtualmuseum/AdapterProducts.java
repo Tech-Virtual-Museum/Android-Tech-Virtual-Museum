@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class AdapterProducts extends ArrayAdapter <productModal> {
 
+
     // constructor for our list view adapter.
     public AdapterProducts(@NonNull Context context, ArrayList<productModal> productModalArrayList) {
         super(context, 0, productModalArrayList);
@@ -47,6 +48,8 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
 
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(productModal.getImg()).into(imageProduct);
+
+
 
         listitemView.setOnClickListener(new View.OnClickListener() {
             @Override
