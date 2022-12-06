@@ -12,16 +12,15 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="744dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/dateTime"
         android:textColor="@color/violet"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step_view"
-        app:layout_constraintVertical_bias="0.052"
         tools:ignore="MissingConstraints" />
 
     <com.skyhope.eventcalenderlibrary.CalenderEvent

@@ -51,26 +51,26 @@ class login : AppCompatActivity() {
         val inputPassword = password.text.toString()
 
         //evaluamos el caso en que alguno de los campos este vacio
-        if (inputEmail.isEmpty() || inputPassword.isEmpty()){
-            Toast.makeText(baseContext, "Debe rellenar todos los campos",
-                Toast.LENGTH_SHORT).show()
+        if (inputEmail.isEmpty() || inputPassword.isEmpty()) {
+            Toast.makeText(
+                baseContext, "Debe rellenar todos los campos",
+                Toast.LENGTH_SHORT
+            ).show()
             return
         }
 
         auth.signInWithEmailAndPassword(inputEmail, inputPassword)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent : Intent = Intent(this, homePage::class.java)
+                    val intent: Intent = Intent(this, buyTicket3::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(baseContext, "Error en el inicio de sesion",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Error en el inicio de sesion",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
-
-
-
-
-
     }
+
 }
