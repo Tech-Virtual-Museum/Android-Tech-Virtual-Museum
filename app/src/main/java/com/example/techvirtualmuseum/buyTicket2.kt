@@ -15,21 +15,73 @@ class buyTicket2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_ticket2)
 
-        val cantidad : EditText = findViewById(R.id.cantidadJunior)
-        var texto = parseInt(cantidad.text.toString())
+
+        //JUNIOR - Aumentamos o disminuimos en 1 el numero de entradas
+        val cantidadJunior : EditText = findViewById(R.id.cantidadJunior)
+        var texto = parseInt(cantidadJunior.text.toString())
 
         //boton con el que aumentamos el numero de entradas
         val aumentarBtnJunior : Button = findViewById(R.id.sumaJunior)
         aumentarBtnJunior.setOnClickListener {
             texto += 1
-            cantidad.setText(texto)
+            cantidadJunior.setText(texto)
         }
-
         //boton con el que aumentamos el numero de entradas
         val disminuirBtnJunior : Button = findViewById(R.id.restaJunior)
         disminuirBtnJunior.setOnClickListener {
             texto += (-1)
-            cantidad.setText(texto)
+            cantidadJunior.setText(texto)
+        }
+
+        //STUDENT
+        val cantidadStudent : EditText = findViewById(R.id.cantidadStudent)
+        var textoStudent = parseInt(cantidadStudent.text.toString())
+
+        //boton con el que aumentamos el numero de entradas
+        val aumentarBtnStudent : Button = findViewById(R.id.sumaStudent)
+        aumentarBtnStudent.setOnClickListener {
+            textoStudent += 1
+            cantidadStudent.setText(textoStudent)
+        }
+        //boton con el que aumentamos el numero de entradas
+        val disminuirBtnStudent : Button = findViewById(R.id.restaStudent)
+        disminuirBtnStudent.setOnClickListener {
+            textoStudent += (-1)
+            cantidadStudent.setText(textoStudent)
+        }
+
+        //ADULT
+        val cantidadAdult : EditText = findViewById(R.id.cantidadAdult)
+        var textoAdult = parseInt(cantidadAdult.text.toString())
+
+        //boton con el que aumentamos el numero de entradas
+        val aumentarBtnAdult : Button = findViewById(R.id.sumaAdult)
+        aumentarBtnAdult.setOnClickListener {
+            textoAdult += 1
+            cantidadAdult.setText(textoAdult)
+        }
+        //boton con el que aumentamos el numero de entradas
+        val disminuirBtnAdult : Button = findViewById(R.id.restaAdult)
+        disminuirBtnAdult.setOnClickListener {
+            textoAdult += (-1)
+            cantidadAdult.setText(textoAdult)
+        }
+
+        //SENIOR
+        val cantidadSenior : EditText = findViewById(R.id.cantidadSenior)
+        var textoSenior = parseInt(cantidadSenior.text.toString())
+
+        //boton con el que aumentamos el numero de entradas
+        val aumentarBtnSenior: Button = findViewById(R.id.sumaSenior)
+        aumentarBtnSenior.setOnClickListener {
+            textoSenior += 1
+            cantidadSenior.setText(textoSenior)
+        }
+        //boton con el que aumentamos el numero de entradas
+        val disminuirBtnSenior : Button = findViewById(R.id.restaSenior)
+        disminuirBtnSenior.setOnClickListener {
+            textoSenior += (-1)
+            cantidadSenior.setText(textoSenior)
         }
 
 
