@@ -21,7 +21,7 @@
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="ContentDescription,MissingConstraints" />
 
         <ImageButton
             android:id="@+id/backButton"
@@ -33,7 +33,7 @@
             android:src="@drawable/back_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="ContentDescription,MissingConstraints" />
 
         <TextView
             android:id="@+id/textView30"
@@ -112,10 +112,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="257dp"
                 android:layout_marginTop="10dp"
-                android:text=""
+                android:inputType="number"
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_bold"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                tools:ignore="LabelFor" />
 
             <Button
                 android:id="@+id/sumaJunior"
@@ -179,7 +180,7 @@
                 android:id="@+id/restaStudent"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:backgroundTint="@color/violet"
                 android:text="-"
                 android:textColor="@color/white" />
@@ -190,16 +191,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="257dp"
                 android:layout_marginTop="10dp"
-                android:text=""
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_bold"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:inputType="number"
+                tools:ignore="LabelFor" />
 
             <Button
                 android:id="@+id/sumaStudent"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:backgroundTint="@color/violet"
                 android:text="+"
                 android:textColor="@color/white" />
@@ -255,7 +257,7 @@
                 android:id="@+id/restaAdult"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:backgroundTint="@color/violet"
                 android:text="-"
                 android:textColor="@color/white" />
@@ -266,16 +268,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="257dp"
                 android:layout_marginTop="10dp"
-                android:text=""
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_bold"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:inputType="number"
+                tools:ignore="LabelFor" />
 
             <Button
                 android:id="@+id/sumaAdult"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:backgroundTint="@color/violet"
                 android:text="+"
                 android:textColor="@color/white" />
@@ -331,7 +334,7 @@
                 android:id="@+id/restaSenior"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:backgroundTint="@color/violet"
                 android:text="-"
                 android:textColor="@color/white" />
@@ -342,7 +345,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="257dp"
                 android:layout_marginTop="10dp"
-                android:text=""
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_bold"
                 android:textAlignment="center" />
@@ -351,7 +353,7 @@
                 android:id="@+id/sumaSenior"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:backgroundTint="@color/violet"
                 android:text="+"
                 android:textColor="@color/white" />

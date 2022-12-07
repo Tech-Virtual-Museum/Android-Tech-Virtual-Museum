@@ -1,23 +1,18 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class homePage : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -33,8 +28,9 @@ class homePage : AppCompatActivity() {
         imageSlider.setImageList(imageList, ScaleTypes.CENTER_INSIDE)
 
         //listener para el boton que nos lleve a la pantalla del perfil del usuario
-        val profilePage: ImageButton = findViewById(R.id.profileImage)
-        profilePage.setOnClickListener {
+        val profilePageBtn: ImageButton = findViewById(R.id.profileImage)
+        profilePageBtn.setOnClickListener {
+            Log.d("imagen", "$profilePageBtn")
             val intent: Intent = Intent(this, profilePage::class.java)
             startActivity(intent)
         }
@@ -51,8 +47,33 @@ class homePage : AppCompatActivity() {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.es/maps/place/Edificio+de+Inform%C3%A1tica+y+Matem%C3%A1ticas+-+ULPGC/@28.0731364,-15.4536018,17z/data=!3m2!4b1!5s0xc4095d48ff9735f:0xe7a7b5620ba98e3a!4m5!3m4!1s0xc4095d48fc41b6b:0x64299e4d4078258c!8m2!3d28.0731317!4d-15.4514078?hl=es"))
             intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
             startActivity(browserIntent)
-
         }
+
+        //boton de la navigationBar - compra ticket 1
+        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener {
+            val intent : Intent = Intent(this, buyTicket::class.java)
+            startActivity(intent)
+        }
+
+
+        //boton de la navigationBar - ir a la pagina inicio
+        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina de escanear QR
+        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener {
+            val intent : Intent = Intent(this, escanerQR::class.java)
+            startActivity(intent)
+        }
+
+
+
+
 
 
     }

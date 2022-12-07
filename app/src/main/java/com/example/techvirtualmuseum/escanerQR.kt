@@ -36,14 +36,13 @@ class escanerQR : AppCompatActivity() {
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
                 val intent : Intent = Intent(this, products::class.java)
-                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
                 startActivity(intent)
 
             }
         }
         codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS
             runOnUiThread {
-                Toast.makeText(this, "Camera initialization error: ${it.message}",
+                Toast.makeText(this, "Error en la camara: ${it.message}",
                     Toast.LENGTH_LONG).show()
             }
         }

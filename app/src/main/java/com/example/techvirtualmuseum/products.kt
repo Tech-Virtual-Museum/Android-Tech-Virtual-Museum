@@ -1,8 +1,11 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
 import com.google.android.gms.tasks.OnFailureListener
@@ -16,6 +19,7 @@ class products : AppCompatActivity() {
     var productModalArrayList: ArrayList<productModal>? = null
     var database: FirebaseFirestore? = null
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
@@ -26,6 +30,29 @@ class products : AppCompatActivity() {
 
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
+
+
+        //boton de la navigationBar - compra ticket 1
+        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener {
+            val intent : Intent = Intent(this, buyTicket::class.java)
+            startActivity(intent)
+        }
+
+
+        //boton de la navigationBar - ir a la pagina inicio
+        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina de escanear QR
+        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener {
+            val intent : Intent = Intent(this, escanerQR::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun loadDatainListview() {
@@ -39,6 +66,7 @@ class products : AppCompatActivity() {
 
                         // despues de obtener los datos de firebase, la guardamos en un arrayList
                         productModalArrayList!!.add(productModal!!)
+
                     }
                     // pasamos el arrayList a la clase adapter que tenemos
                     val adapter = AdapterProducts(this@products, productModalArrayList)
@@ -47,14 +75,13 @@ class products : AppCompatActivity() {
                     // si el snapshot esta vacio, mostramos un aviso
                     Toast.makeText(
                         this@products,
-                        "No data found in Database",
+                        "No se han encontrado datos",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
                 //si tenemos un error, mostramos un mensaje
             }).addOnFailureListener(OnFailureListener {
-                Toast.makeText(this@products, "Fail to load data..", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@products, "Error al cargar los datos", Toast.LENGTH_SHORT).show()
             })
-
     }
 }

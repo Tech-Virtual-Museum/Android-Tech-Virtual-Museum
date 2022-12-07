@@ -50,7 +50,6 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
         Picasso.get().load(productModal.getImg()).into(imageProduct);
 
 
-
         listitemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +57,7 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
                 Intent intent = new Intent(v.getContext(), productDetails.class);
                 intent.putExtra("name", productModal.getName());
                 intent.putExtra("descripcion", productModal.getDescripcion());
+                intent.putExtra("id", productModal.getId());
                 v.getContext().startActivity(intent);
             }
         });

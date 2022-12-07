@@ -82,6 +82,46 @@
         app:layout_constraintTop_toBottomOf="@+id/nameProduct"
         tools:ignore="HardcodedText,MissingConstraints" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageButton
+            android:id="@+id/calendarioBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="57dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/calendar"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/homeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="157dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/home"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/scanBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="257dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/scan"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
 
 
 
