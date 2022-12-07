@@ -25,7 +25,7 @@
 
         <ImageButton
             android:id="@+id/backButton"
-            android:layout_width="43dp"
+            android:layout_width="33dp"
             android:layout_height="37dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="64dp"
@@ -64,6 +64,25 @@
             app:layout_constraintTop_toBottomOf="@+id/textView30"
             tools:ignore="MissingConstraints">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:strokeColor="#4ACE7F"
+                app:cardCornerRadius="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€ 2.50"
+                    android:layout_gravity="center"
+                    android:textColor="#4ACE7F"
+                    android:fontFamily="@font/roboto_bold">
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
             <TextView
                 android:id="@+id/ticketJunior"
                 android:layout_width="wrap_content"
@@ -82,16 +101,16 @@
                 android:id="@+id/restaJunior"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:backgroundTint="@color/violet"
                 android:text="-"
                 android:textColor="@color/white" />
 
-            <TextView
+            <EditText
                 android:id="@+id/cantidadJunior"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="263dp"
+                android:layout_marginStart="257dp"
                 android:layout_marginTop="10dp"
                 android:text=""
                 android:textColor="@color/black"
@@ -102,7 +121,7 @@
                 android:id="@+id/sumaJunior"
                 android:layout_width="43dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:backgroundTint="@color/violet"
                 android:text="+"
                 android:textColor="@color/white" />
@@ -121,6 +140,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_view_junior"
             tools:ignore="MissingConstraints">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€ 4.50"
+                    android:layout_gravity="center"
+                    android:textColor="#4ACE7F"
+                    android:fontFamily="@font/roboto_bold">
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/ticketStudent"
@@ -145,6 +184,17 @@
                 android:text="-"
                 android:textColor="@color/white" />
 
+            <EditText
+                android:id="@+id/cantidadStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="257dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/sumaStudent"
                 android:layout_width="43dp"
@@ -167,6 +217,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_view_student"
             tools:ignore="MissingConstraints">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€ 7.00"
+                    android:layout_gravity="center"
+                    android:textColor="#4ACE7F"
+                    android:fontFamily="@font/roboto_bold">
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/ticketAdult"
@@ -191,6 +260,17 @@
                 android:text="-"
                 android:textColor="@color/white" />
 
+            <EditText
+                android:id="@+id/cantidadAdult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="257dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/sumaAdult"
                 android:layout_width="43dp"
@@ -214,6 +294,25 @@
             app:layout_constraintTop_toBottomOf="@+id/card_view_adult"
             tools:ignore="MissingConstraints">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€ 4.50"
+                    android:layout_gravity="center"
+                    android:textColor="#4ACE7F"
+                    android:fontFamily="@font/roboto_bold">
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
             <TextView
                 android:id="@+id/ticketSenior"
                 android:layout_width="wrap_content"
@@ -236,6 +335,17 @@
                 android:backgroundTint="@color/violet"
                 android:text="-"
                 android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/cantidadSenior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="257dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/sumaSenior"

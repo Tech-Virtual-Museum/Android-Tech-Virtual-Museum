@@ -155,6 +155,7 @@
                 android:id="@+id/passwordEditText_login"
                 android:layout_width="295dp"
                 android:layout_height="40dp"
+                android:layout_marginStart="10dp"
                 android:backgroundTint="@android:color/transparent"
                 android:inputType="textPassword"
                 android:textSize="15sp" />

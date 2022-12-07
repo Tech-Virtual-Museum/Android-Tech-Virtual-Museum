@@ -4,8 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
+import java.lang.Integer.*
 
 
 class buyTicket2 : AppCompatActivity() {
@@ -14,24 +15,21 @@ class buyTicket2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_ticket2)
 
-        //constante que nos servira para sumar o restar de uno en uno en los botones
-        val valor : Int = 1
+        val cantidad : EditText = findViewById(R.id.cantidadJunior)
+        var texto = parseInt(cantidad.text.toString())
 
-        val cantidad : TextView = findViewById(R.id.cantidadJunior)
-
+        //boton con el que aumentamos el numero de entradas
         val aumentarBtnJunior : Button = findViewById(R.id.sumaJunior)
         aumentarBtnJunior.setOnClickListener {
-            var numero = cantidad.text.toString()
-            numero += valor
-            cantidad.text = numero
-
+            texto += 1
+            cantidad.setText(texto)
         }
 
+        //boton con el que aumentamos el numero de entradas
         val disminuirBtnJunior : Button = findViewById(R.id.restaJunior)
         disminuirBtnJunior.setOnClickListener {
-
-
-
+            texto += (-1)
+            cantidad.setText(texto)
         }
 
 
