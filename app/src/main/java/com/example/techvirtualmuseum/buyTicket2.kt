@@ -3,6 +3,7 @@ package com.example.techvirtualmuseum
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -36,7 +37,6 @@ class buyTicket2 : AppCompatActivity() {
         aumentarBtnJunior.setOnClickListener {
             valorJR += 1
             cantidadJR.setText("$valorJR")
-
             //aumentacmos precio en el Summary
             if (valorJR >= 1) {
                 val precioJR = valorJR * ticketJR
@@ -47,9 +47,11 @@ class buyTicket2 : AppCompatActivity() {
         //boton con el que aumentamos el numero de entradas
         val disminuirBtnJunior : Button = findViewById(R.id.restaJunior)
         disminuirBtnJunior.setOnClickListener {
-            if ( valorJR > 0 ){
+            if ( valorJR >= 1 ){
                 valorJR += (-1)
                 cantidadJR.setText("$valorJR")
+                val precioJR = valorJR * ticketJR
+                numTicketJr.setText("$precioJR")
             }
         }
 
@@ -78,6 +80,8 @@ class buyTicket2 : AppCompatActivity() {
             if ( valorST > 0 ){
                 valorST += (-1)
                 cantidadST.setText("$valorST")
+                val precioST = valorST * ticketST
+                numTicketSt.setText("$precioST")
             }
         }
 
@@ -104,6 +108,9 @@ class buyTicket2 : AppCompatActivity() {
             if (valorAD > 0){
                 valorAD += (-1)
                 cantidadAD.setText("$valorAD")
+
+                val precioAD = valorAD * ticketAD
+                numTicketAd.setText("$precioAD")
             }
         }
 
@@ -130,6 +137,9 @@ class buyTicket2 : AppCompatActivity() {
             if (valorSN > 0){
                 valorSN += (-1)
                 cantidadSN.setText("$valorSN")
+
+                val precioSN = valorSN * ticketSN
+                numTicketSn.setText("$precioSN")
             }
         }
 
