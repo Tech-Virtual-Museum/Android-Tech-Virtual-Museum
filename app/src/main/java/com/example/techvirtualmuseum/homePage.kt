@@ -3,7 +3,6 @@ package com.example.techvirtualmuseum
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +29,6 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla del perfil del usuario
         val profilePageBtn: ImageButton = findViewById(R.id.profileImage)
         profilePageBtn.setOnClickListener {
-            Log.d("imagen", "$profilePageBtn")
             val intent: Intent = Intent(this, profilePage::class.java)
             startActivity(intent)
         }
@@ -38,7 +36,7 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, buyTicket::class.java)
+            val intent: Intent = Intent(this, buyTicket2::class.java)
             startActivity(intent)
         }
 
@@ -67,14 +65,9 @@ class homePage : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent : Intent = Intent(this, escanerQR::class.java)
+            val intent: Intent = Intent(this, escanerQR::class.java)
             startActivity(intent)
         }
-
-
-
-
-
 
     }
 
