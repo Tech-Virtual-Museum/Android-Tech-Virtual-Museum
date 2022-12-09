@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,497 +7,693 @@
     android:layout_height="match_parent"
     tools:context=".buyTicket2">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="292dp"
-            android:layout_height="63dp"
-            android:layout_marginTop="52dp"
-            android:src="@drawable/progressbar2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription,MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="292dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/progressbar2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="33dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="65dp"
+                android:backgroundTintMode="add"
+                android:src="@drawable/back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Select your tickets"
+                android:textColor="@color/violet"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_junior"
+                android:layout_width="323dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    app:strokeColor="#4ACE7F"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€ 2.50"
+                        android:layout_gravity="center"
+                        android:textColor="#4ACE7F"
+                        android:fontFamily="@font/roboto_bold">
+                    </TextView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/ticketJunior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="90sp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Junior \n (under 5 y/o)"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/restaJunior"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="210dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="-"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/cantidadJunior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="257dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="number"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    tools:ignore="LabelFor" />
+
+                <Button
+                    android:id="@+id/sumaJunior"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="280dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="+"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_student"
+                android:layout_width="323dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_junior"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€ 4.50"
+                        android:layout_gravity="center"
+                        android:textColor="#4ACE7F"
+                        android:fontFamily="@font/roboto_bold">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/ticketStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="105sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Student"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/restaStudent"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="210dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="-"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/cantidadStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="257dp"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="0"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    tools:ignore="LabelFor" />
+
+                <Button
+                    android:id="@+id/sumaStudent"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="280dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="+"
+                    android:textColor="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_adult"
+                android:layout_width="323dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_student"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€ 7.00"
+                        android:layout_gravity="center"
+                        android:textColor="#4ACE7F"
+                        android:fontFamily="@font/roboto_bold">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/ticketAdult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="111sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Adult"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/restaAdult"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="210dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="-"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/cantidadAdult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="257dp"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="0"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    tools:ignore="LabelFor" />
+
+                <Button
+                    android:id="@+id/sumaAdult"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="280dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="+"
+                    android:textColor="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_senior"
+                android:layout_width="323dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_adult"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€ 4.50"
+                        android:layout_gravity="center"
+                        android:textColor="#4ACE7F"
+                        android:fontFamily="@font/roboto_bold">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/ticketSenior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="90sp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Senior \n (over 65 y/o)"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/restaSenior"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="210dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="-"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/cantidadSenior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="257dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/sumaSenior"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="280dp"
+                    android:backgroundTint="@color/violet"
+                    android:text="+"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Order summary"
+                android:textColor="@color/violet"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.172"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_senior"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/nameJuniorTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Junior Ticket"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView31"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView31">
+
+                <EditText
+                    android:id="@+id/numTicketsJR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="number"
+                    android:text="0"
+                    tools:ignore="LabelFor" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+            <TextView
+                android:id="@+id/nameStudentTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/roboto"
+                android:text="Student Ticket"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameJuniorTicket"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                <EditText
+                    android:id="@+id/numTicketsST"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="number"
+                    android:text="0"
+                    tools:ignore="LabelFor" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="37dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+            <TextView
+                android:id="@+id/nameAdultTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto"
+                android:text="Adult Ticket"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameStudentTicket" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView7">
+
+                <EditText
+                    android:id="@+id/numTicketsAD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="number"
+                    android:text="0"
+                    tools:ignore="LabelFor" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="39dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+            <TextView
+                android:id="@+id/nameSeniorTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/roboto"
+                android:text="Senior Ticket"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameAdultTicket" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+                <EditText
+                    android:id="@+id/numTicketsSN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="number"
+                    android:text="0"
+                    tools:ignore="LabelFor" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="38dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="@font/roboto"
+                android:text="Total taxes include"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/totalPagar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/roboto_bold"
+                android:inputType="number"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView35"
+                app:layout_constraintTop_toBottomOf="@+id/cardView9"
+                tools:ignore="LabelFor,MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="60dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/totalPagar"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+            <Button
+                android:id="@+id/buyFinalTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/violet"
+                android:text="BUY"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView35"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="33dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="65dp"
-            android:backgroundTintMode="add"
-            android:src="@drawable/back_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription,MissingConstraints" />
+            android:id="@+id/calendarioBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="57dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/calendar"
+            tools:ignore="ContentDescription" />
 
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Select your tickets"
-            android:textColor="@color/violet"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.076"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/homeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="157dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/home"
+            tools:ignore="ContentDescription" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_junior"
-            android:layout_width="323dp"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView30"
-            tools:ignore="MissingConstraints">
+        <ImageButton
+            android:id="@+id/scanBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="257dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/scan"
+            tools:ignore="ContentDescription" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="55dp"
-                android:layout_height="25dp"
-                android:backgroundTint="@color/white"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp"
-                app:strokeColor="#4ACE7F"
-                app:cardCornerRadius="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="€ 2.50"
-                    android:layout_gravity="center"
-                    android:textColor="#4ACE7F"
-                    android:fontFamily="@font/roboto_bold">
-                </TextView>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/ticketJunior"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="90sp"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Junior \n (under 5 y/o)"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/restaJunior"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="210dp"
-                android:backgroundTint="@color/violet"
-                android:text="-"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/cantidadJunior"
-                android:layout_width="wrap_content"
-                android:layout_height="43dp"
-                android:layout_marginStart="257dp"
-                android:fontFamily="@font/roboto_bold"
-                android:inputType="number"
-                android:backgroundTint="@android:color/transparent"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                tools:ignore="LabelFor" />
-
-            <Button
-                android:id="@+id/sumaJunior"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="280dp"
-                android:backgroundTint="@color/violet"
-                android:text="+"
-                android:textColor="@color/white" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_student"
-            android:layout_width="323dp"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_junior"
-            tools:ignore="MissingConstraints">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="55dp"
-                android:layout_height="25dp"
-                android:backgroundTint="@color/white"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp"
-                app:cardCornerRadius="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="€ 4.50"
-                    android:layout_gravity="center"
-                    android:textColor="#4ACE7F"
-                    android:fontFamily="@font/roboto_bold">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
-            <TextView
-                android:id="@+id/ticketStudent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="105sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Student"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
 
-            <Button
-                android:id="@+id/restaStudent"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="210dp"
-                android:backgroundTint="@color/violet"
-                android:text="-"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/cantidadStudent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="257dp"
-                android:textColor="@color/black"
-                android:backgroundTint="@android:color/transparent"
-                android:text="0"
-                android:fontFamily="@font/roboto_bold"
-                android:textAlignment="center"
-                android:inputType="number"
-                tools:ignore="LabelFor" />
-
-            <Button
-                android:id="@+id/sumaStudent"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="280dp"
-                android:backgroundTint="@color/violet"
-                android:text="+"
-                android:textColor="@color/white" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_adult"
-            android:layout_width="323dp"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_student"
-            tools:ignore="MissingConstraints">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="55dp"
-                android:layout_height="25dp"
-                android:backgroundTint="@color/white"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp"
-                app:cardCornerRadius="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="€ 7.00"
-                    android:layout_gravity="center"
-                    android:textColor="#4ACE7F"
-                    android:fontFamily="@font/roboto_bold">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/ticketAdult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="111sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Adult"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/restaAdult"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="210dp"
-                android:backgroundTint="@color/violet"
-                android:text="-"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/cantidadAdult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="257dp"
-                android:textColor="@color/black"
-                android:backgroundTint="@android:color/transparent"
-                android:text="0"
-                android:fontFamily="@font/roboto_bold"
-                android:textAlignment="center"
-                android:inputType="number"
-                tools:ignore="LabelFor" />
-
-            <Button
-                android:id="@+id/sumaAdult"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="280dp"
-                android:backgroundTint="@color/violet"
-                android:text="+"
-                android:textColor="@color/white" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_senior"
-            android:layout_width="323dp"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_adult"
-            tools:ignore="MissingConstraints">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="55dp"
-                android:layout_height="25dp"
-                android:backgroundTint="@color/white"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="10dp"
-                app:cardCornerRadius="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="€ 4.50"
-                    android:layout_gravity="center"
-                    android:textColor="#4ACE7F"
-                    android:fontFamily="@font/roboto_bold">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/ticketSenior"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="90sp"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Senior \n (over 65 y/o)"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/restaSenior"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="210dp"
-                android:backgroundTint="@color/violet"
-                android:text="-"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/cantidadSenior"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="257dp"
-                android:backgroundTint="@android:color/transparent"
-                android:text="0"
-                android:textColor="@color/black"
-                android:fontFamily="@font/roboto_bold"
-                android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/sumaSenior"
-                android:layout_width="43dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="280dp"
-                android:backgroundTint="@color/violet"
-                android:text="+"
-                android:textColor="@color/white" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Order summary"
-            android:textColor="@color/violet"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.172"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_senior"
-            tools:ignore="MissingConstraints" />
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="4dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView31">
-
-            <EditText
-                android:id="@+id/numTicketsJR"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:inputType="number"
-                android:text="0"
-                tools:ignore="LabelFor" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="15dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3">
-
-            <EditText
-                android:id="@+id/numTicketsST"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:inputType="number"
-                android:text="0"
-                tools:ignore="LabelFor" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="15dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView7">
-
-            <EditText
-                android:id="@+id/numTicketsAD"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:inputType="number"
-                android:text="0"
-                tools:ignore="LabelFor" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="15dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView8">
-
-            <EditText
-                android:id="@+id/numTicketsSN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:inputType="number"
-                android:text="0"
-                tools:ignore="LabelFor" />
-
-        </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/buyFinalTicket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/violet"
-            android:text="BUY"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView9"
-            tools:ignore="MissingConstraints" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

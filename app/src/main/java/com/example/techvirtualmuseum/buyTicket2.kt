@@ -3,7 +3,6 @@ package com.example.techvirtualmuseum
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -21,37 +20,55 @@ class buyTicket2 : AppCompatActivity() {
         val ticketAD : Double = 7.00
         val ticketSN : Double = 4.50
 
-        //Variables JUNIOR
-        val cantidadJR : EditText = findViewById(R.id.cantidadJunior)
-        val n1 : String = cantidadJR.text.toString()
-        var valorJR : Int = Integer.parseInt(n1)
-
         //Inicialiazacion de los campos para mostrar el precio
         val numTicketJr : EditText = findViewById(R.id.numTicketsJR)
         val numTicketSt : EditText = findViewById(R.id.numTicketsST)
         val numTicketAd : EditText = findViewById(R.id.numTicketsAD)
         val numTicketSn : EditText = findViewById(R.id.numTicketsSN)
 
+        //VARIABLES DE LOS PRECIOS
+        var precioJR : Double
+        var precioST : Double
+        var precioAD : Double
+        var precioSN : Double
+
+        val totalPagar : EditText = findViewById(R.id.totalPagar)
+        var precio : Double = 0.0
+
+        //Variables JUNIOR
+        val cantidadJR : EditText = findViewById(R.id.cantidadJunior)
+        val n1 : String = cantidadJR.text.toString()
+        var valorJR : Int = Integer.parseInt(n1)
+
         //boton con el que aumentamos el numero de entradas
         val aumentarBtnJunior : Button = findViewById(R.id.sumaJunior)
         aumentarBtnJunior.setOnClickListener {
             valorJR += 1
             cantidadJR.setText("$valorJR")
+
             //aumentacmos precio en el Summary
             if (valorJR >= 1) {
-                val precioJR = valorJR * ticketJR
+
+                //precio por las entradas junior
+                precioJR = valorJR * ticketJR
                 numTicketJr.setText("$precioJR")
+
+                //guardamos precio total a pagar
+                precio += precioJR
+                totalPagar.setText("$precio")
             }
         }
 
-        //boton con el que aumentamos el numero de entradas
+        //boton con el que disminuimos el numero de entradas
         val disminuirBtnJunior : Button = findViewById(R.id.restaJunior)
         disminuirBtnJunior.setOnClickListener {
             if ( valorJR >= 1 ){
                 valorJR += (-1)
                 cantidadJR.setText("$valorJR")
-                val precioJR = valorJR * ticketJR
+
+                precioJR = valorJR * ticketJR
                 numTicketJr.setText("$precioJR")
+
             }
         }
 
@@ -69,8 +86,12 @@ class buyTicket2 : AppCompatActivity() {
 
             //aumentacmos precio en el Summary
             if (valorST >= 1) {
-                val precioST = valorST * ticketST
+                precioST = valorST * ticketST
                 numTicketSt.setText("$precioST")
+
+                //guardamos precio total a pagar
+                precio += precioST
+                totalPagar.setText("$precio")
             }
         }
 
@@ -80,7 +101,8 @@ class buyTicket2 : AppCompatActivity() {
             if ( valorST > 0 ){
                 valorST += (-1)
                 cantidadST.setText("$valorST")
-                val precioST = valorST * ticketST
+
+                precioST = valorST * ticketST
                 numTicketSt.setText("$precioST")
             }
         }
@@ -98,8 +120,13 @@ class buyTicket2 : AppCompatActivity() {
 
             //aumentacmos precio en el Summary
             if (valorAD >= 1) {
-                val precioAD = valorAD * ticketAD
+                precioAD = valorAD * ticketAD
                 numTicketAd.setText("$precioAD")
+
+                //guardamos precio total a pagar
+                precio += precioAD
+                totalPagar.setText("$precio")
+
             }
         }
 
@@ -109,8 +136,9 @@ class buyTicket2 : AppCompatActivity() {
                 valorAD += (-1)
                 cantidadAD.setText("$valorAD")
 
-                val precioAD = valorAD * ticketAD
+                precioAD = valorAD * ticketAD
                 numTicketAd.setText("$precioAD")
+
             }
         }
 
@@ -127,8 +155,13 @@ class buyTicket2 : AppCompatActivity() {
 
             //aumentacmos precio en el Summary
             if (valorSN >= 1) {
-                val precioSN = valorSN * ticketSN
+                precioSN = valorSN * ticketSN
                 numTicketSn.setText("$precioSN")
+
+                //guardamos precio total a pagar
+                precio += precioSN
+                totalPagar.setText("$precio")
+
             }
         }
 
@@ -138,10 +171,11 @@ class buyTicket2 : AppCompatActivity() {
                 valorSN += (-1)
                 cantidadSN.setText("$valorSN")
 
-                val precioSN = valorSN * ticketSN
+                precioSN = valorSN * ticketSN
                 numTicketSn.setText("$precioSN")
             }
         }
+
 
         //boton que nos llevara a la actvidad anterior
         val backButton : ImageButton = findViewById(R.id.backButton)
@@ -154,6 +188,28 @@ class buyTicket2 : AppCompatActivity() {
         val buyTicket3 : Button = findViewById(R.id.buyFinalTicket)
         buyTicket3.setOnClickListener {
             val intent : Intent = Intent(this, buyTicket3::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - compra ticket 1
+        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener {
+            val intent : Intent = Intent(this, buyTicket::class.java)
+            startActivity(intent)
+        }
+
+
+        //boton de la navigationBar - ir a la pagina inicio
+        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina de escanear QR
+        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener {
+            val intent: Intent = Intent(this, escanerQR::class.java)
             startActivity(intent)
         }
     }
