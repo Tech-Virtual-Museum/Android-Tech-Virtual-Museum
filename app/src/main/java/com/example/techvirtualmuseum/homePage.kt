@@ -1,5 +1,6 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,6 +13,7 @@ import com.denzcoskun.imageslider.models.SlideModel
 
 class homePage : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -36,10 +38,18 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, buyTicket3::class.java)
+            val intent: Intent = Intent(this, buyTicket::class.java)
             startActivity(intent)
         }
 
+        //boton que nos lleva a la actividad de proximos eventos
+        val upcomingEventsBtn : Button = findViewById(R.id.upcomingEventsBtn)
+        upcomingEventsBtn.setOnClickListener {
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            startActivity(intent)
+        }
+
+        //nos abrira el mapa en un navegador para poder iniciar la ruta
         val mapaButton : ImageButton = findViewById(R.id.imgMapa)
         mapaButton.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.es/maps/place/Edificio+de+Inform%C3%A1tica+y+Matem%C3%A1ticas+-+ULPGC/@28.0731364,-15.4536018,17z/data=!3m2!4b1!5s0xc4095d48ff9735f:0xe7a7b5620ba98e3a!4m5!3m4!1s0xc4095d48fc41b6b:0x64299e4d4078258c!8m2!3d28.0731317!4d-15.4514078?hl=es"))

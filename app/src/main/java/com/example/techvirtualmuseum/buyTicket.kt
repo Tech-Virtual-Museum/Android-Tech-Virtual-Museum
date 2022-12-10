@@ -14,9 +14,6 @@ class buyTicket : AppCompatActivity() {
 
 
 
-
-
-
         //boton que nos llevara a la actvidad anterior
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {

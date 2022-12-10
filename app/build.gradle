@@ -99,6 +99,10 @@ dependencies {
     //materialDesign
     implementation 'com.google.android.material:material:1.7.0'
 
+    //calendario
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+
+
 
 
 

@@ -87,10 +87,11 @@
                     android:id="@+id/textView"
                     android:layout_width="318dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/descripcion_home"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     tools:ignore="MissingConstraints" />
@@ -142,15 +143,15 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="314dp"
-                    android:layout_height="51dp"
-                    android:layout_marginStart="28dp"
+                    android:layout_width="333dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="40dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/descTicket_home"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -161,10 +162,54 @@
                     android:layout_marginTop="95dp"
                     android:backgroundTint="@color/violet"
                     android:drawableStart="@drawable/ticket"
-                    android:text="@string/ticketBuy_home"
+                    android:text="Book Now"
                     android:textColor="@color/white"
                     tools:ignore="MissingConstraints" />
 
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardView6"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Want to know more?"
+                    android:textColor="@color/violet"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_marginTop="40dp"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/roboto"
+                    android:text="Visit us and you can learn about the latest technology and participate in the different workshops."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/upcomingEventsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/violet"
+                    android:text="Upcoming events"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="130dp">
+                </Button>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -174,7 +219,7 @@
                 android:layout_marginTop="44dp"
                 android:backgroundTint="@android:color/transparent"
                 app:cardElevation="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/cardView6"
+                app:layout_constraintTop_toBottomOf="@+id/cardView10"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="29dp">
 
@@ -197,11 +242,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12.5dp"
                     android:layout_marginTop="44dp"
+                    android:layout_marginBottom="50dp"
                     android:backgroundTint="@android:color/transparent"
                     android:src="@drawable/mapa"
                     tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="29dp"
-                    android:layout_marginBottom="50dp"/>
+                    tools:layout_editor_absoluteX="29dp" />
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,8 +33,6 @@ class buyTicket2 : AppCompatActivity() {
         var precioAD : Double
         var precioSN : Double
 
-        val totalPagar : EditText = findViewById(R.id.totalPagar)
-
         //Variables JUNIOR
         val cantidadJR : EditText = findViewById(R.id.cantidadJunior)
         val n1 : String = cantidadJR.text.toString()
