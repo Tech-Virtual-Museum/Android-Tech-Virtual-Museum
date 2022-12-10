@@ -1,15 +1,15 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 
 class productDetails : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
@@ -17,14 +17,21 @@ class productDetails : AppCompatActivity() {
         //inicializamos los campos para posteriormente añadir la informacion
         val nameProduct = findViewById<TextView>(R.id.nameProduct)
         val descripcionProduct = findViewById<TextView>(R.id.descripcionProduct)
+        val imageProduct = findViewById<ImageView>(R.id.imageProduct)
 
         //obtenemos la informacion del evento que ha sido clickado
-        val nombreProducto = getIntent().getStringExtra("name");
-        val descripcionProducto = getIntent().getStringExtra("descripcion")
+        val nombreProducto = intent.getStringExtra("name");
+        val descripcionProducto = intent.getStringExtra("descripcion")
+        val imagenProducto = intent.getStringExtra("img")
 
         //mostramos la informacion
-        nameProduct.setText(nombreProducto)
-        descripcionProduct.setText(descripcionProducto)
+        nameProduct.text = nombreProducto
+        descripcionProduct.text = descripcionProducto
+
+
+        //obtenemos las imagenes guardadas en firebase
+        Picasso.get().load(imagenProducto).into(imageProduct)
+
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)

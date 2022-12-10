@@ -2,6 +2,7 @@ package com.example.techvirtualmuseum;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,7 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
                 intent.putExtra("name", productModal.getName());
                 intent.putExtra("descripcion", productModal.getDescripcion());
                 intent.putExtra("id", productModal.getId());
+                intent.putExtra("img", productModal.getImg());
                 v.getContext().startActivity(intent);
             }
         });

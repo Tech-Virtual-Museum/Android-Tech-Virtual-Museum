@@ -20,7 +20,7 @@ class homePage : AppCompatActivity() {
         val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFondoBien.png?alt=media&token=a9c2261f-61ab-4baf-973b-cbd20abe3307"))
+        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFondoBien.png?alt=media&token=c199380e-b5b7-4256-a1e8-7d30bb35a67a"))
         imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFOndo.png?alt=media&token=5f71760e-0646-4cf5-87fb-f6e7890d358b"))
         imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FtecladoMecanicoSinFondo.png?alt=media&token=fa4e10bd-b8a9-4b15-9a42-00714359441b"))
 
@@ -36,7 +36,7 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, buyTicket2::class.java)
+            val intent: Intent = Intent(this, products::class.java)
             startActivity(intent)
         }
 
