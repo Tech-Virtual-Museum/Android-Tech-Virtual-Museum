@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 
 
 class eventDetails : AppCompatActivity() {
@@ -20,21 +22,25 @@ class eventDetails : AppCompatActivity() {
         val hourEvent = findViewById<TextView>(R.id.hourEvent)
         val priceEvent = findViewById<TextView>(R.id.priceEvent)
         val descripcionEvent = findViewById<TextView>(R.id.descripcionEvent)
+        val imageEvent = findViewById<ImageView>(R.id.imageEvent)
 
         //obtenemos la informacion del evento que ha sido clickado
-        val nombreEvento = getIntent().getStringExtra("name");
-        val fechaEvento = getIntent().getStringExtra("date");
-        val horaEvento = getIntent().getStringExtra("hour");
-        val precioEvento = getIntent().getStringExtra("pricing");
-        val descripcionEvento = getIntent().getStringExtra("description");
-
+        val nombreEvento = intent.getStringExtra("name");
+        val fechaEvento = intent.getStringExtra("date");
+        val horaEvento = intent.getStringExtra("hour");
+        val precioEvento = intent.getStringExtra("pricing");
+        val descripcionEvento = intent.getStringExtra("description");
+        val imagenEvento = intent.getStringExtra("imgUrl")
 
         //mostramos la informacion
-        nameEvent.setText(nombreEvento)
-        dateEvent.setText(fechaEvento)
-        hourEvent.setText(horaEvento)
-        priceEvent.setText(precioEvento)
-        descripcionEvent.setText(descripcionEvento)
+        nameEvent.text = nombreEvento
+        dateEvent.text = fechaEvento
+        hourEvent.text = horaEvento
+        priceEvent.text = precioEvento
+        descripcionEvent.text = descripcionEvento
+
+        //obtenemos las imagenes guardadas en firebase
+        Picasso.get().load(imagenEvento).into(imageEvent)
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)

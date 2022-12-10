@@ -28,10 +28,8 @@ class productDetails : AppCompatActivity() {
         nameProduct.text = nombreProducto
         descripcionProduct.text = descripcionProducto
 
-
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenProducto).into(imageProduct)
-
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)

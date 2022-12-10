@@ -36,7 +36,7 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, products::class.java)
+            val intent: Intent = Intent(this, upcomingEvents::class.java)
             startActivity(intent)
         }
 
