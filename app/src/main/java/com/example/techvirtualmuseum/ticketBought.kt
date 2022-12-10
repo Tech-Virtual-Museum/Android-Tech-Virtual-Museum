@@ -14,7 +14,7 @@ class ticketBought : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de inicio
         val goBackButton: Button = findViewById(R.id.goback)
         goBackButton.setOnClickListener {
-            val intent : Intent = Intent(this, login::class.java)
+            val intent : Intent = Intent(this, homePage::class.java)
             startActivity(intent)
         }
 
