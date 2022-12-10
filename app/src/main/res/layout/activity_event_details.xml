@@ -133,8 +133,8 @@
 
         <TextView
             android:id="@+id/descripcionEvent"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="323dp"
+            android:layout_height="154dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="360dp"
             android:layout_toEndOf="@id/imageEvent"
@@ -151,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="125dp"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="510dp"
             android:backgroundTint="@color/violet"
             android:text="Book now"
             android:textColor="@color/white">
