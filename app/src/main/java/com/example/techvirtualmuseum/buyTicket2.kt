@@ -34,7 +34,6 @@ class buyTicket2 : AppCompatActivity() {
         var precioSN : Double
 
         val totalPagar : EditText = findViewById(R.id.totalPagar)
-        var precio : Double = 0.0
 
         //Variables JUNIOR
         val cantidadJR : EditText = findViewById(R.id.cantidadJunior)
@@ -54,9 +53,6 @@ class buyTicket2 : AppCompatActivity() {
                 precioJR = valorJR * ticketJR
                 numTicketJr.setText("$precioJR")
 
-                //guardamos precio total a pagar
-                precio += precioJR
-                totalPagar.setText("$precio")
             }
         }
 
@@ -90,9 +86,6 @@ class buyTicket2 : AppCompatActivity() {
                 precioST = valorST * ticketST
                 numTicketSt.setText("$precioST")
 
-                //guardamos precio total a pagar
-                precio += precioST
-                totalPagar.setText("$precio")
             }
         }
 
@@ -123,10 +116,6 @@ class buyTicket2 : AppCompatActivity() {
             if (valorAD >= 1) {
                 precioAD = valorAD * ticketAD
                 numTicketAd.setText("$precioAD")
-
-                //guardamos precio total a pagar
-                precio += precioAD
-                totalPagar.setText("$precio")
 
             }
         }
@@ -159,9 +148,7 @@ class buyTicket2 : AppCompatActivity() {
                 precioSN = valorSN * ticketSN
                 numTicketSn.setText("$precioSN")
 
-                //guardamos precio total a pagar
-                precio += precioSN
-                totalPagar.setText("$precio")
+
 
             }
         }

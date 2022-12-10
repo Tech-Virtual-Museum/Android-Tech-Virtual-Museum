@@ -2,9 +2,7 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 
@@ -31,6 +29,16 @@ class productDetails : AppCompatActivity() {
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenProducto).into(imageProduct)
 
+        val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
+        checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
+            if (isChecked){
+                Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
@@ -51,7 +59,6 @@ class productDetails : AppCompatActivity() {
             val intent : Intent = Intent(this, buyTicket::class.java)
             startActivity(intent)
         }
-
 
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Estado deseleccionado -->
+    <item
+        android:drawable="@drawable/ic_heart_outlined"
+        android:state_checked="false">
+    </item>
+
+    <!--Estado seleccionado -->
+    <item
+        android:drawable="@drawable/ic_heart"
+        android:state_checked="true">
+    </item>
+
+    <!--Estado por defecto -->
+    <item
+        android:drawable="@drawable/ic_heart_outlined">
+    </item>
+
+</selector>

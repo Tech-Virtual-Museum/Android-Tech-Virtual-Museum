@@ -25,7 +25,6 @@ class ticketBought : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {

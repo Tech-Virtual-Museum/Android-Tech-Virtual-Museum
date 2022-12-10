@@ -37,43 +37,37 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="397dp"
-        android:layout_height="620dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@android:color/transparent"
-        app:cardElevation="0dp"
+    <ImageView
+        android:id="@+id/imageEvent"
+        android:layout_width="254dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="24dp"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp">
+        tools:ignore="ContentDescription,MissingConstraints" />
 
-        <ImageView
-            android:id="@+id/imageEvent"
-            android:layout_width="254dp"
-            android:layout_height="188dp"
-            android:layout_marginStart="75dp"
-            android:padding="3dp"
-            tools:ignore="ContentDescription,MissingConstraints" />
+    <TextView
+        android:id="@+id/nameEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@id/imageEvent"
+        android:padding="3dp"
+        android:text="name event"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEvent"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
-        <TextView
-            android:id="@+id/nameEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="220dp"
-            android:layout_toEndOf="@id/imageEvent"
-            android:padding="3dp"
-            android:text="name event"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageEvent"
-            tools:ignore="HardcodedText,MissingConstraints" />
-
-        <TextView
+    <TextView
             android:id="@+id/dateEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,73 +86,95 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="HardcodedText,MissingConstraints" />
 
-        <TextView
-            android:id="@+id/hourEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="320dp"
-            android:layout_marginEnd="40dp"
-            android:layout_toEndOf="@id/imageEvent"
-            android:drawableStart="@drawable/relojveinte"
-            android:drawablePadding="5dp"
-            android:padding="3dp"
-            android:text="hour event"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/priceEvent"
-            tools:ignore="HardcodedText,MissingConstraints" />
 
+    <TextView
+        android:id="@+id/hourEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/imageEvent"
+        android:drawableStart="@drawable/relojveinte"
+        android:drawablePadding="5dp"
+        android:padding="3dp"
+        android:text="hour event"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEvent"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="75dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="250dp"
-            android:layout_marginTop="285dp"
-            android:backgroundTint="#4ACE7F"
-            app:cardCornerRadius="3dp">
-
-            <TextView
-                android:id="@+id/priceEvent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/creditcard_white"
-                android:drawablePadding="5dp"
-                android:paddingStart="5dp"
-                android:text="price event"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                tools:ignore="RtlSymmetry" />
-        </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="75dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#4ACE7F"
+        app:cardCornerRadius="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/checkboxFav"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toEndOf="@+id/hourEvent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEvent"
+        tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/descripcionEvent"
-            android:layout_width="323dp"
-            android:layout_height="154dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="360dp"
-            android:layout_toEndOf="@id/imageEvent"
-            android:drawablePadding="5dp"
-            android:padding="3dp"
-            android:text="descripcion event"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/dateEvent"
-            tools:ignore="HardcodedText,MissingConstraints" />
-
-        <Button
-            android:id="@+id/bookNowBtn"
+            android:id="@+id/priceEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="510dp"
-            android:backgroundTint="@color/violet"
-            android:text="Book now"
-            android:textColor="@color/white">
-
-        </Button>
-
+            android:drawableStart="@drawable/creditcard_white"
+            android:drawablePadding="5dp"
+            android:paddingStart="5dp"
+            android:text="price event"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            tools:ignore="RtlSymmetry" />
     </androidx.cardview.widget.CardView>
+
+    <CheckBox
+        android:id="@+id/checkboxFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="32dp"
+        android:button="@drawable/selector_fav_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hourEvent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEvent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/descripcionEvent"
+        android:layout_width="323dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="28dp"
+        android:layout_toEndOf="@id/imageEvent"
+        android:drawablePadding="5dp"
+        android:padding="3dp"
+        android:text="descripcion event"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hourEvent"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <Button
+        android:id="@+id/bookNowBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/violet"
+        android:text="Book now"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionEvent">
+
+    </Button>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomNav"
@@ -167,7 +183,6 @@
         app:cardBackgroundColor="#F5F5F5"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
 

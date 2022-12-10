@@ -1,17 +1,16 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 
 
 class eventDetails : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_details)
@@ -41,6 +40,15 @@ class eventDetails : AppCompatActivity() {
 
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenEvento).into(imageEvent)
+
+        val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
+        checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
+            if (isChecked){
+                Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
