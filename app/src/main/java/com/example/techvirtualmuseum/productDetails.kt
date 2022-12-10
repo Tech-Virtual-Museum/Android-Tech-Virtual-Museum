@@ -4,13 +4,24 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
 class productDetails : AppCompatActivity() {
 
+    private lateinit var auth : FirebaseAuth
+    private lateinit var database : FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
+
+        //inicializamos las variables para firebase
+        auth = Firebase.auth
+        database = FirebaseFirestore.getInstance()
 
         //inicializamos los campos para posteriormente añadir la informacion
         val nameProduct = findViewById<TextView>(R.id.nameProduct)
@@ -29,6 +40,8 @@ class productDetails : AppCompatActivity() {
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenProducto).into(imageProduct)
 
+
+        //mostramos un mensaje dependiendo de si hemos añaidodo a favoritos o no
         val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
         checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
             if (isChecked){

@@ -100,8 +100,5 @@ class register : AppCompatActivity() {
             }
         }
     }
-
-
-
 }
 
