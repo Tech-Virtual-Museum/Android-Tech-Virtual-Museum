@@ -27,6 +27,8 @@ class productDetails : AppCompatActivity() {
         val descripcionProducto = intent.getStringExtra("descripcion")
         val imagenProducto = intent.getStringExtra("img")
 
+        val videoProducto = intent.getStringExtra("video")
+
         //mostramos la informacion
         nameProduct.text = nombreProducto
         descripcionProduct.text = descripcionProducto

@@ -46,7 +46,6 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
         nameProduct.setText(productModal.getName());
         descripcionProduct.setText(productModal.getDescripcion());
 
-
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(productModal.getImg()).into(imageProduct);
 
@@ -60,6 +59,7 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
                 intent.putExtra("descripcion", productModal.getDescripcion());
                 intent.putExtra("id", productModal.getId());
                 intent.putExtra("img", productModal.getImg());
+                intent.putExtra("video", productModal.getVideo());
                 v.getContext().startActivity(intent);
             }
         });

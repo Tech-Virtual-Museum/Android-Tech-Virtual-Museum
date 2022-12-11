@@ -34,59 +34,57 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription,MissingConstraints" />
 
+
     <TextView
         android:id="@+id/nameProduct"
-        android:layout_width="215dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="321dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
         android:layout_toEndOf="@id/imageProduct"
         android:fontFamily="@font/roboto_bold"
         android:padding="3dp"
         android:text="name product"
-
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageProduct"
         tools:ignore="HardcodedText,MissingConstraints" />
 
-
     <ImageButton
         android:id="@+id/playAudioVideo"
-        android:layout_width="52dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="27dp"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/auriculares"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
-        app:layout_constraintStart_toEndOf="@+id/nameProduct"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxFav"
+        android:src="@drawable/ic_headphones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameProduct"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <CheckBox
         android:id="@+id/checkboxFav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
         android:button="@drawable/selector_fav_item"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toEndOf="@+id/nameProduct"
-        app:layout_constraintTop_toBottomOf="@+id/imageProduct"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toEndOf="@+id/playAudioVideo"
+        app:layout_constraintTop_toBottomOf="@+id/nameProduct"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/descripcionProduct"
         android:layout_width="327dp"
         android:layout_height="143dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
         android:drawablePadding="5dp"
         android:padding="3dp"
         android:text="descripcion product"
@@ -94,8 +92,10 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameProduct"
+        app:layout_constraintTop_toBottomOf="@+id/playAudioVideo"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <androidx.cardview.widget.CardView

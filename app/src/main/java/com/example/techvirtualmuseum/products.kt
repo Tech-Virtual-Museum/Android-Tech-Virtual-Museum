@@ -29,7 +29,6 @@ class products : AppCompatActivity() {
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
 
-
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {

@@ -97,43 +97,41 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView22"
                 tools:ignore="MissingConstraints">
 
-
-                    <RadioButton
-                        android:id="@+id/radioHour1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_bold"
-                        android:onClick="buttonClick"
-                        android:textColor="@color/violet"
-                        android:text="10:00 AM"
-                        android:layout_marginBottom="30dp"
-                        android:button="@null"
-                        android:textSize="15dp" />
-
-
-
+                <RadioButton
+                    android:id="@+id/radioHour1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="buttonClick"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
+                    android:text="   10:00 AM"
+                    android:background="@drawable/rectangulo"
+                    android:layout_marginBottom="30dp"
+                    android:button="@null"
+                    android:textSize="15dp" />
 
                 <RadioButton
                     android:id="@+id/radioHour4"
                     android:button="@null"
-                    android:textColor="@color/violet"
                     android:layout_marginBottom="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
+                    android:background="@drawable/rectangulo"
+                    android:textColor="@color/black"
                     android:onClick="buttonClick"
-                    android:text="11:30 AM"
+                    android:text="   11:30 AM"
                     android:textSize="15sp" />
 
                 <RadioButton
                     android:id="@+id/radioHour7"
                     android:button="@null"
-                    android:textColor="@color/violet"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rectangulo"
                     android:fontFamily="@font/roboto_bold"
-                    android:onClick="buttonClick"
-                    android:text="1:00 PM"
+                    android:text="    1:00 PM"
                     android:textSize="15sp" />
             </RadioGroup>
 
@@ -142,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="150dp"
+                android:layout_marginStart="135dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView22"
                 tools:ignore="MissingConstraints">
@@ -152,9 +150,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
                     android:onClick="buttonClick"
-                    android:textColor="@color/violet"
-                    android:text="10:30 AM"
+                    android:text="   10:30 AM"
+                    android:background="@drawable/rectangulo"
                     android:layout_marginBottom="30dp"
                     android:button="@null"
                     android:textSize="15dp" />
@@ -162,24 +161,26 @@
                 <RadioButton
                     android:id="@+id/radioHour5"
                     android:button="@null"
-                    android:textColor="@color/violet"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="30dp"
+                    android:background="@drawable/rectangulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:onClick="buttonClick"
-                    android:text="12:00 AM"
+                    android:text="   12:00 AM"
                     android:textSize="15sp" />
 
                 <RadioButton
                     android:id="@+id/radioHour8"
                     android:button="@null"
-                    android:textColor="@color/violet"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
+                    android:background="@drawable/rectangulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:onClick="buttonClick"
-                    android:text="1:30 PM"
+                    android:text="    1:30 PM"
                     android:textSize="15sp" />
             </RadioGroup>
 
@@ -188,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="240dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView22"
                 tools:ignore="MissingConstraints">
@@ -197,10 +198,11 @@
                     android:id="@+id/radioHour3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:onClick="buttonClick"
-                    android:textColor="@color/violet"
-                    android:text="11:00 AM"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
+                    android:text="   11:00 AM"
+                    android:background="@drawable/rectangulo"
                     android:layout_marginBottom="30dp"
                     android:button="@null"
                     android:textSize="15dp" />
@@ -208,24 +210,26 @@
                 <RadioButton
                     android:id="@+id/radioHour6"
                     android:button="@null"
-                    android:textColor="@color/violet"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="30dp"
+                    android:background="@drawable/rectangulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:onClick="buttonClick"
-                    android:text="12:30 AM"
+                    android:text="   12:30 AM"
                     android:textSize="15sp" />
 
                 <RadioButton
                     android:id="@+id/radioHour9"
                     android:button="@null"
-                    android:textColor="@color/violet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
+                    android:background="@drawable/rectangulo"
                     android:onClick="buttonClick"
-                    android:text="2:00 PM"
+                    android:text="    2:00 PM"
                     android:textSize="15sp" />
             </RadioGroup>
 
