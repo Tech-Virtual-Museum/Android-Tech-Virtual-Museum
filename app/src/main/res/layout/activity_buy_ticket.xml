@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,24 +49,22 @@
 
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="185dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:mcv_arrowColor="@android:color/transparent"
-        app:mcv_rightArrowMask="@drawable/der_violet"
-        app:mcv_leftArrowMask="@drawable/izq_violet"
         app:mcv_calendarMode="month"
         app:mcv_firstDayOfWeek="monday"
+        app:mcv_leftArrowMask="@drawable/izq_violet"
+        app:mcv_rightArrowMask="@drawable/der_violet"
         app:mcv_selectionColor="@color/violet"
         app:mcv_selectionMode="single"
         app:mcv_showOtherDates="none"
         tools:ignore="MissingConstraints" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
