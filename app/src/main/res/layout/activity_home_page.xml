@@ -147,6 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="40dp"
+                    android:layout_marginEnd="15dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/descTicket_home"
                     android:textAlignment="center"
@@ -190,10 +191,10 @@
                     android:textSize="22sp" />
 
                 <TextView
-                    android:layout_marginTop="40dp"
-                    android:layout_width="318dp"
+                    android:layout_width="333dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dp"
                     android:fontFamily="@font/roboto"
                     android:text="Visit us and you can learn about the latest technology and participate in the different workshops."
                     android:textAlignment="center"
@@ -207,7 +208,7 @@
                     android:backgroundTint="@color/violet"
                     android:text="Upcoming events"
                     android:textColor="@color/white"
-                    android:layout_marginStart="120dp"
+                    android:layout_marginStart="105dp"
                     android:layout_marginTop="130dp">
                 </Button>
             </androidx.cardview.widget.CardView>

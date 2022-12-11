@@ -14,260 +14,260 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="292dp"
-            android:layout_height="63dp"
-            android:layout_marginTop="36dp"
-            android:src="@drawable/progressbar3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="292dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="36dp"
+                android:src="@drawable/progressbar3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="43dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="4dp"
-            android:backgroundTintMode="add"
-            android:src="@drawable/back_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.065"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Checkout"
-            android:textColor="@color/violet"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Order summary"
-            android:textColor="@color/violet"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView21"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Your personal information"
-            android:textColor="@color/violet"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.154"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView22"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="NAME"
-            android:textColor="@color/violet"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.088"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView25"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_name"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.442"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView26"
-            tools:ignore="MissingConstraints">
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="43dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="4dp"
+                android:backgroundTintMode="add"
+                android:src="@drawable/back_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.065"
+                tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/nameTextView"
-                android:layout_width="295dp"
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@android:color/transparent"
-                android:textSize="15sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="SURNAME"
-            android:textColor="@color/violet"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.099"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_name"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_surname"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView27"
-            tools:ignore="MissingConstraints">
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Checkout"
+                android:textColor="@color/violet"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.093"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/surnameTextView"
-                android:layout_width="295dp"
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@android:color/transparent"
-                android:textSize="15sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="EMAIL"
-            android:textColor="@color/violet"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.091"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_surname"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_email"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="#FFEDEBEB"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.397"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView28"
-            tools:ignore="MissingConstraints">
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Order summary"
+                android:textColor="@color/violet"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.093"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21"
+                tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/emailTextView"
-                android:layout_width="295dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@android:color/transparent"
-                android:textSize="15sp" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Select your payment method"
-            android:textColor="@color/violet"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.175"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_email"
-            tools:ignore="MissingConstraints" />
-
-        <RadioGroup
-            android:id="@+id/buttonsGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.142"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView29"
-            tools:ignore="MissingConstraints">
-
-            <RadioButton
-                android:id="@+id/radioCreditCard"
+                android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/mastercard"
-                android:fontFamily="@font/lato"
-                android:text="Credit card"
-                android:buttonTint="@color/violet"
-                android:onClick="buttonClick"
-                android:textSize="15dp" />
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Your personal information"
+                android:textColor="@color/violet"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.154"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22"
+                tools:ignore="MissingConstraints" />
 
-            <RadioButton
-                android:id="@+id/radioPaypal"
+            <TextView
+                android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/paypal"
-                android:fontFamily="@font/lato"
-                android:text="Paypal"
-                android:buttonTint="@color/violet"
-                android:onClick="buttonClick"
-                android:textSize="15sp" />
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="NAME"
+                android:textColor="@color/violet"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.088"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView25"
+                tools:ignore="MissingConstraints" />
 
-            <RadioButton
-                android:id="@+id/radioApplePay"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_name"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.442"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView26"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/apple_pay"
-                android:fontFamily="@font/lato"
-                android:text="Apple pay"
-                android:buttonTint="@color/violet"
-                android:onClick="buttonClick"
-                android:textSize="15sp" />
-        </RadioGroup>
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="SURNAME"
+                android:textColor="@color/violet"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.099"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_name"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView27"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/surnameTextView"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="EMAIL"
+                android:textColor="@color/violet"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.091"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_surname"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_email"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#FFEDEBEB"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.397"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView28"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/emailTextView"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textSize="15sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Select your payment method"
+                android:textColor="@color/violet"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.175"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_email"
+                tools:ignore="MissingConstraints" />
+
+            <RadioGroup
+                android:id="@+id/buttonsGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.142"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView29"
+                tools:ignore="MissingConstraints">
+
+                <RadioButton
+                    android:id="@+id/radioCreditCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/mastercard"
+                    android:fontFamily="@font/lato"
+                    android:text="Credit card"
+                    android:buttonTint="@color/violet"
+                    android:onClick="buttonClick"
+                    android:textSize="15dp" />
+
+                <RadioButton
+                    android:id="@+id/radioPaypal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/paypal"
+                    android:fontFamily="@font/lato"
+                    android:text="Paypal"
+                    android:buttonTint="@color/violet"
+                    android:onClick="buttonClick"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/radioApplePay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/apple_pay"
+                    android:fontFamily="@font/lato"
+                    android:text="Apple pay"
+                    android:buttonTint="@color/violet"
+                    android:onClick="buttonClick"
+                    android:textSize="15sp" />
+            </RadioGroup>
 
             <Button
                 android:id="@+id/buyFinalButton"
