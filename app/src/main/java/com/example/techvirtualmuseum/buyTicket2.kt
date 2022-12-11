@@ -173,8 +173,7 @@ class buyTicket2 : AppCompatActivity() {
         //listener para el boton que nos dirigira a la tercera actividad de compra de tickets
         val buyTicket3 : Button = findViewById(R.id.buyFinalTicket)
         buyTicket3.setOnClickListener {
-            val intent : Intent = Intent(this, buyTicket3::class.java)
-            Log.d("problema", "$intent")
+            val intent: Intent = Intent(this, com.example.techvirtualmuseum.buyTicket3::class.java)
             startActivity(intent)
         }
 

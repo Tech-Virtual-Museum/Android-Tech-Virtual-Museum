@@ -97,17 +97,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView22"
                 tools:ignore="MissingConstraints">
 
-                <RadioButton
-                    android:id="@+id/radioHour1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:onClick="buttonClick"
-                    android:textColor="@color/violet"
-                    android:text="10:00 AM"
-                    android:layout_marginBottom="30dp"
-                    android:button="@null"
-                    android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioHour1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:onClick="buttonClick"
+                        android:textColor="@color/violet"
+                        android:text="10:00 AM"
+                        android:layout_marginBottom="30dp"
+                        android:button="@null"
+                        android:textSize="15dp" />
+
+
+
 
                 <RadioButton
                     android:id="@+id/radioHour4"
