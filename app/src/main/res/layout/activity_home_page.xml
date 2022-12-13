@@ -171,56 +171,13 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:backgroundTint="@android:color/transparent"
-                app:cardElevation="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/cardView6"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="-16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Want to know more?"
-                    android:textColor="@color/violet"
-                    android:textSize="22sp" />
-
-                <TextView
-                    android:layout_width="333dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="40dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Visit us and you can learn about the latest technology and participate in the different workshops."
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <Button
-                    android:id="@+id/upcomingEventsBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/violet"
-                    android:text="Upcoming events"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="105dp"
-                    android:layout_marginTop="130dp">
-                </Button>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 android:backgroundTint="@android:color/transparent"
                 app:cardElevation="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/cardView10"
+                app:layout_constraintTop_toBottomOf="@+id/cardView6"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="29dp">
 

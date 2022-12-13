@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".buyEventTicket">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -299,37 +305,34 @@
             app:layout_constraintTop_toBottomOf="@+id/textView29"
             tools:ignore="MissingConstraints">
 
-            <RadioButton
+            <Button
                 android:id="@+id/radioCreditCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/mastercard"
                 android:fontFamily="@font/lato"
                 android:text="Credit card"
-                android:buttonTint="@color/violet"
-                android:onClick="buttonClick"
+                android:background="@android:color/transparent"
                 android:textSize="15dp" />
 
-            <RadioButton
+            <Button
                 android:id="@+id/radioPaypal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/paypal"
                 android:fontFamily="@font/lato"
                 android:text="Paypal"
-                android:buttonTint="@color/violet"
-                android:onClick="buttonClick"
+                android:background="@android:color/transparent"
                 android:textSize="15sp" />
 
-            <RadioButton
+            <Button
                 android:id="@+id/radioApplePay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/apple_pay"
                 android:fontFamily="@font/lato"
                 android:text="Apple pay"
-                android:buttonTint="@color/violet"
-                android:onClick="buttonClick"
+                android:background="@android:color/transparent"
                 android:textSize="15sp" />
         </RadioGroup>
 
@@ -349,4 +352,43 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageButton
+            android:id="@+id/calendarioBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="57dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/calendar"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/homeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="157dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/home"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/scanBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="257dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/scan"
+            tools:ignore="ContentDescription" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

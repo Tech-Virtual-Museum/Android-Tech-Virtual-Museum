@@ -1,8 +1,8 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
@@ -10,7 +10,6 @@ import com.squareup.picasso.Picasso
 
 class eventDetails : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_details)
@@ -61,6 +60,7 @@ class eventDetails : AppCompatActivity() {
         val bookNowBtn : Button = findViewById(R.id.bookNowBtn)
         bookNowBtn.setOnClickListener {
             val intent : Intent = Intent(this, buyEventTicket::class.java)
+            Log.d("error", "$intent")
             intent.putExtra("name", nombreEvento)
             intent.putExtra("date", fechaEvento)
             intent.putExtra("hour", horaEvento)
@@ -73,7 +73,7 @@ class eventDetails : AppCompatActivity() {
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, buyTicket::class.java)
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
             startActivity(intent)
         }
 

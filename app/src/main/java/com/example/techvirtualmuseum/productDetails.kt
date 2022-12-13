@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
 class productDetails : AppCompatActivity() {
@@ -16,6 +18,9 @@ class productDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
+
+        auth = Firebase.auth
+        database = FirebaseFirestore.getInstance()
 
         //inicializamos los campos para posteriormente añadir la informacion
         val nameProduct = findViewById<TextView>(R.id.nameProduct)
@@ -36,16 +41,23 @@ class productDetails : AppCompatActivity() {
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenProducto).into(imageProduct)
 
+        //obtenemmos el usuario actual
+        val idUser = auth.currentUser!!.email
 
         //mostramos un mensaje dependiendo de si hemos añaidodo a favoritos o no
         val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
         checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
             if (isChecked){
+                //cuando añadimos a favoritos, se guarda en una coleccion de firebase del propio usuario
+                database.collection("favorito").document(idUser!!).set(hashMapOf("name" to nombreProducto, "img" to imagenProducto))
                 Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
+
             }else{
+                database.collection("favorito").document(idUser!!).delete()
                 Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
             }
         }
+
 
 
         //listener para el boton de volver atras
@@ -58,14 +70,15 @@ class productDetails : AppCompatActivity() {
         //boton que nos lleva a la pantalla de ver video o escuchar un audio
         val playAudioVideo : ImageButton = findViewById(R.id.playAudioVideo)
         playAudioVideo.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent : Intent = Intent(this, videoPlayer::class.java)
+            intent.putExtra("video", videoProducto)
             startActivity(intent)
         }
 
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, buyTicket::class.java)
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
             startActivity(intent)
         }
 

@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".videoPlayer">
 
+    <VideoView
+        android:id="@+id/videoPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    </VideoView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

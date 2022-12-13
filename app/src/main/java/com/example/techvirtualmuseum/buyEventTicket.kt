@@ -1,5 +1,6 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +20,7 @@ class buyEventTicket : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
     private lateinit var database : FirebaseFirestore
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,22 +74,34 @@ class buyEventTicket : AppCompatActivity() {
             val intent : Intent = Intent(this, ticketBought::class.java)
             startActivity(intent)
         }
-    }
 
-    fun buttonClick(view: View) {
-        if ( view is RadioButton){
-            if (view.id == R.id.radioCreditCard){
-                Toast.makeText(this, "Has seleccionado tarjeta de credito", Toast.LENGTH_SHORT).show()
-            }
-
-            if (view.id == R.id.radioPaypal){
-                Toast.makeText(this, "Has seleccionado paypal", Toast.LENGTH_SHORT).show()
-            }
-
-            if (view.id == R.id.radioApplePay){
-                Toast.makeText(this, "Has seleccionado apple pay", Toast.LENGTH_SHORT).show()
-            }
+        //boton de la navigationBar - actividad de eventos
+        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener {
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            startActivity(intent)
         }
+
+
+        //boton de la navigationBar - ir a la pagina inicio
+        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina de escanear QR
+        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener {
+            val intent: Intent = Intent(this, escanerQR::class.java)
+            startActivity(intent)
+        }
+
+
     }
+
+
+
+
 
 }

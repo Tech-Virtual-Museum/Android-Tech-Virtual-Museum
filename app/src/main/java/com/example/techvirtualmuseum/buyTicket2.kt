@@ -180,7 +180,7 @@ class buyTicket2 : AppCompatActivity() {
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, buyTicket::class.java)
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
             startActivity(intent)
         }
 

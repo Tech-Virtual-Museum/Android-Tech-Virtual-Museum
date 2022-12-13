@@ -23,9 +23,9 @@ class homePage : AppCompatActivity() {
         val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
         val imageList = ArrayList<SlideModel>()
 
-        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFondoBien.png?alt=media&token=c199380e-b5b7-4256-a1e8-7d30bb35a67a"))
-        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFOndo.png?alt=media&token=5f71760e-0646-4cf5-87fb-f6e7890d358b"))
-        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FtecladoMecanicoSinFondo.png?alt=media&token=fa4e10bd-b8a9-4b15-9a42-00714359441b"))
+        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFondoBien.png?alt=media&token=aea8255d-dd2d-42b3-abbb-6d7b3e442801"))
+        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FgameboySinFOndo.png?alt=media&token=2b92c4a9-4d37-448c-bd4c-a7e931fa60ac"))
+        imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/virtualtechmuseum-53a42.appspot.com/o/slider%2FtecladoMecanicoSinFondo.png?alt=media&token=231533d2-0896-4464-acc4-2ceff20df84d"))
 
         imageSlider.setImageList(imageList, ScaleTypes.CENTER_INSIDE)
 
@@ -40,16 +40,9 @@ class homePage : AppCompatActivity() {
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
             val intent: Intent = Intent(this, buyTicket::class.java)
-            Log.d("error", "$intent")
             startActivity(intent)
         }
 
-        //boton que nos lleva a la actividad de proximos eventos
-        val upcomingEventsBtn : Button = findViewById(R.id.upcomingEventsBtn)
-        upcomingEventsBtn.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
-            startActivity(intent)
-        }
 
         //nos abrira el mapa en un navegador para poder iniciar la ruta
         val mapaButton : ImageButton = findViewById(R.id.imgMapa)
@@ -59,10 +52,10 @@ class homePage : AppCompatActivity() {
             startActivity(browserIntent)
         }
 
-        //boton de la navigationBar - compra ticket 1
+        //boton de la navigationBar - actividad de eventos
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, buyTicket::class.java)
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
             startActivity(intent)
         }
 

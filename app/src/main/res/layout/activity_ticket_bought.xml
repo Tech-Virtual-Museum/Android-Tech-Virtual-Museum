@@ -7,6 +7,7 @@
     tools:context=".ticketBought">
 
     <TextView
+        android:id="@+id/textView35"
         android:layout_width="293dp"
         android:layout_height="96dp"
         android:fontFamily="@font/roboto_bold"
@@ -21,6 +22,7 @@
         app:layout_constraintVertical_bias="0.14"
         tools:ignore="MissingConstraints" />
 
+
     <ImageView
         android:id="@+id/check"
         android:layout_width="84dp"
@@ -30,12 +32,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409"
+        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        app:layout_constraintVertical_bias="0.143"
         tools:ignore="MissingConstraints" />
 
-
     <TextView
+        android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
@@ -47,11 +49,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616"
+        app:layout_constraintTop_toBottomOf="@+id/check"
+        app:layout_constraintVertical_bias="0.205"
         tools:ignore="MissingConstraints" />
 
     <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="226dp"
         android:layout_height="155dp"
         android:src="@drawable/logoblanco"
@@ -59,24 +62,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.798"
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:layout_constraintVertical_bias="0.172"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/goback"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926"
+        android:layout_marginBottom="20dp"
         android:text="@string/goback"
         android:textColor="@color/violet"
-        android:layout_marginBottom="20dp"
-        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.423"
         tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
