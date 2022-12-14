@@ -57,6 +57,7 @@ class productDetails : AppCompatActivity() {
                 Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
 
             }else{
+                database.collection("favorito").document(idUser!!).collection("item").document().delete()
                 Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
             }
         }

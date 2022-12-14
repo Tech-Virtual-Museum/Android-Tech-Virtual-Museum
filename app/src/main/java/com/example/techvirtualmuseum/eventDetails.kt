@@ -5,14 +5,28 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
 
 class eventDetails : AppCompatActivity() {
 
+    private lateinit var auth : FirebaseAuth
+    private lateinit var database : FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_details)
+
+        //inicializamos firebase authentication y obtenemos una instancia de la base de datos
+        auth = Firebase.auth
+        database = FirebaseFirestore.getInstance()
+
+        //obtenemos el email del usuario actual
+        val idUser = auth.currentUser!!.email
 
         //inicializamos los campos para posteriormente añadir la informacion
         val nameEvent = findViewById<TextView>(R.id.nameEvent)
@@ -40,9 +54,11 @@ class eventDetails : AppCompatActivity() {
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenEvento).into(imageEvent)
 
+        val dato = hashMapOf("name" to nombreEvento, "date" to fechaEvento, "hour" to horaEvento, "pricing" to precioEvento, "description" to descripcionEvent, "img" to imagenEvento)
         val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
         checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
             if (isChecked){
+                database.collection("eventosFavorito").document(idUser!!).collection("item").add(dato)
                 Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
