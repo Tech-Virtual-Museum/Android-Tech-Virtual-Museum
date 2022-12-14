@@ -46,18 +46,20 @@ class productDetails : AppCompatActivity() {
 
         //mostramos un mensaje dependiendo de si hemos añaidodo a favoritos o no
         val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
+
+        //guardamos en una variable la informacion que queremos que represente al favorito
+        //para facilitar la agregacion y eliminacion de esta en caso de añadir o eliminar
+        val dato = hashMapOf("name" to nombreProducto, "img" to imagenProducto)
         checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
             if (isChecked){
                 //cuando añadimos a favoritos, se guarda en una coleccion de firebase del propio usuario
-                database.collection("favorito").document(idUser!!).set(hashMapOf("name" to nombreProducto, "img" to imagenProducto))
+                database.collection("favorito").document(idUser!!).collection("item").add(dato)
                 Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
 
             }else{
-                database.collection("favorito").document(idUser!!).delete()
                 Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
             }
         }
-
 
 
         //listener para el boton de volver atras
