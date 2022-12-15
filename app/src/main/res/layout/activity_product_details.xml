@@ -66,23 +66,22 @@
         app:layout_constraintTop_toBottomOf="@+id/nameProduct"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <CheckBox
-        android:id="@+id/checkboxFav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="40dp"
-        android:button="@drawable/selector_fav_item"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.992"
+
+    <ImageButton
+        android:id="@+id/comentarioBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/comentario"
         app:layout_constraintStart_toEndOf="@+id/playAudioVideo"
-        app:layout_constraintTop_toBottomOf="@+id/nameProduct"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/nameProduct" />
 
     <TextView
         android:id="@+id/descripcionProduct"
-        android:layout_width="327dp"
-        android:layout_height="143dp"
+        android:layout_width="337dp"
+        android:layout_height="210dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
         android:drawablePadding="5dp"

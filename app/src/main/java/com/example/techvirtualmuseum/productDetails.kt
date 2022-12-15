@@ -44,23 +44,6 @@ class productDetails : AppCompatActivity() {
         //obtenemmos el usuario actual
         val idUser = auth.currentUser!!.email
 
-        //mostramos un mensaje dependiendo de si hemos añaidodo a favoritos o no
-        val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
-
-        //guardamos en una variable la informacion que queremos que represente al favorito
-        //para facilitar la agregacion y eliminacion de esta en caso de añadir o eliminar
-        val dato = hashMapOf("name" to nombreProducto, "img" to imagenProducto)
-        checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
-            if (isChecked){
-                //cuando añadimos a favoritos, se guarda en una coleccion de firebase del propio usuario
-                database.collection("favorito").document(idUser!!).collection("item").add(dato)
-                Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
-
-            }else{
-                database.collection("favorito").document(idUser!!).collection("item").document().delete()
-                Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
-            }
-        }
 
 
         //listener para el boton de volver atras
@@ -76,6 +59,14 @@ class productDetails : AppCompatActivity() {
             val intent : Intent = Intent(this, videoPlayer::class.java)
             intent.putExtra("video", videoProducto)
             startActivity(intent)
+        }
+
+        //nos lleva a una actividad donde podremos ver todos los comentarios
+        val comentarioBtn : ImageButton = findViewById(R.id.comentarioBtn)
+        comentarioBtn.setOnClickListener {
+            val intent : Intent = Intent(this, displayComments::class.java)
+            startActivity(intent)
+
         }
 
         //boton de la navigationBar - compra ticket 1
