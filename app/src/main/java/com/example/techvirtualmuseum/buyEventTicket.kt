@@ -1,16 +1,11 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,7 +15,6 @@ class buyEventTicket : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
     private lateinit var database : FirebaseFirestore
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +32,9 @@ class buyEventTicket : AppCompatActivity() {
         //obtenemos el email del usuario actual, ya que en el firebase estan identificados por su correo y no por un uid aleatorio
         val idUser = auth.currentUser!!.email
         database.collection("Users").document(idUser!!).get().addOnSuccessListener {
-            userName.setText(it.get("name") as String? )
-            userSurname.setText(it.get("surname") as String? )
-            userEmail.setText(it.get("email") as String? )
+            userName.text = it.get("name") as String?
+            userSurname.text = it.get("surname") as String?
+            userEmail.text = it.get("email") as String?
         }
 
         //inicializamos los campos para posteriormente añadir la informacion
@@ -50,16 +44,16 @@ class buyEventTicket : AppCompatActivity() {
         val priceEvent = findViewById<TextView>(R.id.priceEvent)
 
         //obtenemos la informacion del evento que ha sido clickado
-        val nombreEvento = getIntent().getStringExtra("name");
-        val fechaEvento = getIntent().getStringExtra("date");
-        val horaEvento = getIntent().getStringExtra("hour");
-        val precioEvento = getIntent().getStringExtra("pricing");
+        val nombreEvento = intent.getStringExtra("name");
+        val fechaEvento = intent.getStringExtra("date");
+        val horaEvento = intent.getStringExtra("hour");
+        val precioEvento = intent.getStringExtra("pricing");
 
         //mostramos la informacion
-        nameEvent.setText(nombreEvento)
-        dateEvent.setText(fechaEvento)
-        hourEvent.setText(horaEvento)
-        priceEvent.setText(precioEvento)
+        nameEvent.text = nombreEvento
+        dateEvent.text = fechaEvento
+        hourEvent.text = horaEvento
+        priceEvent.text = precioEvento
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
@@ -68,10 +62,16 @@ class buyEventTicket : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //guardamos en un hashMap la informacion que queremos que se guarde en la BD: evento, usuario, metodo de pago
+        val dato = hashMapOf("nameEvent" to nombreEvento, "dateEvent" to fechaEvento, "hourEvent" to horaEvento,
+            "priceEvent" to precioEvento, "nameUser" to userName, "surnameUser" to userSurname,"emailUser" to userEmail)
+
         //listener que nos dirige a la pantalla final informativa
         val buyFinalButton : Button = findViewById(R.id.buyFinalButton)
         buyFinalButton.setOnClickListener{
             val intent : Intent = Intent(this, ticketBought::class.java)
+            //guardamos la informacion del usuario, metodo de pago y la informacion del evento a firebase
+            database.collection("eventoComprado").document(idUser).set(dato)
             startActivity(intent)
         }
 
@@ -96,12 +96,5 @@ class buyEventTicket : AppCompatActivity() {
             val intent: Intent = Intent(this, escanerQR::class.java)
             startActivity(intent)
         }
-
-
     }
-
-
-
-
-
 }
