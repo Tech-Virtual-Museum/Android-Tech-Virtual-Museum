@@ -65,6 +65,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
 
     //slider
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
@@ -101,6 +102,7 @@ dependencies {
 
     //calendario
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+
 
 
 

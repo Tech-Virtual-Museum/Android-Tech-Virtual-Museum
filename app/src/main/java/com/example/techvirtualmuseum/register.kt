@@ -2,6 +2,7 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -44,7 +45,6 @@ class register : AppCompatActivity() {
             performSignUp()
         }
     }
-
 
     //Funcion con la que se crea en el Authentication el usuario
     private fun performSignUp() {
