@@ -8,12 +8,14 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.techvirtualmuseum.adapter.AdapterComments
 import com.example.techvirtualmuseum.adapter.AdapterEventos
 import com.example.techvirtualmuseum.modal.commentModal
 import com.example.techvirtualmuseum.modal.dataModal
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
@@ -38,6 +40,39 @@ class displayComments : AppCompatActivity() {
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener{
             val intent : Intent = Intent (this, productDetails::class.java)
+            startActivity(intent)
+        }
+
+        //cuando hacemos click
+        val floatingButton : FloatingActionButton = findViewById(R.id.floatingButton)
+        floatingButton.setOnClickListener{
+            val inflater = layoutInflater
+            val view = inflater.inflate(R.layout.popup_layout, null)
+            val builder = AlertDialog.Builder(this@displayComments)
+            builder.setView(view)
+            val dialog = builder.create()
+            dialog.show()
+        }
+
+
+        //boton de la navigationBar - compra ticket 1
+        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener {
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina inicio
+        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina de escanear QR
+        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener {
+            val intent : Intent = Intent(this, escanerQR::class.java)
             startActivity(intent)
         }
     }
