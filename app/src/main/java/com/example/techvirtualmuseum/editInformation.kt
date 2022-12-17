@@ -30,12 +30,6 @@ class editInformation : AppCompatActivity() {
         val inputSurname = surname.text.toString()
         val inputEmail = email.text.toString()
 
-        val idUser = auth.currentUser!!.email
-        val dato = hashMapOf("name" to inputName,"surname" to inputSurname, "email" to inputEmail)
-        if (idUser != null) {
-            database.collection("prueba").document(idUser).set(dato)
-        }
-
         val cambio : Button = findViewById(R.id.cambio)
         cambio.setOnClickListener {
             val intent : Intent = Intent(this, profilePage::class.java)

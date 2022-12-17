@@ -1,10 +1,8 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +12,6 @@ import com.denzcoskun.imageslider.models.SlideModel
 
 class homePage : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -39,7 +36,7 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, buyTicket::class.java)
+            val intent: Intent = Intent(this, products::class.java)
             startActivity(intent)
         }
 

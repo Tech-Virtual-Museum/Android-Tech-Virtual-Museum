@@ -54,17 +54,6 @@ class eventDetails : AppCompatActivity() {
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenEvento).into(imageEvent)
 
-        val dato = hashMapOf("name" to nombreEvento, "date" to fechaEvento, "hour" to horaEvento, "pricing" to precioEvento, "description" to descripcionEvent, "img" to imagenEvento)
-        val checkboxFav : CheckBox = findViewById(R.id.checkboxFav)
-        checkboxFav.setOnCheckedChangeListener{ checkbox, isChecked ->
-            if (isChecked){
-                database.collection("eventosFavorito").document(idUser!!).collection("item").add(dato)
-                Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show()
-            }
-        }
-
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {

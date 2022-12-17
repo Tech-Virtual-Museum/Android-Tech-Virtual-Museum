@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
+import com.example.techvirtualmuseum.adapter.AdapterProducts
+import com.example.techvirtualmuseum.modal.productModal
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -66,7 +68,11 @@ class products : AppCompatActivity() {
 
                     }
                     // pasamos el arrayList a la clase adapter que tenemos
-                    val adapter = AdapterProducts(this@products, productModalArrayList)
+                    val adapter =
+                        AdapterProducts(
+                            this@products,
+                            productModalArrayList
+                        )
                     productosLista!!.setAdapter(adapter)
                 } else {
                     // si el snapshot esta vacio, mostramos un aviso

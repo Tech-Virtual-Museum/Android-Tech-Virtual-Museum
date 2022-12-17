@@ -1,9 +1,13 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.techvirtualmuseum.modal.commentModal
+import com.example.techvirtualmuseum.modal.dataModal
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,8 +47,6 @@ class productDetails : AppCompatActivity() {
 
         //obtenemmos el usuario actual
         val idUser = auth.currentUser!!.email
-
-
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
@@ -91,4 +93,5 @@ class productDetails : AppCompatActivity() {
         }
 
     }
+
 }

@@ -10,10 +10,7 @@ class videoPlayer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
 
-        val videoPlayer : VideoView = findViewById(R.id.videoPlayer)
-        val verVideo = intent.getStringExtra("video")
 
-        videoPlayer.setVideoPath(verVideo)
 
     }
 }

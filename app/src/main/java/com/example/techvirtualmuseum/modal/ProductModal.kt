@@ -1,4 +1,4 @@
-package com.example.techvirtualmuseum
+package com.example.techvirtualmuseum.modal
 
 class productModal {
     var name: String? = null

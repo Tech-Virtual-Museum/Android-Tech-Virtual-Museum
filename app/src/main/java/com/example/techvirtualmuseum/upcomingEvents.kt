@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.techvirtualmuseum.adapter.AdapterEventos
+import com.example.techvirtualmuseum.modal.dataModal
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -26,8 +28,6 @@ class upcomingEvents : AppCompatActivity() {
 
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
-
-
 
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
@@ -64,7 +64,11 @@ class upcomingEvents : AppCompatActivity() {
                         dataModalArrayList!!.add(dataModal!!)
                     }
                     // pasamos el arrayList a la clase adapter que tenemos
-                    val adapter = AdapterEventos(this@upcomingEvents, dataModalArrayList)
+                    val adapter =
+                        AdapterEventos(
+                            this@upcomingEvents,
+                            dataModalArrayList
+                        )
                     eventosLista!!.setAdapter(adapter)
                 } else {
                     // si el snapshot esta vacio, mostramos un aviso
