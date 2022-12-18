@@ -19,7 +19,6 @@ class profilePage : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseFirestore
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_page)
@@ -27,9 +26,9 @@ class profilePage : AppCompatActivity() {
         auth = Firebase.auth
         database = FirebaseFirestore.getInstance()
 
+        val userName = findViewById<TextView>(R.id.nameTextView)
         val userSurname = findViewById<TextView>(R.id.surnameTextView)
         val userEmail = findViewById<TextView>(R.id.emailTextView)
-        val userName = findViewById<TextView>(R.id.nameTextView)
 
         //obtenemos el email del usuario actual, ya que en el firebase estan identificados por su correo y no por un uid aleatorio
         val idUser = auth.currentUser!!.email
@@ -49,7 +48,6 @@ class profilePage : AppCompatActivity() {
         val editProfile: Button = findViewById(R.id.editInformation)
         editProfile.setOnClickListener {
             val intent: Intent = Intent(this, editInformation::class.java)
-
             startActivity(intent)
         }
 

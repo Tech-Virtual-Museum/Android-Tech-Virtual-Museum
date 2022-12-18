@@ -37,7 +37,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/nameEditText_register"
+            android:id="@+id/newName"
             android:layout_width="295dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -81,7 +81,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/surnameEditText_register"
+            android:id="@+id/newSurname"
             android:layout_width="295dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -93,46 +93,6 @@
             android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_bold"
-        android:text="EMAIL"
-        android:textColor="@color/violet"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_name"
-        android:layout_width="323dp"
-        android:layout_height="42dp"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="#FFEDEBEB"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/emailEditText_register"
-            android:layout_width="295dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10sp"
-            android:textSize="15sp"
-            android:hint="Enter your email"
-            android:inputType="textEmailAddress"
-            android:backgroundTint="@android:color/transparent" />
-    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/cambio"

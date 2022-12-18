@@ -305,33 +305,36 @@
             app:layout_constraintTop_toBottomOf="@+id/textView29"
             tools:ignore="MissingConstraints">
 
-            <Button
+            <RadioButton
                 android:id="@+id/radioCreditCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/mastercard"
                 android:fontFamily="@font/lato"
                 android:text="Credit card"
+                android:buttonTint="@color/violet"
                 android:background="@android:color/transparent"
                 android:textSize="15dp" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/radioPaypal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/paypal"
                 android:fontFamily="@font/lato"
                 android:text="Paypal"
+                android:buttonTint="@color/violet"
                 android:background="@android:color/transparent"
                 android:textSize="15sp" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/radioApplePay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/apple_pay"
                 android:fontFamily="@font/lato"
                 android:text="Apple pay"
+                android:buttonTint="@color/violet"
                 android:background="@android:color/transparent"
                 android:textSize="15sp" />
         </RadioGroup>
@@ -341,15 +344,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:layout_marginBottom="70dp"
             android:backgroundTint="@color/violet"
             android:text="BUY"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonsGroup"
             tools:ignore="MissingConstraints" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

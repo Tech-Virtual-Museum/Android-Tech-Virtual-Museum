@@ -2,6 +2,7 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -30,6 +31,7 @@ class displayComments : AppCompatActivity() {
 
         comentariosLista = findViewById<View>(R.id.listItems) as ListView?
         commentModalArrayList = ArrayList()
+
         database = FirebaseFirestore.getInstance()
         auth = Firebase.auth
 
@@ -45,35 +47,34 @@ class displayComments : AppCompatActivity() {
 
         val idUser = auth.currentUser!!.email
 
-
         //cuando hacemos click
         val floatingButton : FloatingActionButton = findViewById(R.id.floatingButton)
         floatingButton.setOnClickListener{
             val inflater = layoutInflater
             val view = inflater.inflate(R.layout.popup_layout, null)
-            val builder = AlertDialog.Builder(this@displayComments)
-            val nameComment = view.findViewById<EditText>(R.id.nameComment)
-            val commentComment = view.findViewById<EditText>(R.id.commentComment)
-            val inputName = nameComment.text.toString()
-            val inputComment = commentComment.text.toString()
-            builder.setView(view)
+            val builder = AlertDialog.Builder(this@displayComments).setView(view)
             val dialog = builder.create()
+
+            val inputName = view.findViewById<EditText>(R.id.nameComment).text.toString()
+            val inputComment = view.findViewById<EditText>(R.id.commentComment).text.toString()
+
+            //mostramos el dialogo
             dialog.show()
 
-            with(builder){
-                val saveComments : Button? = dialog.findViewById(R.id.saveComment)
-                saveComments?.setOnClickListener {
-                    val dato = hashMapOf("name" to inputName, "comment" to inputComment)
-                    database!!.collection("pruebaComentarios").document(idUser!!).set(dato)
-                    val myIntent = Intent(this@displayComments, displayComments::class.java)
-                    startActivity(myIntent)
-                    dialog.cancel() //Cierra dialogo.
-                }
+            val saveComments : Button? = dialog.findViewById(R.id.saveComment)
+            saveComments?.setOnClickListener {
+                val dato = hashMapOf("name" to inputName, "comment" to inputComment)
+                database!!.collection("pruebaComentarios").document(idUser!!).set(dato)
+
+                val myIntent = Intent(this@displayComments, displayComments::class.java)
+                startActivity(myIntent)
+                dialog.cancel() //Cierra dialogo.
+
             }
         }
 
 
-        //boton de la navigationBar - compra ticket 1
+        //boton de la navigationBar - eventos
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
             val intent : Intent = Intent(this, upcomingEvents::class.java)

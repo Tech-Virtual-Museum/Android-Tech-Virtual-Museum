@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.RadioButton
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -62,15 +63,13 @@ class buyEventTicket : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //guardamos en un hashMap la informacion que queremos que se guarde en la BD: evento, usuario, metodo de pago
-        val dato = hashMapOf("nameEvent" to nombreEvento, "dateEvent" to fechaEvento, "hourEvent" to horaEvento,
-            "priceEvent" to precioEvento, "nameUser" to userName, "surnameUser" to userSurname,"emailUser" to userEmail)
-
         //listener que nos dirige a la pantalla final informativa
         val buyFinalButton : Button = findViewById(R.id.buyFinalButton)
         buyFinalButton.setOnClickListener{
             val intent : Intent = Intent(this, ticketBought::class.java)
             //guardamos la informacion del usuario, metodo de pago y la informacion del evento a firebase
+            val dato = hashMapOf("nameEvent" to nombreEvento, "dateEvent" to fechaEvento, "hourEvent" to horaEvento,
+                "priceEvent" to precioEvento)
             database.collection("eventoComprado").document(idUser).set(dato)
             startActivity(intent)
         }
