@@ -85,7 +85,7 @@ class register : AppCompatActivity() {
             if (task.isSuccessful) {
                 val dato = hashMapOf("name" to inputName,
                     "surname" to inputSurname, "email" to inputEmail, "password" to inputPassword)
-                database.collection("Users").document(inputEmail).set(dato)
+                database.collection("users").document(inputEmail).set(dato)
 
                     Toast.makeText(baseContext, "Se ha registrado correctamente",
                         Toast.LENGTH_SHORT).show()

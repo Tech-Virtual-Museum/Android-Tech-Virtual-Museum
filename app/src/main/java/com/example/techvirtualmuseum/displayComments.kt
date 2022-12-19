@@ -55,17 +55,19 @@ class displayComments : AppCompatActivity() {
             val builder = AlertDialog.Builder(this@displayComments).setView(view)
             val dialog = builder.create()
 
-            val inputName = view.findViewById<EditText>(R.id.nameComment).text.toString()
-            val inputComment = view.findViewById<EditText>(R.id.commentComment).text.toString()
+            val inputName = view.findViewById<EditText>(R.id.nameComment)
+            val inputComment = view.findViewById<EditText>(R.id.commentComment)
+
+            val nombreComentario = inputName.text.toString()
+            val comentarioComentario = inputComment.text.toString()
 
             //mostramos el dialogo
             dialog.show()
 
             val saveComments : Button? = dialog.findViewById(R.id.saveComment)
             saveComments?.setOnClickListener {
-                val dato = hashMapOf("name" to inputName, "comment" to inputComment)
-                database!!.collection("pruebaComentarios").document(idUser!!).set(dato)
-
+                val dato = hashMapOf("nombreComentario" to nombreComentario, "comentarioComentario" to comentarioComentario )
+                database!!.collection("coments").document(idUser!!).set(dato)
                 val myIntent = Intent(this@displayComments, displayComments::class.java)
                 startActivity(myIntent)
                 dialog.cancel() //Cierra dialogo.

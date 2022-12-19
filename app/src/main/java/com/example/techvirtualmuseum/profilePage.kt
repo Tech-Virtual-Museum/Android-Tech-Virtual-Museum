@@ -32,7 +32,7 @@ class profilePage : AppCompatActivity() {
 
         //obtenemos el email del usuario actual, ya que en el firebase estan identificados por su correo y no por un uid aleatorio
         val idUser = auth.currentUser!!.email
-        database.collection("Users").document(idUser!!).get().addOnSuccessListener {
+        database.collection("users").document(idUser!!).get().addOnSuccessListener {
             userName.text = it.get("name") as String?
             userSurname.text = it.get("surname") as String?
             userEmail.text = it.get("email") as String?
