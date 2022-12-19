@@ -2,7 +2,7 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.text.InputType
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -45,34 +45,33 @@ class displayComments : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //obtenemos el usuario actual
         val idUser = auth.currentUser!!.email
 
         //cuando hacemos click
         val floatingButton : FloatingActionButton = findViewById(R.id.floatingButton)
         floatingButton.setOnClickListener{
-            val inflater = layoutInflater
-            val view = inflater.inflate(R.layout.popup_layout, null)
-            val builder = AlertDialog.Builder(this@displayComments).setView(view)
-            val dialog = builder.create()
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Escribe tu comentario a continuación:")
 
-            val inputName = view.findViewById<EditText>(R.id.nameComment)
-            val inputComment = view.findViewById<EditText>(R.id.commentComment)
+            val input = EditText(this)
+            input.inputType = InputType.TYPE_CLASS_TEXT
+            builder.setView(input)
 
-            val nombreComentario = inputName.text.toString()
-            val comentarioComentario = inputComment.text.toString()
-
-            //mostramos el dialogo
-            dialog.show()
-
-            val saveComments : Button? = dialog.findViewById(R.id.saveComment)
-            saveComments?.setOnClickListener {
-                val dato = hashMapOf("nombreComentario" to nombreComentario, "comentarioComentario" to comentarioComentario )
-                database!!.collection("coments").document(idUser!!).set(dato)
-                val myIntent = Intent(this@displayComments, displayComments::class.java)
-                startActivity(myIntent)
-                dialog.cancel() //Cierra dialogo.
-
+            // Agregar botones "OK" y "Cancelar" al diálogo
+            builder.setPositiveButton("OK") { dialog, which ->
+                // Obtener el texto ingresado por el usuario y guardarlo en Firestore
+                database!!.collection("comments").document(idUser!!).set("comentario" to input.text.toString())
+                Toast.makeText(this, "Comentario añadido correctamente", Toast.LENGTH_SHORT).show()
             }
+
+            builder.setNegativeButton("Cancelar") { dialog, which ->
+                // Cerrar el diálogo sin hacer nada
+            }
+
+            // Mostrar el diálogo
+            val dialog = builder.create()
+            dialog.show()
         }
 
 
@@ -99,7 +98,7 @@ class displayComments : AppCompatActivity() {
     }
 
     private fun loadDatainListview() {
-        database!!.collection("pruebaComentarios").get()
+        database!!.collection("comments").get()
             .addOnSuccessListener(OnSuccessListener<QuerySnapshot> { queryDocumentSnapshots ->
                 if (!queryDocumentSnapshots.isEmpty) {
                     val list = queryDocumentSnapshots.documents
@@ -121,13 +120,13 @@ class displayComments : AppCompatActivity() {
                     // si el snapshot esta vacio, mostramos un aviso
                     Toast.makeText(
                         this@displayComments,
-                        "No data found in Database",
+                        "No existen comentarios",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
                 //si tenemos un error, mostramos un mensaje
             }).addOnFailureListener(OnFailureListener {
-                Toast.makeText(this@displayComments, "Fail to load data..", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@displayComments, "Error al cargar los comentarios", Toast.LENGTH_SHORT).show()
             })
     }
 }
