@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -49,6 +47,9 @@ class buyEventTicket : AppCompatActivity() {
         //inicializamos los campos
         val muestraPrecio = findViewById<TextView>(R.id.precioEvent)
         val muestraNombre = findViewById<TextView>(R.id.nombreEvent)
+        val muestraNombre2 = findViewById<TextView>(R.id.nombreEventito)
+        val muestraCantidad2 = findViewById<EditText>(R.id.cantidadEntraditas)
+        val muestraPrecio2 = findViewById<TextView>(R.id.precioEventito)
 
         //obtenemos la informacion del evento que ha sido clickado
         val nombreEvento = intent.getStringExtra("name");
@@ -57,15 +58,20 @@ class buyEventTicket : AppCompatActivity() {
         //mostramos la informacion
         muestraPrecio.text = precioEvento
         muestraNombre.text = nombreEvento
+        muestraNombre2.text = nombreEvento
+        muestraPrecio2.text = precioEvento
 
         //dismminuimos en 1  las entradas
         val menosEntradasBtn :  Button = findViewById(R.id.menosEntradas)
         menosEntradasBtn.setOnClickListener {
             if ( valorEntradas == 0){
                 cantidadEntradas.setText("0")
+                muestraCantidad2.setText("$valorEntradas")
+
             }else{
                 valorEntradas += (-1)
                 cantidadEntradas.setText("$valorEntradas")
+                muestraCantidad2.setText("$valorEntradas")
             }
         }
 
@@ -74,7 +80,7 @@ class buyEventTicket : AppCompatActivity() {
         masEntradasBtn.setOnClickListener {
             valorEntradas +=1
             cantidadEntradas.setText("$valorEntradas")
-
+            muestraCantidad2.setText("$valorEntradas")
         }
 
         //listener para el boton de volver atras
