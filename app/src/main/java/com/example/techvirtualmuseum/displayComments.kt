@@ -35,6 +35,9 @@ class displayComments : AppCompatActivity() {
         database = FirebaseFirestore.getInstance()
         auth = Firebase.auth
 
+        //obtenemos el usuario actual
+        val idUser = auth.currentUser!!.email
+
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
 
@@ -44,9 +47,6 @@ class displayComments : AppCompatActivity() {
             val intent : Intent = Intent (this, productDetails::class.java)
             startActivity(intent)
         }
-
-        //obtenemos el usuario actual
-        val idUser = auth.currentUser!!.email
 
         //cuando hacemos click
         val floatingButton : FloatingActionButton = findViewById(R.id.floatingButton)
@@ -97,8 +97,11 @@ class displayComments : AppCompatActivity() {
         }
     }
 
+
+    //mostramos los comentarios segun el id del producto
     private fun loadDatainListview() {
-        database!!.collection("comments").get()
+        database!!.collection("comments")
+            .get()
             .addOnSuccessListener(OnSuccessListener<QuerySnapshot> { queryDocumentSnapshots ->
                 if (!queryDocumentSnapshots.isEmpty) {
                     val list = queryDocumentSnapshots.documents
@@ -115,7 +118,7 @@ class displayComments : AppCompatActivity() {
                             this@displayComments,
                             commentModalArrayList
                         )
-                    comentariosLista!!.setAdapter(adapter)
+                    comentariosLista!!.adapter = adapter
                 } else {
                     // si el snapshot esta vacio, mostramos un aviso
                     Toast.makeText(

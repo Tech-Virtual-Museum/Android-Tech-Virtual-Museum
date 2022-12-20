@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -12,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 
 class buyEventTicket : AppCompatActivity() {
 
@@ -26,6 +28,11 @@ class buyEventTicket : AppCompatActivity() {
         auth = Firebase.auth
         database = FirebaseFirestore.getInstance()
 
+        //inicializamos los campos
+        val cantidadEntradas = findViewById<EditText>(R.id.cantidadEntradas)
+        val n1 : String = cantidadEntradas.text.toString()
+        var valorEntradas : Int = Integer.parseInt(n1)
+
         //inicializamos los campos para la infomacion personal
         val userName = findViewById<TextView>(R.id.nameTextView)
         val userSurname = findViewById<TextView>(R.id.surnameTextView)
@@ -39,23 +46,17 @@ class buyEventTicket : AppCompatActivity() {
             userEmail.text = it.get("email") as String?
         }
 
-        //inicializamos los campos para posteriormente añadir la informacion
-        val nameEvent = findViewById<TextView>(R.id.nameEvent)
-        val dateEvent = findViewById<TextView>(R.id.dateEvent)
-        val hourEvent = findViewById<TextView>(R.id.hourEvent)
-        val priceEvent = findViewById<TextView>(R.id.priceEvent)
+        //inicializamos los campos
+        val muestraPrecio = findViewById<TextView>(R.id.precioEvent)
+        val muestraNombre = findViewById<TextView>(R.id.nombreEvent)
 
         //obtenemos la informacion del evento que ha sido clickado
         val nombreEvento = intent.getStringExtra("name");
-        val fechaEvento = intent.getStringExtra("date");
-        val horaEvento = intent.getStringExtra("hour");
         val precioEvento = intent.getStringExtra("pricing");
 
         //mostramos la informacion
-        nameEvent.text = nombreEvento
-        dateEvent.text = fechaEvento
-        hourEvent.text = horaEvento
-        priceEvent.text = precioEvento
+        muestraPrecio.text = precioEvento
+        muestraNombre.text = nombreEvento
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
@@ -69,8 +70,7 @@ class buyEventTicket : AppCompatActivity() {
         buyFinalButton.setOnClickListener{
             val intent : Intent = Intent(this, ticketBought::class.java)
             //guardamos la informacion del usuario, metodo de pago y la informacion del evento a firebase
-            val dato = hashMapOf("nameEvent" to nombreEvento, "dateEvent" to fechaEvento, "hourEvent" to horaEvento,
-                "priceEvent" to precioEvento)
+            val dato = hashMapOf("email" to idUser, "nameEvent" to nombreEvento,  "priceEvent" to precioEvento)
             database.collection("eventoComprado").document(idUser).set(dato)
             startActivity(intent)
         }

@@ -11,13 +11,6 @@ class ticketBought : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket_bought)
 
-        //listener para el boton que nos lleve a la pantalla de inicio
-        val goBackButton: Button = findViewById(R.id.goback)
-        goBackButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
-            startActivity(intent)
-        }
-
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
