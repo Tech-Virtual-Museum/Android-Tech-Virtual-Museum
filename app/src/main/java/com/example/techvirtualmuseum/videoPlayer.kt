@@ -12,6 +12,7 @@ import com.google.android.youtube.player.YouTubePlayerView
 
 class videoPlayer: YouTubeBaseActivity() {
 
+
     lateinit var youtubePlayerInit : YouTubePlayer.OnInitializedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -40,7 +40,7 @@ class buyEventTicket : AppCompatActivity() {
 
         //obtenemos el email del usuario actual, ya que en el firebase estan identificados por su correo y no por un uid aleatorio
         val idUser = auth.currentUser!!.email
-        database.collection("Users").document(idUser!!).get().addOnSuccessListener {
+        database.collection("users").document(idUser!!).get().addOnSuccessListener {
             userName.text = it.get("name") as String?
             userSurname.text = it.get("surname") as String?
             userEmail.text = it.get("email") as String?
@@ -57,6 +57,25 @@ class buyEventTicket : AppCompatActivity() {
         //mostramos la informacion
         muestraPrecio.text = precioEvento
         muestraNombre.text = nombreEvento
+
+        //dismminuimos en 1  las entradas
+        val menosEntradasBtn :  Button = findViewById(R.id.menosEntradas)
+        menosEntradasBtn.setOnClickListener {
+            if ( valorEntradas == 0){
+                cantidadEntradas.setText("0")
+            }else{
+                valorEntradas += (-1)
+                cantidadEntradas.setText("$valorEntradas")
+            }
+        }
+
+        //aumentamos en 1 el numero de entradas
+        val masEntradasBtn : Button = findViewById(R.id.masEntradas)
+        masEntradasBtn.setOnClickListener {
+            valorEntradas +=1
+            cantidadEntradas.setText("$valorEntradas")
+
+        }
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
