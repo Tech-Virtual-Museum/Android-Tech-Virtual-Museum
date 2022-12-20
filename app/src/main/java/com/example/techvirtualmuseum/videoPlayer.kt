@@ -12,9 +12,6 @@ import com.google.android.youtube.player.YouTubePlayerView
 
 class videoPlayer: YouTubeBaseActivity() {
 
-    val VIDEO_ID = "aJpsMDC9t_g"
-    val YOUTUBE_API_KEY ="AIzaSyCP5tuaeBUeaJSGZx8EcR2dZHHceHodvbY"
-
     lateinit var youtubePlayerInit : YouTubePlayer.OnInitializedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
