@@ -93,7 +93,7 @@
                         android:id="@+id/precioEvent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="#4ACE7F" />
 
@@ -158,11 +158,10 @@
                 android:id="@+id/nombreEventito"
                 android:layout_width="wrap_content"
                 android:layout_height="17dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.103"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/card_view_events" />
 
@@ -210,11 +209,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/card_view_events" />
 
             <TextView
+                android:id="@+id/textView41"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="28dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="40dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="€"
                 android:textColor="@color/black"
@@ -223,18 +223,63 @@
                 app:layout_constraintTop_toBottomOf="@+id/card_view_events" />
 
             <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto"
+                android:text="Total taxes incl."
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+            <EditText
+                android:id="@+id/precioTotal"
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="88dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cantidadEntraditas"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="60dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/precioTotal"
+                app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+            <TextView
                 android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="56dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Your personal information"
                 android:textColor="@color/violet"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.154"
+                app:layout_constraintHorizontal_bias="0.138"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombreEventito"
+                app:layout_constraintTop_toBottomOf="@+id/textView40"
                 tools:ignore="MissingConstraints" />
 
             <TextView

@@ -50,6 +50,9 @@ class buyEventTicket : AppCompatActivity() {
         val muestraNombre2 = findViewById<TextView>(R.id.nombreEventito)
         val muestraCantidad2 = findViewById<EditText>(R.id.cantidadEntraditas)
         val muestraPrecio2 = findViewById<TextView>(R.id.precioEventito)
+        val precioFinal = findViewById<EditText>(R.id.precioTotal)
+
+        var total : Double
 
         //obtenemos la informacion del evento que ha sido clickado
         val nombreEvento = intent.getStringExtra("name");
@@ -61,17 +64,24 @@ class buyEventTicket : AppCompatActivity() {
         muestraNombre2.text = nombreEvento
         muestraPrecio2.text = precioEvento
 
+        //convertimos el valor a un entero para trabajar con el
+        val n : Double = precioEvento!!.toDouble()
+
         //dismminuimos en 1  las entradas
         val menosEntradasBtn :  Button = findViewById(R.id.menosEntradas)
         menosEntradasBtn.setOnClickListener {
             if ( valorEntradas == 0){
                 cantidadEntradas.setText("0")
                 muestraCantidad2.setText("$valorEntradas")
+                total = (valorEntradas * n)
+                precioFinal.setText("$total")
 
             }else{
                 valorEntradas += (-1)
                 cantidadEntradas.setText("$valorEntradas")
                 muestraCantidad2.setText("$valorEntradas")
+                total = (valorEntradas * n)
+                precioFinal.setText("$total")
             }
         }
 
@@ -81,6 +91,9 @@ class buyEventTicket : AppCompatActivity() {
             valorEntradas +=1
             cantidadEntradas.setText("$valorEntradas")
             muestraCantidad2.setText("$valorEntradas")
+            total = (valorEntradas * n)
+            precioFinal.setText("$total")
+
         }
 
         //listener para el boton de volver atras
