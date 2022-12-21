@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-115dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -71,20 +73,19 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="55dp"
                     android:layout_height="25dp"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
-                    app:strokeColor="#4ACE7F"
-                    app:cardCornerRadius="5dp">
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="5dp"
+                    app:strokeColor="#4ACE7F">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="€ 2.50"
                         android:layout_gravity="center"
-                        android:textColor="#4ACE7F"
-                        android:fontFamily="@font/roboto_bold">
-                    </TextView>
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="€ 2.50"
+                        android:textColor="#4ACE7F"></TextView>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
@@ -115,9 +116,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="43dp"
                     android:layout_marginStart="257dp"
+                    android:backgroundTint="@android:color/transparent"
                     android:fontFamily="@font/roboto_bold"
                     android:inputType="number"
-                    android:backgroundTint="@android:color/transparent"
                     android:text="0"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -150,19 +151,18 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="55dp"
                     android:layout_height="25dp"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/white"
                     app:cardCornerRadius="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="€ 4.50"
                         android:layout_gravity="center"
-                        android:textColor="#4ACE7F"
-                        android:fontFamily="@font/roboto_bold">
-                    </TextView>
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="€ 4.50"
+                        android:textColor="#4ACE7F"></TextView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -196,12 +196,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="257dp"
-                    android:textColor="@color/black"
                     android:backgroundTint="@android:color/transparent"
-                    android:text="0"
                     android:fontFamily="@font/roboto_bold"
-                    android:textAlignment="center"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
                     tools:ignore="LabelFor" />
 
                 <Button
@@ -230,19 +230,18 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="55dp"
                     android:layout_height="25dp"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/white"
                     app:cardCornerRadius="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="€ 7.00"
                         android:layout_gravity="center"
-                        android:textColor="#4ACE7F"
-                        android:fontFamily="@font/roboto_bold">
-                    </TextView>
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="€ 7.00"
+                        android:textColor="#4ACE7F"></TextView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -275,12 +274,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="257dp"
-                    android:textColor="@color/black"
                     android:backgroundTint="@android:color/transparent"
-                    android:text="0"
                     android:fontFamily="@font/roboto_bold"
-                    android:textAlignment="center"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
                     tools:ignore="LabelFor" />
 
                 <Button
@@ -309,19 +308,18 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="55dp"
                     android:layout_height="25dp"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/white"
                     app:cardCornerRadius="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="€ 4.50"
                         android:layout_gravity="center"
-                        android:textColor="#4ACE7F"
-                        android:fontFamily="@font/roboto_bold">
-                    </TextView>
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="€ 4.50"
+                        android:textColor="#4ACE7F"></TextView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -354,10 +352,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="257dp"
                     android:backgroundTint="@android:color/transparent"
-                    android:text="0"
-                    android:textColor="@color/black"
                     android:fontFamily="@font/roboto_bold"
-                    android:textAlignment="center" />
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/sumaSenior"
@@ -457,8 +455,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="15dp"
-                app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.72"
                 app:layout_constraintStart_toStartOf="parent"
@@ -592,6 +590,49 @@
                 app:layout_constraintStart_toEndOf="@+id/cardView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="196dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:text="Total"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="49dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
             <Button
                 android:id="@+id/buyFinalTicket"
                 android:layout_width="wrap_content"
@@ -605,8 +646,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket"
+                app:layout_constraintTop_toBottomOf="@+id/total"
                 tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/totalDineros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/roboto_bold"
+                android:inputType="number"
+                android:text="0"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@+id/cardView9"
+                tools:ignore="LabelFor,MissingConstraints"
+                tools:layout_editor_absoluteX="295dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

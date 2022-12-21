@@ -2,7 +2,7 @@ package com.example.techvirtualmuseum.modal
 
 class commentModal {
     // getter and setter methods variables for storing our image and name.
-    var name: String? = null
+    var author: String? = null
     var comment: String? = null
 
     constructor() {
@@ -10,8 +10,8 @@ class commentModal {
     }
 
     // constructor for our object class.
-    constructor(name: String?, comment: String?) {
-        this.name = name
+    constructor(author: String?, comment: String?) {
+        this.author = author
         this.comment = comment
     }
 

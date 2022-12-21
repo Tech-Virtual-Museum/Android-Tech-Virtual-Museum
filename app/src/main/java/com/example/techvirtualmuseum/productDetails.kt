@@ -47,7 +47,6 @@ class productDetails : AppCompatActivity() {
         Picasso.get().load(imagenProducto).into(imageProduct)
 
         val qrText = intent.getStringExtra("QR_CODE_TEXT")
-        Log.d("qr text", "$qrText")
 
         database.collection("products").document(qrText!!).get().addOnSuccessListener {
             //mostramos la informacion
@@ -81,6 +80,9 @@ class productDetails : AppCompatActivity() {
         val comentarioBtn : ImageButton = findViewById(R.id.comentarioBtn)
         comentarioBtn.setOnClickListener {
             val intent : Intent = Intent(this, displayComments::class.java)
+
+            //le pasamos el id del producto para en la otra actividad mostrar solo sus comentarios
+            intent.putExtra("QR_CODE_TEXT", qrText)
             startActivity(intent)
 
         }

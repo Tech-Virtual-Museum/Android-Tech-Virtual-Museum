@@ -3,6 +3,7 @@ package com.example.techvirtualmuseum
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -14,8 +15,10 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class displayComments : AppCompatActivity() {
@@ -38,8 +41,36 @@ class displayComments : AppCompatActivity() {
         //obtenemos el usuario actual
         val idUser = auth.currentUser!!.email
 
+        //obtenemos el id del producto
+        val qrText = intent.getStringExtra("QR_CODE_TEXT")
+
+
         // llamamos al metodo que nos cargaran los datos en la vista
-        loadDatainListview()
+        database!!.collection("comments").document(qrText!!).collection("comments").get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    val list = querySnapshot.documents
+                    for (document in list) {
+                        // Procesamos el documento
+                        val comment = document.toObject(commentModal::class.java)
+                        commentModalArrayList!!.add(comment!!)
+                    }
+                    val adapter = AdapterComments(this@displayComments, commentModalArrayList)
+                    comentariosLista!!.adapter = adapter
+                } else {
+                    // si el snapshot esta vacio, mostramos un aviso
+                    Toast.makeText(
+                        this@displayComments,
+                        "No se han encontrado datos",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+            .addOnFailureListener { exception ->
+                // Manejamos la excepción
+                Toast.makeText(this@displayComments, "Error al cargar los datos", Toast.LENGTH_SHORT).show()
+            }
+
 
         //boton para volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
@@ -60,8 +91,8 @@ class displayComments : AppCompatActivity() {
 
             // Agregar botones "OK" y "Cancelar" al diálogo
             builder.setPositiveButton("OK") { dialog, which ->
-                // Obtener el texto ingresado por el usuario y guardarlo en Firestore
-                database!!.collection("comments").document(idUser!!).set("comentario" to input.text.toString())
+                // Obtener el texto ingresado por el usuario y lo guardamos en la coleccion pertinente al producto en el que nos encontramos
+                database!!.collection("comments").document(qrText).collection("comments").document(idUser!!).set("comentario" to input.text.toString())
                 Toast.makeText(this, "Comentario añadido correctamente", Toast.LENGTH_SHORT).show()
             }
 
@@ -95,41 +126,5 @@ class displayComments : AppCompatActivity() {
             val intent : Intent = Intent(this, escanerQR::class.java)
             startActivity(intent)
         }
-    }
-
-
-    //mostramos los comentarios segun el id del producto
-    private fun loadDatainListview() {
-        database!!.collection("comments")
-            .get()
-            .addOnSuccessListener(OnSuccessListener<QuerySnapshot> { queryDocumentSnapshots ->
-                if (!queryDocumentSnapshots.isEmpty) {
-                    val list = queryDocumentSnapshots.documents
-                    for (d in list) {
-                        // despues de obtener la lista, la pasamos para nuestra clase objeto
-                        val commentModal: commentModal? = d.toObject(commentModal::class.java)
-
-                        // despues de obtener los datos de firebase, la guardamos en un arrayList
-                        commentModalArrayList!!.add(commentModal!!)
-                    }
-                    // pasamos el arrayList a la clase adapter que tenemos
-                    val adapter =
-                        AdapterComments(
-                            this@displayComments,
-                            commentModalArrayList
-                        )
-                    comentariosLista!!.adapter = adapter
-                } else {
-                    // si el snapshot esta vacio, mostramos un aviso
-                    Toast.makeText(
-                        this@displayComments,
-                        "No existen comentarios",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                //si tenemos un error, mostramos un mensaje
-            }).addOnFailureListener(OnFailureListener {
-                Toast.makeText(this@displayComments, "Error al cargar los comentarios", Toast.LENGTH_SHORT).show()
-            })
     }
 }

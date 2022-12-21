@@ -27,6 +27,10 @@ class buyTicket2 : AppCompatActivity() {
         val numTicketAd : EditText = findViewById(R.id.numTicketsAD)
         val numTicketSn : EditText = findViewById(R.id.numTicketsSN)
 
+        val totalDineros : EditText = findViewById(R.id.totalDineros)
+        val n : String = totalDineros.text.toString()
+        var dinero: Int = Integer.parseInt(n)
+
         //VARIABLES DE LOS PRECIOS
         var precioJR : Double
         var precioST : Double
@@ -46,12 +50,11 @@ class buyTicket2 : AppCompatActivity() {
 
             //aumentacmos precio en el Summary
             if (valorJR >= 1) {
-
                 //precio por las entradas junior
                 precioJR = valorJR * ticketJR
                 numTicketJr.setText("$precioJR")
-
             }
+
         }
 
         //boton con el que disminuimos el numero de entradas
@@ -146,8 +149,6 @@ class buyTicket2 : AppCompatActivity() {
                 precioSN = valorSN * ticketSN
                 numTicketSn.setText("$precioSN")
 
-
-
             }
         }
 
@@ -161,6 +162,7 @@ class buyTicket2 : AppCompatActivity() {
                 numTicketSn.setText("$precioSN")
             }
         }
+
 
 
         //boton que nos llevara a la actvidad anterior

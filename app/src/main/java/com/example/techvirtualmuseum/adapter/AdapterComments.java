@@ -41,14 +41,14 @@ public class AdapterComments extends ArrayAdapter<commentModal> {
         TextView commentName = listitemView.findViewById(R.id.commentName);
         TextView commentBody = listitemView.findViewById(R.id.commentBody);
 
-        commentName.setText(commentModal.getName());
+        commentName.setText(commentModal.getAuthor());
         commentBody.setText(commentModal.getComment());
 
         listitemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
                     Intent intent = new Intent(v.getContext(), productDetails.class);
-                    intent.putExtra("name", commentModal.getName());
+                    intent.putExtra("author", commentModal.getAuthor());
                     intent.putExtra("comment", commentModal.getComment());
                     v.getContext().startActivity(intent);
                 }
