@@ -29,7 +29,6 @@ class videoPlayer: YouTubeBaseActivity() {
 
         //obtenemos los datos
         val idVideoProducto = intent.getStringExtra("videoId")
-        val urlVideo = intent.getStringExtra("video")
 
         youtubePlayerInit = object : YouTubePlayer.OnInitializedListener{
             override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean){

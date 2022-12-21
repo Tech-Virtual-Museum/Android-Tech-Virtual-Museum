@@ -31,18 +31,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
-
     <Button
         android:id="@+id/btnPlay"
-        android:backgroundTint="@color/violet"
-        android:text="Play video"
-        android:fontFamily="@font/roboto"
-        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/youtubePlayer"
-        tools:ignore="MissingConstraints">
-    </Button>
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/violet"
+        android:fontFamily="@font/roboto"
+        android:text="Play video"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomNav"
