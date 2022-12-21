@@ -38,14 +38,10 @@ class displayComments : AppCompatActivity() {
         database = FirebaseFirestore.getInstance()
         auth = Firebase.auth
 
-        //obtenemos el usuario actual
-        val idUser = auth.currentUser!!.email
-
         //obtenemos el id del producto
         val qrText = intent.getStringExtra("QR_CODE_TEXT")
 
-
-        // llamamos al metodo que nos cargaran los datos en la vista
+        // llamamos al metodo que nos cargaran los comentarios en una lista
         database!!.collection("comments").document(qrText!!).collection("comments").get()
             .addOnSuccessListener { querySnapshot ->
                 if (!querySnapshot.isEmpty) {
@@ -92,7 +88,7 @@ class displayComments : AppCompatActivity() {
             // Agregar botones "OK" y "Cancelar" al diálogo
             builder.setPositiveButton("OK") { dialog, which ->
                 // Obtener el texto ingresado por el usuario y lo guardamos en la coleccion pertinente al producto en el que nos encontramos
-                database!!.collection("comments").document(qrText).collection("comments").document(idUser!!).set("comentario" to input.text.toString())
+                database!!.collection("comments").document(qrText).collection("comments").document().set("comment" to input.text.toString())
                 Toast.makeText(this, "Comentario añadido correctamente", Toast.LENGTH_SHORT).show()
             }
 
