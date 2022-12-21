@@ -4,7 +4,7 @@ class productModal {
     var name: String? = null
     var descripcion: String? = null
     var img: String? = null
-    var id: String? = null
+    var videoId: String? = null
     var video: String? = null
 
     constructor() {
@@ -12,10 +12,10 @@ class productModal {
     }
 
     // constructor for our object class.
-    constructor(name: String?, descripcion:String?, img: String?, id:String?, video: String?) {
+    constructor(name: String?, descripcion:String?, img: String?, videoId:String?, video: String?) {
         this.name = name
         this.descripcion = descripcion
-        this.id = id
+        this.videoId = videoId
         this.img = img
         this.video = video
     }

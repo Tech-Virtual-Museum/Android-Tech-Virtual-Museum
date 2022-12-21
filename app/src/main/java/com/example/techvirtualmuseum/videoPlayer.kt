@@ -10,9 +10,10 @@ import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerView
 
+
 class videoPlayer: YouTubeBaseActivity() {
 
-
+    private val YOUTUBE_API_KEY ="AIzaSyA280whFAGngDw3523jqqvXlQ5sKyQjdrE"
 
     lateinit var youtubePlayerInit : YouTubePlayer.OnInitializedListener
 
@@ -23,20 +24,22 @@ class videoPlayer: YouTubeBaseActivity() {
         val youTubePlayer : YouTubePlayerView = findViewById(R.id.youtubePlayer)
         val btnPlay : Button = findViewById(R.id.btnPlay)
 
-        youtubePlayerInit = object : YouTubePlayer.OnInitializedListener{
-            override fun onInitializationSuccess(
-                p0: YouTubePlayer.Provider?,
-                p1: YouTubePlayer?,
-                p2: Boolean
-            ) {
-                p1?.loadVideo(VIDEO_ID)
-            }
+        //obtenemos los datos
+        val idVideoProducto = intent.getStringExtra("videoId")
 
-            override fun onInitializationFailure(
-                p0: YouTubePlayer.Provider?,
-                p1: YouTubeInitializationResult?
-            ) {
-                Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT).show()
+        youtubePlayerInit = object : YouTubePlayer.OnInitializedListener{
+            override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean){
+                if(player == null) return
+                if (wasRestored)
+                    player.play()
+                else{
+                    player.loadVideo(idVideoProducto, 0)
+                    player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
+                }
+
+            }
+            override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
+
             }
         }
 

@@ -24,25 +24,25 @@ class editInformation : AppCompatActivity() {
         auth = Firebase.auth
         database = FirebaseFirestore.getInstance()
 
-        //obtenemos el usuario actual
-        val userActual = auth.currentUser
-
-        //inicializamos los campos
-        val newName = findViewById<EditText>(R.id.newName)
-        val newSurname = findViewById<EditText>(R.id.newSurname)
-        val newEmail = findViewById<EditText>(R.id.newEmail)
-        val newPassword = findViewById<EditText>(R.id.newPassword)
-
-        //obtenemos los textos introducidos por el usuario
-        val inputName = newName.text.toString()
-        val inputSurname = newSurname.text.toString()
-        val inputEmail = newEmail.text.toString()
-        val inputPassword = newPassword.text.toString()
-
-
         val cambio : Button = findViewById(R.id.cambio)
         cambio.setOnClickListener {
             val intent : Intent = Intent(this, profilePage::class.java)
+            //inicializamos los campos
+            val newName = findViewById<EditText>(R.id.newName)
+            Log.d("nombre", "$newName")
+            val newSurname = findViewById<EditText>(R.id.newSurname)
+            val newEmail = findViewById<EditText>(R.id.newEmail)
+            val newPassword = findViewById<EditText>(R.id.newPassword)
+
+            //obtenemos los textos introducidos por el usuario
+            val inputName = newName.text.toString()
+            val inputSurname = newSurname.text.toString()
+            val inputEmail = newEmail.text.toString()
+            val inputPassword = newPassword.text.toString()
+
+            //obtenemos el email del usuario actual, ya que en el firebase estan identificados por su correo y no por un uid aleatorio
+            val idUser = auth.currentUser!!.email
+            database.collection("nuevaInfo").document(idUser!!).set(hashMapOf("name" to inputName, "surname" to inputSurname, "email" to inputEmail, "password" to inputPassword))
             startActivity(intent)
         }
 

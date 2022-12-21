@@ -59,7 +59,7 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
                 Intent intent = new Intent(v.getContext(), productDetails.class);
                 intent.putExtra("name", productModal.getName());
                 intent.putExtra("descripcion", productModal.getDescripcion());
-                intent.putExtra("id", productModal.getId());
+                intent.putExtra("videoId", productModal.getVideoId());
                 intent.putExtra("img", productModal.getImg());
                 intent.putExtra("video", productModal.getVideo());
                 v.getContext().startActivity(intent);

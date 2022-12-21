@@ -153,6 +153,7 @@
             android:layout_marginStart="10sp"
             android:backgroundTint="@android:color/transparent"
             android:hint="Enter your email"
+            android:inputType="textEmailAddress"
             android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
@@ -178,6 +179,7 @@
         android:layout_marginTop="12dp"
         app:cardBackgroundColor="#FFEDEBEB"
         app:cardCornerRadius="15dp"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"

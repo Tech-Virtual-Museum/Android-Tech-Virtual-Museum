@@ -3,6 +3,7 @@ package com.example.techvirtualmuseum
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -35,8 +36,8 @@ class productDetails : AppCompatActivity() {
         val nombreProducto = intent.getStringExtra("name");
         val descripcionProducto = intent.getStringExtra("descripcion")
         val imagenProducto = intent.getStringExtra("img")
-
         val videoProducto = intent.getStringExtra("video")
+        val idVideoProducto = intent.getStringExtra("videoId")
 
         //mostramos la informacion
         nameProduct.text = nombreProducto
@@ -44,9 +45,6 @@ class productDetails : AppCompatActivity() {
 
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenProducto).into(imageProduct)
-
-        //obtenemmos el usuario actual
-        val idUser = auth.currentUser!!.email
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
@@ -60,6 +58,7 @@ class productDetails : AppCompatActivity() {
         playAudioVideo.setOnClickListener {
             val intent : Intent = Intent(this, videoPlayer::class.java)
             intent.putExtra("video", videoProducto)
+            intent.putExtra("videoId", idVideoProducto)
             startActivity(intent)
         }
 
