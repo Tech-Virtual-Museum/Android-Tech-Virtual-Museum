@@ -77,18 +77,10 @@ class editInformation : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
 
             //actualizamos el email en firebase auth
-            user?.updateEmail(inputEmail)?.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Se ha actualizado el email de forma correcta", Toast.LENGTH_SHORT).show()
-                }
-            }
+            user?.updateEmail(inputEmail)
 
             //actualizamos la contraseña en firebase auth
-            user?.updatePassword(inputPassword)?.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Se ha actualizado la contraseña de forma correcta", Toast.LENGTH_SHORT).show()
-                }
-            }
+            user?.updatePassword(inputPassword)
 
             //obtenemos el email del usuario actual, ya que en el firebase estan identificados por su correo y no por un uid aleatorio
             val idUser = auth.currentUser!!.email

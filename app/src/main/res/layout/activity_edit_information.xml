@@ -185,17 +185,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/newPassword"
-            android:layout_width="295dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10sp"
             android:backgroundTint="@android:color/transparent"
+            app:boxStrokeColor="@android:color/transparent"
             android:hint="Enter your password"
-            android:inputType="textPassword"
-            android:textSize="15sp" />
+            app:hintTextColor="@android:color/transparent"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/newPassword"
+                android:layout_width="295dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@android:color/transparent"
+                android:inputType="textPassword"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
