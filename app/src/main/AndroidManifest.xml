@@ -13,6 +13,7 @@
     </queries>
 
     <!-- permiso para poder usar la camara -->
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature

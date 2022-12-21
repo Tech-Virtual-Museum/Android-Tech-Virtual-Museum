@@ -1,5 +1,6 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ class videoPlayer: YouTubeBaseActivity() {
 
     lateinit var youtubePlayerInit : YouTubePlayer.OnInitializedListener
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
@@ -53,6 +55,27 @@ class videoPlayer: YouTubeBaseActivity() {
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             val intent : Intent = Intent(this, productDetails::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - compra ticket 1
+        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener {
+            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina inicio
+        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener {
+            val intent : Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
+        //boton de la navigationBar - ir a la pagina de escanear QR
+        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener {
+            val intent : Intent = Intent(this, escanerQR::class.java)
             startActivity(intent)
         }
 

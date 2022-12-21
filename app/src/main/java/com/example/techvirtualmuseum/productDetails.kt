@@ -35,9 +35,9 @@ class productDetails : AppCompatActivity() {
         //obtenemos la informacion del evento que ha sido clickado
         val nombreProducto = intent.getStringExtra("name");
         val descripcionProducto = intent.getStringExtra("descripcion")
-        val imagenProducto = intent.getStringExtra("img")
-        val videoProducto = intent.getStringExtra("video")
-        val idVideoProducto = intent.getStringExtra("videoId")
+        var imagenProducto = intent.getStringExtra("img")
+        var videoProducto = intent.getStringExtra("video")
+        var idVideoProducto = intent.getStringExtra("videoId")
 
         //mostramos la informacion
         nameProduct.text = nombreProducto
@@ -45,6 +45,21 @@ class productDetails : AppCompatActivity() {
 
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(imagenProducto).into(imageProduct)
+
+        val qrText = intent.getStringExtra("QR_CODE_TEXT")
+        Log.d("qr text", "$qrText")
+
+        database.collection("products").document(qrText!!).get().addOnSuccessListener {
+            //mostramos la informacion
+            nameProduct.text = it.get("name") as String?
+            descripcionProduct.text = it.get("descripcion") as String?
+            imagenProducto = it.get("img") as String?
+            videoProducto = it.get("video") as String?
+            idVideoProducto = it.get("videoId") as String?
+
+            //obtenemos las imagenes guardadas en firebase
+            Picasso.get().load(imagenProducto).into(imageProduct)
+        }
 
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)

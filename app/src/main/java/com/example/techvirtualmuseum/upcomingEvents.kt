@@ -1,5 +1,6 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -28,6 +29,35 @@ class upcomingEvents : AppCompatActivity() {
 
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
+
+
+        //searchview
+        val searchView = findViewById<SearchView>(R.id.search_view)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Handle search submit
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Handle search text change
+                val query = FirebaseFirestore.getInstance()
+                    .collection("events")
+                    .whereEqualTo("fieldName", newText)
+
+                query.get().addOnSuccessListener { documents ->
+                    // Process the documents
+                }
+                return true
+            }
+        })
+
+        //boton para volver atras
+        val backButton: ImageButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            val intent: Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
 
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)

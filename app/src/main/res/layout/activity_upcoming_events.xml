@@ -7,32 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".upcomingEvents">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="43dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:backgroundTintMode="add"
+        android:src="@drawable/back_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Upcoming events"
         android:textColor="@color/violet"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/listItems"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
     <ListView
         android:id="@+id/listItems"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="394dp"
+        android:layout_height="638dp"
         android:layout_marginTop="104dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNav"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="-1dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomNav"
