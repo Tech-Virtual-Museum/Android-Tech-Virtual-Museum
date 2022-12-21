@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Hello again!"
+        android:text="Welcome!"
         android:textColor="@color/violet"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
