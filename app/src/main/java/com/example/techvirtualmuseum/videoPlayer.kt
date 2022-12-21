@@ -2,6 +2,7 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
@@ -26,6 +27,7 @@ class videoPlayer: YouTubeBaseActivity() {
 
         //obtenemos los datos
         val idVideoProducto = intent.getStringExtra("videoId")
+        val urlVideo = intent.getStringExtra("video")
 
         youtubePlayerInit = object : YouTubePlayer.OnInitializedListener{
             override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean){
@@ -33,7 +35,7 @@ class videoPlayer: YouTubeBaseActivity() {
                 if (wasRestored)
                     player.play()
                 else{
-                    player.loadVideo(idVideoProducto, 0)
+                    player.loadVideo(idVideoProducto)
                     player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
                 }
 

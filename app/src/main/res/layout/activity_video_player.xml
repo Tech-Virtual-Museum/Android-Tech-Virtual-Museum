@@ -23,7 +23,7 @@
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtubePlayer"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -31,12 +31,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
+
     <Button
         android:id="@+id/btnPlay"
+        android:backgroundTint="@color/violet"
+        android:text="Play video"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="play video"
-        app:layout_constraintBottom_toBottomOf="@id/youtubePlayer"
+        app:layout_constraintBottom_toBottomOf="@+id/youtubePlayer"
         tools:ignore="MissingConstraints">
     </Button>
 
