@@ -1,6 +1,5 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,6 +11,8 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import androidx.appcompat.widget.SearchView
+
 
 class upcomingEvents : AppCompatActivity() {
 
@@ -27,30 +28,31 @@ class upcomingEvents : AppCompatActivity() {
         dataModalArrayList = ArrayList()
         database = FirebaseFirestore.getInstance()
 
+
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
 
 
-        //searchview
+        //filtrar para buscar
         val searchView = findViewById<SearchView>(R.id.search_view)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        val names = arrayOf("Robotics Expo Winter 2022", "Augmented Reality Exhibition", "Smartphone Evolution Expo", "3D Printing Beginner Class", "Augmented Reality Games", "Evolution Of Games Expo")
+        val namesAdapter : ArrayAdapter <String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, names)
+
+        searchView.setOnQueryTextListener( object  :SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                // Handle search submit
-                return true
+                searchView.clearFocus()
+                if (names.contains(query)){
+                    namesAdapter.filter.filter(query)
+                }
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // Handle search text change
-                val query = FirebaseFirestore.getInstance()
-                    .collection("events")
-                    .whereEqualTo("fieldName", newText)
-
-                query.get().addOnSuccessListener { documents ->
-                    // Process the documents
-                }
-                return true
+                namesAdapter.filter.filter(newText)
+                return false
             }
         })
+
 
         //boton para volver atras
         val backButton: ImageButton = findViewById(R.id.backButton)

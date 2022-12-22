@@ -1,6 +1,9 @@
 package com.example.techvirtualmuseum
 
+import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.fonts.Font
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
@@ -81,15 +84,18 @@ class displayComments : AppCompatActivity() {
             val builder = AlertDialog.Builder(this)
             builder.setMessage("Escribe tu comentario a continuación:")
 
+
             val input = EditText(this)
             input.inputType = InputType.TYPE_CLASS_TEXT
             builder.setView(input)
+
 
             // Agregar botones "OK" y "Cancelar" al diálogo
             builder.setPositiveButton("OK") { dialog, which ->
                 // Obtener el texto ingresado por el usuario y lo guardamos en la coleccion pertinente al producto en el que nos encontramos
                 database!!.collection("comments").document(qrText).collection("comments").document().set("comment" to input.text.toString())
                 Toast.makeText(this, "Comentario añadido correctamente", Toast.LENGTH_SHORT).show()
+
             }
 
             builder.setNegativeButton("Cancelar") { dialog, which ->
@@ -99,7 +105,13 @@ class displayComments : AppCompatActivity() {
             // Mostrar el diálogo
             val dialog = builder.create()
             dialog.show()
+
+            //cambiamos el color de las letras del pop up
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(Color.BLACK)
+            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.BLACK)
+
         }
+
 
 
         //boton de la navigationBar - eventos
