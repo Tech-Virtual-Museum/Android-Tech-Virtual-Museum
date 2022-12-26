@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
     <!-- internet permissions and network state permission -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <queries>
         <intent>
             <action android:name="com.google.android.youtube.api.service.START" />
         </intent>
-    </queries>
-
-    <!-- permiso para poder usar la camara -->
-
+    </queries> <!-- permiso para poder usar la camara -->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
@@ -32,11 +30,18 @@
         android:theme="@style/Theme.TechVirtualMuseum"
         tools:targetApi="31">
         <activity
+            android:name=".crearComentario"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".displayComments"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        <meta-data
+            <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
@@ -56,7 +61,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".buyTicket3"
             android:exported="false"
