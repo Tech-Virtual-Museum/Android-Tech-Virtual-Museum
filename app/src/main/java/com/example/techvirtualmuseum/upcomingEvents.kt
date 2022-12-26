@@ -2,6 +2,7 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -28,28 +29,35 @@ class upcomingEvents : AppCompatActivity() {
         dataModalArrayList = ArrayList()
         database = FirebaseFirestore.getInstance()
 
-
         // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
-
 
         //filtrar para buscar
         val searchView = findViewById<SearchView>(R.id.search_view)
         val names = arrayOf("Robotics Expo Winter 2022", "Augmented Reality Exhibition", "Smartphone Evolution Expo", "3D Printing Beginner Class", "Augmented Reality Games", "Evolution Of Games Expo")
         val namesAdapter : ArrayAdapter <String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, names)
 
-        searchView.setOnQueryTextListener( object  :SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                searchView.clearFocus()
-                if (names.contains(query)){
-                    namesAdapter.filter.filter(query)
-                }
-                return false
+        val collection = database!!.collection("eventos")
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                // Cuando el usuario envía la búsqueda, realizamos una consulta de Firestore para buscar documentos que contengan la palabra especificada
+                collection
+                    .whereArrayContains("names", query)
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        // Aquí procesamos los documentos que se han obtenido de la consulta
+                        for (document in documents) {
+                            val dato = document.get("dato") as String
+                            // Mostramos el dato en pantalla o en cualquier otro lugar que deseemos
+                            Log.d("dato", dato)
+                        }
+                    }
+                return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                namesAdapter.filter.filter(newText)
-                return false
+                TODO("Not yet implemented")
             }
         })
 

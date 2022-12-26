@@ -51,27 +51,6 @@ class editInformation : AppCompatActivity() {
             val inputEmail = newEmail.text.toString()
             val inputPassword = newPassword.text.toString()
 
-            //evaluamos el caso en que alguno de los campos este vacio
-            if ( inputName.isEmpty() || inputSurname.isEmpty() || inputEmail.isEmpty() ||
-                inputPassword.isEmpty()){
-                Toast.makeText(baseContext, "Debe rellenar todos los campos",
-                    Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            //comprobamos que la contraseña introducida cumple con el patron estipulado
-            if (!PASSWORD_PATTERN.matcher(inputPassword).matches()){
-                Toast.makeText(baseContext, "La contraseña debe tener minimo 6 caracteres y un caracter especial",
-                    Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            //comprobamos que el email introducido cumple con el patron establecido
-            if (!EMAIL_PATTERN.matcher(inputEmail).matches()){
-                Toast.makeText(baseContext, "Debe introducir un correo valido",
-                    Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
 
             //obtenemos el usuario actual
             val user = FirebaseAuth.getInstance().currentUser

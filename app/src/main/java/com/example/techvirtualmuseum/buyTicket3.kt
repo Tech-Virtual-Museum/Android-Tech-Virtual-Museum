@@ -31,7 +31,7 @@ class buyTicket3 : AppCompatActivity() {
         val idUser = auth.currentUser!!.email
 
         //mostramos la informacion del usuario
-        database.collection("Users").document(idUser!!).get().addOnSuccessListener {
+        database.collection("users").document(idUser!!).get().addOnSuccessListener {
             userName.setText(it.get("name") as String?)
             userSurname.setText(it.get("surname") as String?)
             userEmail.setText(it.get("email") as String?)

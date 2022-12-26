@@ -575,12 +575,13 @@
                     tools:ignore="LabelFor" />
             </androidx.cardview.widget.CardView>
 
+
             <TextView
                 android:id="@+id/textView36"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="38dp"
+                android:layout_marginTop="104dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="€"
                 android:textColor="@color/black"
@@ -588,50 +589,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/cardView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView34" />
-
-            <TextView
-                android:id="@+id/total"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="196dp"
-                android:layout_marginTop="36dp"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/black"
-                android:text="Total"
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.72"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView8">
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textView37"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="49dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="€"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/cardView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+                app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
             <Button
                 android:id="@+id/buyFinalTicket"
@@ -646,22 +604,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/total"
+                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket"
                 tools:ignore="MissingConstraints" />
 
-            <EditText
-                android:id="@+id/totalDineros"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/roboto_bold"
-                android:inputType="number"
-                android:text="0"
-                android:textSize="22sp"
-                app:layout_constraintTop_toBottomOf="@+id/cardView9"
-                tools:ignore="LabelFor,MissingConstraints"
-                tools:layout_editor_absoluteX="295dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
