@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 class crearComentario : AppCompatActivity() {
@@ -21,8 +22,6 @@ class crearComentario : AppCompatActivity() {
         //obtenemos el id del producto
         val qrText = intent.getStringExtra("QR_CODE_TEXT")
 
-
-
         //boton para guardar el comentario en la  base de datos
         val saveComment : Button = findViewById(R.id.guardarComentario)
         saveComment.setOnClickListener{
@@ -37,7 +36,7 @@ class crearComentario : AppCompatActivity() {
             val intent : Intent = Intent (this, displayComments::class.java)
 
             database!!.collection("comments").document(qrText!!).collection("comments").document().set(
-                hashMapOf("author" to nameComment, "comment" to comentarioComment))
+                hashMapOf("author" to nameComment, "comment" to comentarioComment, "timestamp" to FieldValue.serverTimestamp()))
 
             startActivity(intent)
         }

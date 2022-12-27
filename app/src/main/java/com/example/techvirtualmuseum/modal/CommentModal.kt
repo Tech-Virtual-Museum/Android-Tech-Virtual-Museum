@@ -1,5 +1,7 @@
 package com.example.techvirtualmuseum.modal
 
+import java.sql.Timestamp
+
 class commentModal {
     // getter and setter methods variables for storing our image and name.
     var author: String? = null
