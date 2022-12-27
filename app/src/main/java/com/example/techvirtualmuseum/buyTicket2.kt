@@ -1,5 +1,6 @@
 package com.example.techvirtualmuseum
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,10 +8,12 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 
 
 class buyTicket2 : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_ticket2)
@@ -27,11 +30,13 @@ class buyTicket2 : AppCompatActivity() {
         val numTicketAd : EditText = findViewById(R.id.numTicketsAD)
         val numTicketSn : EditText = findViewById(R.id.numTicketsSN)
 
+        val precioTotalEntradas : TextView = findViewById(R.id.precioTotalEntradas)
+
         //VARIABLES DE LOS PRECIOS
-        var precioJR : Double
-        var precioST : Double
-        var precioAD : Double
-        var precioSN : Double
+        var precioJR : Double = 0.0
+        var precioST : Double = 0.0
+        var precioAD : Double = 0.0
+        var precioSN : Double = 0.0
 
         //Variables JUNIOR
         val cantidadJR : EditText = findViewById(R.id.cantidadJunior)
@@ -51,6 +56,10 @@ class buyTicket2 : AppCompatActivity() {
                 numTicketJr.setText("$precioJR")
             }
 
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
+
         }
 
         //boton con el que disminuimos el numero de entradas
@@ -62,10 +71,12 @@ class buyTicket2 : AppCompatActivity() {
 
                 precioJR = valorJR * ticketJR
                 numTicketJr.setText("$precioJR")
-
             }
-        }
 
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
+        }
 
         //Variables STUDENT
         val cantidadST : EditText = findViewById(R.id.cantidadStudent)
@@ -84,6 +95,10 @@ class buyTicket2 : AppCompatActivity() {
                 numTicketSt.setText("$precioST")
 
             }
+
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
         }
 
         //boton con el que aumentamos el numero de entradas
@@ -96,6 +111,10 @@ class buyTicket2 : AppCompatActivity() {
                 precioST = valorST * ticketST
                 numTicketSt.setText("$precioST")
             }
+
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
         }
 
 
@@ -115,6 +134,10 @@ class buyTicket2 : AppCompatActivity() {
                 numTicketAd.setText("$precioAD")
 
             }
+
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
         }
 
         val disminuirBtnAdult : Button = findViewById(R.id.restaAdult)
@@ -127,6 +150,10 @@ class buyTicket2 : AppCompatActivity() {
                 numTicketAd.setText("$precioAD")
 
             }
+
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
         }
 
 
@@ -146,6 +173,10 @@ class buyTicket2 : AppCompatActivity() {
                 numTicketSn.setText("$precioSN")
 
             }
+
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
         }
 
         val disminuirBtnSenior : Button = findViewById(R.id.restaSenior)
@@ -157,6 +188,10 @@ class buyTicket2 : AppCompatActivity() {
                 precioSN = valorSN * ticketSN
                 numTicketSn.setText("$precioSN")
             }
+
+            // actualizamos el precio total
+            val precioTotal = precioJR + precioST + precioAD + precioSN
+            precioTotalEntradas.setText("$precioTotal")
         }
 
 

@@ -591,6 +591,23 @@
                 app:layout_constraintStart_toEndOf="@+id/cardView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.72"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+            </androidx.cardview.widget.CardView>
+
+
             <Button
                 android:id="@+id/buyFinalTicket"
                 android:layout_width="wrap_content"
@@ -604,9 +621,51 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket"
+                app:layout_constraintTop_toBottomOf="@+id/precioTotalEntradas"
                 tools:ignore="MissingConstraints" />
 
+            <TextView
+                android:id="@+id/totalEntradas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:text="Total"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameSeniorTicket" />
+
+            <TextView
+                android:id="@+id/precioTotalEntradas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/roboto_bold"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView9"
+                tools:ignore="LabelFor,MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="€"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/precioTotalEntradas"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
