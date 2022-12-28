@@ -35,21 +35,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:queryHint="Search for documents"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        tools:layout_editor_absoluteX="4dp" />
-
     <ListView
         android:id="@+id/listItems"
         android:layout_width="406dp"
         android:layout_height="599dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-12dp" />
 

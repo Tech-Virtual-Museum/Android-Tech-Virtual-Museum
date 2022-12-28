@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.messaging.Constants.MessageNotificationKeys.COLOR
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
@@ -65,7 +66,7 @@ class buyTicket : AppCompatActivity() {
         if (view is RadioButton) {
             // comprobamos si ha sido seleccionado
             val checked = view.isChecked
-            // comprobamos cual de las tres opciones ha sido
+            // comprobamos cual de las opciones ha sido
             when (view.getId()) {
                 R.id.radioHour1 ->
                     if (checked) {
@@ -93,6 +94,7 @@ class buyTicket : AppCompatActivity() {
 
                 R.id.radioHour5 ->
                     if (checked) {
+                        view.setElevation(8f)
                         Toast.makeText(this, "Has seleccionado 12:00 AM", Toast.LENGTH_SHORT
                         ).show()
                     }
