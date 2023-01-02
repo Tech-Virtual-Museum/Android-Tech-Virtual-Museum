@@ -92,19 +92,6 @@ dependencies {
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
 
     //calendario
-    implementation 'com.github.mahimrocky:EventCalender:v1.0.0'
-
-    //stepview animado
-    implementation 'com.github.shuhart:stepview:1.5.1'
-
-    //bottom navigation bar
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
-
-    //materialDesign
-    implementation 'com.google.android.material:material:1.7.0'
-
-    //calendario
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
 
 
