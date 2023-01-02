@@ -19,9 +19,9 @@
         </intent>
     </queries>
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+
 
     <application
         android:allowBackup="true"
@@ -137,7 +137,13 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity> <!-- google maps -->
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.youtube.API_KEY"
+            android:value="@string/youtube_key" />
+
+        <!-- google maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
