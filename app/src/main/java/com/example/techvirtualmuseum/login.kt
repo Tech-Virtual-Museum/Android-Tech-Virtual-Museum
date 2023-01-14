@@ -43,6 +43,19 @@ class login : AppCompatActivity() {
         }
     }
 
+    //comprobamos si el usuario ya esta logueado y en caso afirmativo,
+    // mostrar la home page directamente
+    public override fun onResume() {
+        super.onResume()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            val intent: Intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        } else {
+            performLogin()
+        }
+    }
+
     private fun performLogin() {
         val email = findViewById<EditText>(R.id.emailEditText_login)
         val password = findViewById<EditText>(R.id.passwordEditText_login)
