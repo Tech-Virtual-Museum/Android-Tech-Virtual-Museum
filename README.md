@@ -12,9 +12,10 @@ Additionally, users can see a list of upcoming events at the museum, with their 
 
 
 ## Libraries
-
-
-
+* <a href="https://github.com/yuriy-budiyev/code-scanner"> Code Scanner </a>
+* <a href="https://square.github.io/picasso/"> Picasso </a>
+* <a href="https://github.com/prolificinteractive/material-calendarview"> Material Calendar View </a>
+* <a href="https://github.com/material-components/material-components-android/tree/master/docs/components"> Material Design UI Componentes for Android </a>
 
 
 ## Contributors
