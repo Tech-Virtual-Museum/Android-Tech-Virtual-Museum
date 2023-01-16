@@ -57,12 +57,6 @@ class escanerQR : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS
-            runOnUiThread {
-                Toast.makeText(this, "Error en la camara: ${it.message} .Debe activar los permisos",
-                    Toast.LENGTH_LONG).show()
-            }
-        }
 
         scannerView.setOnClickListener {
             codeScanner.startPreview()
@@ -92,11 +86,11 @@ class escanerQR : AppCompatActivity() {
     private fun requestCameraPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
             //El usuario ya ha rechazado el permiso anteriormente, debemos informarle que vaya a ajustes.
+            Toast.makeText(this, "Al rechazar los permisos debe ir a ajustes y activarlos desde ahi.",
+                Toast.LENGTH_LONG).show()
         } else {
             //El usuario nunca ha aceptado ni rechazado, así que le pedimos que acepte el permiso.
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.CAMERA),
-                CAMERA_REQUEST_CODE)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA),  CAMERA_REQUEST_CODE)
         }
     }
 }
