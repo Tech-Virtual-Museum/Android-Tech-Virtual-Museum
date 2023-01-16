@@ -32,6 +32,15 @@ El usuario que desee probar la aplicación sólo tiene que acceder al directorio
 
 Al ser un archivo con extension .apk y no encontrarse en una tienda oficial de descarga de aplicaciones como es la Google Play Store, puede que exista la posibilidad de que le avise de que debe habilitar el permiso de *instalación de aplicaciones de origen desconocido* en su telefono. Tras habilitarlo, solo quedará instalar la aplicación y comenzar a utilizarla.
 
+Para probar la funcionalidad del escaner, se adjunta a continuación algunos de los códigos referentes a los objetos que se pueden encontrar en el museo
+<p align="center">
+<img width="287" alt="Captura de Pantalla 2022-12-15 a las 1 00 04 p  m" src="https://user-images.githubusercontent.com/56322714/212767054-73b2a1b7-ad8f-4efd-bf5f-cb489e8c2772.png">
+<img width="276" alt="Captura de Pantalla 2022-12-15 a las 1 00 20 p  m" src="https://user-images.githubusercontent.com/56322714/212767057-75893fe3-9c63-413d-975c-33012bd1d2e5.png">
+<img width="273" alt="Captura de Pantalla 2022-12-15 a las 1 00 37 p  m" src="https://user-images.githubusercontent.com/56322714/212767058-f30602f6-a123-4487-8e5b-4b6643ff0719.png">
+<img width="275" alt="Captura de Pantalla 2022-12-15 a las 1 00 49 p  m" src="https://user-images.githubusercontent.com/56322714/212767059-b172cab7-ac50-416d-bb31-2c7cf62187bd.png">
+<img width="285" alt="Captura de Pantalla 2022-12-15 a las 1 00 59 p  m" src="https://user-images.githubusercontent.com/56322714/212767061-3f9b25ca-f02f-4d9f-acb3-4f90a3a5f4b6.png">
+  </p>
+
 
 
 ## :hammer:Funcionalidades del proyecto
@@ -129,6 +138,8 @@ Al ser un archivo con extension .apk y no encontrarse en una tienda oficial de d
 * <a href="https://github.com/material-components/material-components-android/tree/master/docs/components"> Material Design UI Componentes for Android </a>
 * <a href="https://developers.google.com/maps/documentation/android-sdk?hl=es_419"> Google Maps </a>
 
+## :notebook: Documentacion
+La documentación del software, así como recursos adicionales como una presentación en PowerPoint con los puntos clave, maquetas, un vídeo en el que se muestra la aplicación en funcionamiento, etc., se pueden encontrar haciendo clic en este enlace <a href="https://github.com/Tech-Virtual-Museum/Documentation">link</a>.
 
 ## :woman: :woman: Colaboradores
 
