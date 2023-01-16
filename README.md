@@ -21,6 +21,11 @@ Proyecto finalizado
 
 * <img src="https://miro.medium.com/max/304/1*BXaq7UZ-QoMH0vF0Znjy0A.jpeg" alt="Firestore" width="30"/> **Firestore** - base de datos donde nos encontramos con las diferentes colecciones que almacenan los registros de usuarios, la informacion de los eventos y productos, los eventos que han sido comprados...
 
+* <img src="https://camo.githubusercontent.com/67656699cd98f4b08399428e139231613d62ffb92b43ae8c9d412ad031167f43/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f342f34662f596f75547562655f736f6369616c5f77686974655f7371756972636c652e7376672f3132303070782d596f75547562655f736f6369616c5f77686974655f7371756972636c652e7376672e706e67" alt="api youtube" width="30"/> **API Youtube** - Permite añadir funciones de YouTube a la aplicación móvil. En esta app, nos permite mostrar vídeos de los objetos escaneados.
+
+* <img src="https://user-images.githubusercontent.com/56322714/212765471-d7e278e0-85ee-4e7c-bdfb-dfb72dace9b0.png" alt="jira" width="30"/> **Jira** - Software para ayudar al equipo a gestionar el trabajo de desarrollo de la aplicación.
+
+
 
 ## :wrench: Instalación
 El usuario que desee probar la aplicación sólo tiene que acceder al directorio *Documentation* donde ademas de los diferentes códigos QR para los objetos que pertenecen al museo, y de los enlace a la presentación tanto en formato video como en powerpoint, se encontrará con otro directorio denominado *Executables*. Es en éste donde se encuentra ubicado el apk que tiene que descargarse e instalar en su dispositivo android.
