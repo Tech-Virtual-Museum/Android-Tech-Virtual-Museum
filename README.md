@@ -1,7 +1,10 @@
 # Tech Virtual Museum  :classical_building:
 
-Aplicación de un museo que permite a los usuarios escanear un código QR que se encuentra junto a cada objeto del museo. Cuando se escanea un QR, la aplicación muestra información sobre el objeto correspondiente.
-Además, los usuarios pueden ver una lista de los próximos eventos del museo, con su información, fecha y precio, y reservar entradas para visitar el museo.
+Aplicación dirigida a los usuarios del Tech Virtual Museum mediante la cual podrán escanear diferentes códigos que se encuentran al lado de los diversos objetos del museo. 
+Tras el escaneo podrán visualizar información acerca del objeto así como reproducir un vídeo explicativo y/o realizar un comentario.
+
+Asimismo, se centraliza el resto de acciones como la compra de las entradas, conocer sobre las diferentes charlas o seminarios que se impartirán en el museo y comprar los tickets desde la propia aplicación.
+
 
 
 ## :ok: Estado del proyecto
