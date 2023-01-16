@@ -3,7 +3,7 @@
 Aplicación dirigida a los usuarios del Tech Virtual Museum mediante la cual podrán escanear diferentes códigos que se encuentran al lado de los diversos objetos del museo. 
 Tras el escaneo podrán visualizar información acerca del objeto así como reproducir un vídeo explicativo y/o realizar un comentario.
 
-Asimismo, se centraliza el resto de acciones como la compra de las entradas, conocer sobre las diferentes charlas o seminarios que se impartirán en el museo y comprar los tickets desde la propia aplicación.
+Asimismo, se centraliza el resto de acciones como la compra de las entradas, conocer sobre las diferentes charlas o seminarios que se impartirán en el museo y comprar los tickets para acudir a esas charlas desde la propia aplicación.
 
 
 
