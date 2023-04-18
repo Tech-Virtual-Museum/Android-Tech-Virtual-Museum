@@ -12,67 +12,58 @@ import com.google.android.youtube.player.YouTubePlayerView
 
 class VideoPlayer: YouTubeBaseActivity() {
 
-    private val YOUTUBE_API_KEY ="AIzaSyA280whFAGngDw3523jqqvXlQ5sKyQjdrE"
+    private lateinit var youtubePlayerInit : YouTubePlayer.OnInitializedListener
+    private lateinit var calendarioButton: ImageButton
+    private lateinit var homeButton: ImageButton
+    private lateinit var scanButton: ImageButton
+    private lateinit var backButton: ImageButton
 
-    lateinit var youtubePlayerInit : YouTubePlayer.OnInitializedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
 
-        val youTubePlayer : YouTubePlayerView = findViewById(R.id.youtubePlayer)
-        val btnPlay : Button = findViewById(R.id.btnPlay)
+        val youTubePlayer: YouTubePlayerView = findViewById(R.id.youtubePlayer)
+        val btnPlay: Button = findViewById(R.id.btnPlay)
 
-        //obtenemos los datos
+        initButtons()
+
         val idVideoProducto = intent.getStringExtra("videoId")
 
-        youtubePlayerInit = object : YouTubePlayer.OnInitializedListener{
-            override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean){
-                if(player == null) return
-                if (wasRestored)
+        youtubePlayerInit = object : YouTubePlayer.OnInitializedListener {
+            override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, player: YouTubePlayer?, wasRestored: Boolean) {
+                if (player == null) return
+                if (wasRestored) {
                     player.play()
-                else{
+                } else {
                     player.loadVideo(idVideoProducto)
                     player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT)
                 }
-
             }
-            override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
 
+            override fun onInitializationFailure(provider: YouTubePlayer.Provider?, result: YouTubeInitializationResult?) {
+                // Handle initialization failure
             }
         }
 
         btnPlay.setOnClickListener {
-            youTubePlayer.initialize(YOUTUBE_API_KEY, youtubePlayerInit)
+            val apiKey = getString(R.string.youtube_api_key)
+            youTubePlayer.initialize(apiKey, youtubePlayerInit)
         }
+    }
 
-        //listener para el boton de volver atras
-        val backButton : ImageButton = findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            val intent = Intent(this, ProductDetails::class.java)
-            startActivity(intent)
-        }
 
-        //boton de la navigationBar - compra ticket 1
-        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
-        calendarioButton.setOnClickListener {
-            val intent = Intent(this, UpcomingEvents::class.java)
-            startActivity(intent)
-        }
+    private fun initButtons() {
+        backButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener{startActivity(Intent(this, ProductDetails::class.java))}
 
-        //boton de la navigationBar - ir a la pagina inicio
-        val homeButton : ImageButton = findViewById(R.id.homeBtn)
-        homeButton.setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
-            startActivity(intent)
-        }
+        calendarioButton = findViewById(R.id.calendarioBtn)
+        calendarioButton.setOnClickListener { startActivity(Intent(this, UpcomingEvents::class.java)) }
 
-        //boton de la navigationBar - ir a la pagina de escanear QR
-        val scanButton : ImageButton = findViewById(R.id.scanBtn)
-        scanButton.setOnClickListener {
-            val intent = Intent(this, EscanerQR::class.java)
-            startActivity(intent)
-        }
+        homeButton = findViewById(R.id.homeBtn)
+        homeButton.setOnClickListener { startActivity(Intent(this, HomePage::class.java)) }
 
+        scanButton =findViewById(R.id.scanBtn)
+        scanButton.setOnClickListener { startActivity(Intent(this, EscanerQR::class.java)) }
     }
 }

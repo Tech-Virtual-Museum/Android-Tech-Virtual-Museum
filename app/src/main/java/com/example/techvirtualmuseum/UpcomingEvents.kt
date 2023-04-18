@@ -2,93 +2,63 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.*
+import android.widget.ImageButton
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.techvirtualmuseum.adapter.AdapterEventos
 import com.example.techvirtualmuseum.modal.DataModal
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class UpcomingEvents : AppCompatActivity() {
 
-    var eventosLista: ListView? = null
-    var dataModalArrayList: ArrayList<DataModal>? = null
-    var database: FirebaseFirestore? = null
+    private lateinit var eventosLista: ListView
+    private var dataModalArrayList = ArrayList<DataModal>()
+    private lateinit var database: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upcoming_events)
 
-        eventosLista = findViewById<View>(R.id.listItems) as ListView?
-        dataModalArrayList = ArrayList()
+        eventosLista = findViewById(R.id.listItems)
         database = FirebaseFirestore.getInstance()
 
-        // llamamos al metodo que nos cargaran los datos en la vista
         loadDatainListview()
 
-        //boton para volver atras
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, HomePage::class.java))
         }
 
-        //boton de la navigationBar - compra ticket 1
-        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        val calendarioButton: ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent = Intent(this, UpcomingEvents::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, UpcomingEvents::class.java))
         }
 
-        //boton de la navigationBar - ir a la pagina inicio
-        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        val homeButton: ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, HomePage::class.java))
         }
 
-        //boton de la navigationBar - ir a la pagina de escanear QR
-        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        val scanButton: ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent = Intent(this, EscanerQR::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, EscanerQR::class.java))
         }
     }
 
     private fun loadDatainListview() {
-        database!!.collection("eventos").get()
+        database.collection("eventos").get()
             .addOnSuccessListener { queryDocumentSnapshots ->
                 if (!queryDocumentSnapshots.isEmpty) {
-                    val list = queryDocumentSnapshots.documents
-                    for (d in list) {
-                        // despues de obtener la lista, la pasamos para nuestra clase objeto
-                        val dataModal: DataModal? = d.toObject(DataModal::class.java)
-
-                        // despues de obtener los datos de firebase, la guardamos en un arrayList
-                        dataModalArrayList!!.add(dataModal!!)
-                    }
-                    // pasamos el arrayList a la clase adapter que tenemos
-                    val adapter =
-                        AdapterEventos(
-                            this@UpcomingEvents,
-                            dataModalArrayList
-                        )
-                    eventosLista!!.adapter = adapter
+                    val list = queryDocumentSnapshots.toObjects(DataModal::class.java)
+                    dataModalArrayList.addAll(list)
+                    val adapter = AdapterEventos(this@UpcomingEvents, dataModalArrayList)
+                    eventosLista.adapter = adapter
                 } else {
-                    // si el snapshot esta vacio, mostramos un aviso
-                    Toast.makeText(
-                        this@UpcomingEvents,
-                        "No data found in Database",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this@UpcomingEvents, "No data found in Database", Toast.LENGTH_SHORT).show()
                 }
-                //si tenemos un error, mostramos un mensaje
             }.addOnFailureListener {
-                Toast.makeText(this@UpcomingEvents, "Fail to load data..", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this@UpcomingEvents, "Fail to load data..", Toast.LENGTH_SHORT).show()
             }
     }
-
-
 }

@@ -37,6 +37,10 @@ android {
     }
 }
 
+ext {
+    YOUTUBE_API_KEY = project.YOUTUBE_API_KEY
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.10.0'

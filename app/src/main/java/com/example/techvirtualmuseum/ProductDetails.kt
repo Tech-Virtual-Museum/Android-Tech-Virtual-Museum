@@ -12,9 +12,8 @@ import com.squareup.picasso.Picasso
 
 class ProductDetails : AppCompatActivity() {
 
-    private lateinit var auth : FirebaseAuth
-    private lateinit var database : FirebaseFirestore
-
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,87 +22,67 @@ class ProductDetails : AppCompatActivity() {
         auth = Firebase.auth
         database = FirebaseFirestore.getInstance()
 
-        //inicializamos los campos para posteriormente añadir la informacion
-        val nameProduct = findViewById<TextView>(R.id.nameProduct)
-        val descripcionProduct = findViewById<TextView>(R.id.descripcionProduct)
-        val imageProduct = findViewById<ImageView>(R.id.imageProduct)
-
-        //obtenemos la informacion del evento que ha sido clickado
-        val nombreProducto = intent.getStringExtra("name");
-        val descripcionProducto = intent.getStringExtra("descripcion")
-        var imagenProducto = intent.getStringExtra("img")
-        var videoProducto = intent.getStringExtra("video")
-        var idVideoProducto = intent.getStringExtra("videoId")
-
-        //mostramos la informacion
-        nameProduct.text = nombreProducto
-        descripcionProduct.text = descripcionProducto
-
-        //obtenemos las imagenes guardadas en firebase
-        Picasso.get().load(imagenProducto).into(imageProduct)
+        val nameProduct: TextView = findViewById(R.id.nameProduct)
+        val descripcionProduct: TextView = findViewById(R.id.descripcionProduct)
+        val imageProduct: ImageView = findViewById(R.id.imageProduct)
 
         val qrText = intent.getStringExtra("QR_CODE_TEXT")
+        val docRef = database.collection("products").document(qrText!!)
 
-        database.collection("products").document(qrText!!).get().addOnSuccessListener {
-            //mostramos la informacion
-            nameProduct.text = it.get("name") as String?
-            descripcionProduct.text = it.get("descripcion") as String?
-            imagenProducto = it.get("img") as String?
-            videoProducto = it.get("video") as String?
-            idVideoProducto = it.get("videoId") as String?
+        docRef.get().addOnSuccessListener { documentSnapshot ->
+            val data = documentSnapshot.data
+            if (data != null) {
+                val nombreProducto = data["name"] as String?
+                val descripcionProducto = data["descripcion"] as String?
+                val imagenProducto = data["img"] as String?
+                val videoProducto = data["video"] as String?
+                val idVideoProducto = data["videoId"] as String?
 
-            //obtenemos las imagenes guardadas en firebase
-            Picasso.get().load(imagenProducto).into(imageProduct)
+                nameProduct.text = nombreProducto
+                descripcionProduct.text = descripcionProducto
+                Picasso.get().load(imagenProducto).into(imageProduct)
+
+                val playAudioVideo: ImageButton = findViewById(R.id.playAudioVideo)
+                playAudioVideo.setOnClickListener {
+                    val intent = Intent(this, VideoPlayer::class.java).apply {
+                        putExtra("video", videoProducto)
+                        putExtra("videoId", idVideoProducto)
+                    }
+                    startActivity(intent)
+                }
+
+                val comentarioBtn: ImageButton = findViewById(R.id.comentarioBtn)
+                comentarioBtn.setOnClickListener {
+                    val intent = Intent(this, DisplayComments::class.java).apply {
+                        putExtra("QR_CODE_TEXT", qrText)
+                    }
+                    startActivity(intent)
+                }
+            }
         }
 
-        //listener para el boton de volver atras
-        val backButton : ImageButton = findViewById(R.id.backButton)
+        val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             val intent = Intent(this, Products::class.java)
             startActivity(intent)
         }
 
-        //boton que nos lleva a la pantalla de ver video o escuchar un audio
-        val playAudioVideo : ImageButton = findViewById(R.id.playAudioVideo)
-        playAudioVideo.setOnClickListener {
-            val intent : Intent = Intent(this, VideoPlayer::class.java)
-            intent.putExtra("video", videoProducto)
-            intent.putExtra("videoId", idVideoProducto)
-            startActivity(intent)
-        }
-
-        //nos lleva a una actividad donde podremos ver todos los comentarios
-        val comentarioBtn : ImageButton = findViewById(R.id.comentarioBtn)
-        comentarioBtn.setOnClickListener {
-            val intent = Intent(this, DisplayComments::class.java)
-
-            //le pasamos el id del producto para en la otra actividad mostrar solo sus comentarios
-            intent.putExtra("QR_CODE_TEXT", qrText)
-            startActivity(intent)
-
-        }
-
-        //boton de la navigationBar - compra ticket 1
-        val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
+        val calendarioButton: ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
             val intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
-        //boton de la navigationBar - ir a la pagina inicio
-        val homeButton : ImageButton = findViewById(R.id.homeBtn)
+        val homeButton: ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
-        //boton de la navigationBar - ir a la pagina de escanear QR
-        val scanButton : ImageButton = findViewById(R.id.scanBtn)
+        val scanButton: ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
             val intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
-
     }
-
 }

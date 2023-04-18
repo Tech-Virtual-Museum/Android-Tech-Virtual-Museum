@@ -13,6 +13,8 @@
         android:name="android.hardware.camera"
         android:required="false"/>
 
+
+
     <queries>
         <intent>
             <action android:name="com.google.android.youtube.api.service.START" />
@@ -207,6 +209,11 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="com.google.android.youtube.v3.API_KEY"
+            android:value="@string/youtube_api_key" />
+
     </application>
 
 </manifest>
