@@ -4,17 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
-class profilePage : AppCompatActivity() {
+class ProfilePage : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseFirestore
@@ -40,14 +38,14 @@ class profilePage : AppCompatActivity() {
 
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent: Intent = Intent(this, homePage::class.java)
+            val intent: Intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton para editar la informacion del perfil
         val editProfile: Button = findViewById(R.id.editInformation)
         editProfile.setOnClickListener {
-            val intent: Intent = Intent(this, editInformation::class.java)
+            val intent = Intent(this, EditInformation::class.java)
             startActivity(intent)
         }
 
@@ -59,7 +57,7 @@ class profilePage : AppCompatActivity() {
                 baseContext, "Se ha cerrado la sesion correctamente",
                 Toast.LENGTH_SHORT
             ).show()
-            val intent: Intent = Intent(this, login::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
 
@@ -67,21 +65,21 @@ class profilePage : AppCompatActivity() {
         //boton de la navigationBar - compra ticket 1
         val calendarioButton: ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent: Intent = Intent(this, buyTicket::class.java)
+            val intent = Intent(this, BuyTicket::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton: ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent: Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton: ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent: Intent = Intent(this, escanerQR::class.java)
+            val intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
     }

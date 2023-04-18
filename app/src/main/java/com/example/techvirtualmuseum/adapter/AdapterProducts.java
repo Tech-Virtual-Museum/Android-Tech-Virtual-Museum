@@ -13,17 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.techvirtualmuseum.R;
-import com.example.techvirtualmuseum.productDetails;
-import com.example.techvirtualmuseum.modal.productModal;
+import com.example.techvirtualmuseum.ProductDetails;
+import com.example.techvirtualmuseum.modal.ProductModal;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class AdapterProducts extends ArrayAdapter <productModal> {
+public class AdapterProducts extends ArrayAdapter <ProductModal> {
 
 
     // constructor for our list view adapter.
-    public AdapterProducts(@NonNull Context context, ArrayList<productModal> productModalArrayList) {
+    public AdapterProducts(@NonNull Context context, List<ProductModal> productModalArrayList) {
         super(context, 0, productModalArrayList);
     }
 
@@ -37,7 +37,7 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
         }
 
         // obtenemos los datos del array list que tenemos en la clase modelo
-        productModal productModal = getItem(position);
+        ProductModal productModal = getItem(position);
 
         // inicializamos el UI de los campos
         TextView nameProduct = listitemView.findViewById(R.id.nameProduct);
@@ -52,18 +52,15 @@ public class AdapterProducts extends ArrayAdapter <productModal> {
         Picasso.get().load(productModal.getImg()).into(imageProduct);
 
 
-        listitemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //al hacer click guardamos los datos del evento al que se lo hemos hecho
-                Intent intent = new Intent(v.getContext(), productDetails.class);
-                intent.putExtra("name", productModal.getName());
-                intent.putExtra("descripcion", productModal.getDescripcion());
-                intent.putExtra("videoId", productModal.getVideoId());
-                intent.putExtra("img", productModal.getImg());
-                intent.putExtra("video", productModal.getVideo());
-                v.getContext().startActivity(intent);
-            }
+        listitemView.setOnClickListener(v -> {
+            //al hacer click guardamos los datos del evento al que se lo hemos hecho
+            Intent intent = new Intent(v.getContext(), ProductDetails.class);
+            intent.putExtra("name", productModal.getName());
+            intent.putExtra("descripcion", productModal.getDescripcion());
+            intent.putExtra("videoId", productModal.getVideoId());
+            intent.putExtra("img", productModal.getImg());
+            intent.putExtra("video", productModal.getVideo());
+            v.getContext().startActivity(intent);
         });
 
         return listitemView;

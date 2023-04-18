@@ -10,7 +10,7 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 
-class homePage : AppCompatActivity() {
+class HomePage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +29,14 @@ class homePage : AppCompatActivity() {
         //listener para el boton que nos lleve a la pantalla del perfil del usuario
         val profilePageBtn: ImageButton = findViewById(R.id.profileImage)
         profilePageBtn.setOnClickListener {
-            val intent: Intent = Intent(this, profilePage::class.java)
+            val intent = Intent(this, ProfilePage::class.java)
             startActivity(intent)
         }
 
         //listener para el boton que nos lleve a la pantalla de compra del ticket
         val buyTicketButton: Button = findViewById(R.id.buyTicket)
         buyTicketButton.setOnClickListener {
-            val intent: Intent = Intent(this, buyTicket::class.java)
+            val intent = Intent(this, BuyTicket::class.java)
             startActivity(intent)
         }
 
@@ -52,7 +52,7 @@ class homePage : AppCompatActivity() {
         //boton de la navigationBar - actividad de eventos
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
@@ -60,14 +60,14 @@ class homePage : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent: Intent = Intent(this, escanerQR::class.java)
+            val intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
 

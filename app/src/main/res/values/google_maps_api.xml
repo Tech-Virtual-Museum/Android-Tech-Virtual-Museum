@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e5c96ec90fc15d9d34fa81e52c23604722ff9a2733e0d374c03b19e092f2e1d9
-size 204
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCP5tuaeBUeaJSGZx8EcR2dZHHceHodvbY</string>
+</resources>

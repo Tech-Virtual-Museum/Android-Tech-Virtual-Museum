@@ -3,31 +3,16 @@ package com.example.techvirtualmuseum
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import java.util.regex.Pattern
 
-class editInformation : AppCompatActivity() {
+class EditInformation : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
     private lateinit var database : FirebaseFirestore
-
-    //creamos el patron que debe seguir la contraseña para ser considerada valida
-    private val PASSWORD_PATTERN: Pattern = Pattern.compile("^" +
-            "(?=.*[@#$%^&+=])" + // minimo un caracter especial
-            "(?=\\S+$)" +  // sin espacios en blanco
-            ".{6,}" +  // minimo 6 caracteres
-            "$"
-    )
-
-    //creamos el patron que debe seguir el email
-    private val EMAIL_PATTERN : Pattern = Pattern.compile(
-        "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +23,7 @@ class editInformation : AppCompatActivity() {
 
         val cambio : Button = findViewById(R.id.cambio)
         cambio.setOnClickListener {
-            val intent : Intent = Intent(this, profilePage::class.java)
+            val intent = Intent(this, ProfilePage::class.java)
             //inicializamos los campos
             val newName = findViewById<EditText>(R.id.newName)
             val newSurname = findViewById<EditText>(R.id.newSurname)
@@ -75,7 +60,7 @@ class editInformation : AppCompatActivity() {
 
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent: Intent = Intent(this, profilePage::class.java)
+            val intent = Intent(this, ProfilePage::class.java)
             startActivity(intent)
         }
     }

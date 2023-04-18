@@ -1,3 +1,55 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07c7e9e3d825d3d93e3c7f3063b4bdf480c1f72c25ef2b95d25a7aa6289fe24c
-size 1692
+{
+  "project_info": {
+    "project_number": "646957242518",
+    "firebase_url": "https://virtualtechmuseum-53a42-default-rtdb.firebaseio.com",
+    "project_id": "virtualtechmuseum-53a42",
+    "storage_bucket": "virtualtechmuseum-53a42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646957242518:android:eaf1ce42db9bc298cfcab7",
+        "android_client_info": {
+          "package_name": "com.example.techvirtualmuseum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646957242518-1svpqjiron0ijuq3tpg0arpv60sb8etc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.techvirtualmuseum",
+            "certificate_hash": "463961c3dc9baeb271379e736ccb7291258b2fbd"
+          }
+        },
+        {
+          "client_id": "646957242518-cnuuog1htsfhecldf8ijp18l3clj84ef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfrS-2_cVbrR8jJtZjXTmgGnArFyRpfVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646957242518-cnuuog1htsfhecldf8ijp18l3clj84ef.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "646957242518-sqajlnorpadb7e11slk1rdjnu5tuuub1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "pamn.TechVirtualMuseum"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

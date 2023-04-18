@@ -1,6 +1,6 @@
 package com.example.techvirtualmuseum.modal
 
-class productModal {
+class ProductModal {
     var name: String? = null
     var descripcion: String? = null
     var img: String? = null

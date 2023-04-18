@@ -11,9 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import org.w3c.dom.Text
 
-class buyEventTicket : AppCompatActivity() {
+class BuyEventTicket : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
     private lateinit var database : FirebaseFirestore
@@ -55,8 +54,8 @@ class buyEventTicket : AppCompatActivity() {
         var total : Double
 
         //obtenemos la informacion del evento que ha sido clickado
-        val nombreEvento = intent.getStringExtra("name");
-        val precioEvento = intent.getStringExtra("pricing");
+        val nombreEvento = intent.getStringExtra("name")
+        val precioEvento = intent.getStringExtra("pricing")
 
         //mostramos la informacion
         muestraPrecio.text = precioEvento
@@ -99,14 +98,14 @@ class buyEventTicket : AppCompatActivity() {
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent : Intent = Intent(this, eventDetails::class.java)
+            val intent : Intent = Intent(this, EventDetails::class.java)
             startActivity(intent)
         }
 
         //listener que nos dirige a la pantalla final informativa
         val buyFinalButton : Button = findViewById(R.id.buyFinalButton)
         buyFinalButton.setOnClickListener{
-            val intent : Intent = Intent(this, ticketBought::class.java)
+            val intent : Intent = Intent(this, TicketBought::class.java)
             //guardamos la informacion del usuario, metodo de pago y la informacion del evento a firebase
             val dato = hashMapOf("email" to idUser, "nameEvent" to nombreEvento,  "priceEvent" to precioEvento)
             database.collection("eventoComprado").document(idUser).set(dato)
@@ -116,7 +115,7 @@ class buyEventTicket : AppCompatActivity() {
         //boton de la navigationBar - actividad de eventos
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent : Intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
@@ -124,14 +123,14 @@ class buyEventTicket : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent : Intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent: Intent = Intent(this, escanerQR::class.java)
+            val intent: Intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
     }

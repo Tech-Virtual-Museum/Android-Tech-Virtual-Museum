@@ -9,7 +9,7 @@ import android.widget.ImageButton
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
-class crearComentario : AppCompatActivity() {
+class CrearComentario : AppCompatActivity() {
 
     var database: FirebaseFirestore? = null
 
@@ -33,7 +33,7 @@ class crearComentario : AppCompatActivity() {
             val editTextComment = findViewById<EditText>(R.id.comentario)
             val comentarioComment = editTextComment.text.toString()
 
-            val intent : Intent = Intent (this, displayComments::class.java)
+            val intent = Intent (this, DisplayComments::class.java)
 
             database!!.collection("comments").document(qrText!!).collection("comments").document().set(
                 hashMapOf("author" to nameComment, "comment" to comentarioComment, "timestamp" to FieldValue.serverTimestamp()))
@@ -44,7 +44,7 @@ class crearComentario : AppCompatActivity() {
         //boton para volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener{
-            val intent : Intent = Intent (this, displayComments::class.java)
+            val intent = Intent (this, DisplayComments::class.java)
             startActivity(intent)
         }
     }

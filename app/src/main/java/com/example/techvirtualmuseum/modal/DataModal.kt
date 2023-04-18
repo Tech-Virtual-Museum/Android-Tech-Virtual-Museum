@@ -1,6 +1,6 @@
 package com.example.techvirtualmuseum.modal
 
-class dataModal {
+class DataModal {
     // getter and setter methods variables for storing our image and name.
     var name: String? = null
     var date: String? = null

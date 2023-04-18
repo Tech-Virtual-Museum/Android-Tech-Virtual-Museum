@@ -12,7 +12,7 @@ import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
 
-class eventDetails : AppCompatActivity() {
+class EventDetails : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
     private lateinit var database : FirebaseFirestore
@@ -25,8 +25,6 @@ class eventDetails : AppCompatActivity() {
         auth = Firebase.auth
         database = FirebaseFirestore.getInstance()
 
-        //obtenemos el email del usuario actual
-        val idUser = auth.currentUser!!.email
 
         //inicializamos los campos para posteriormente añadir la informacion
         val nameEvent = findViewById<TextView>(R.id.nameEvent)
@@ -57,14 +55,14 @@ class eventDetails : AppCompatActivity() {
         //listener para el boton de volver atras
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
         //listener para el boton de comprar ticket
         val bookNowBtn : Button = findViewById(R.id.bookNowBtn)
         bookNowBtn.setOnClickListener {
-            val intent : Intent = Intent(this, buyEventTicket::class.java)
+            val intent = Intent(this, BuyEventTicket::class.java)
             Log.d("error", "$intent")
             intent.putExtra("name", nombreEvento)
             intent.putExtra("date", fechaEvento)
@@ -78,7 +76,7 @@ class eventDetails : AppCompatActivity() {
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
@@ -86,14 +84,14 @@ class eventDetails : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent : Intent = Intent(this, escanerQR::class.java)
+            val intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
     }

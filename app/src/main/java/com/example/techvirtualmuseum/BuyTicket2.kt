@@ -4,14 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 
 
-class buyTicket2 : AppCompatActivity() {
+class BuyTicket2 : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -199,21 +198,21 @@ class buyTicket2 : AppCompatActivity() {
         //boton que nos llevara a la actvidad anterior
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent : Intent = Intent(this, buyTicket::class.java)
+            val intent : Intent = Intent(this, BuyTicket::class.java)
             startActivity(intent)
         }
 
         //listener para el boton que nos dirigira a la tercera actividad de compra de tickets
         val buyTicket3 : Button = findViewById(R.id.buyFinalTicket)
         buyTicket3.setOnClickListener {
-            val intent: Intent = Intent(this, com.example.techvirtualmuseum.buyTicket3::class.java)
+            val intent: Intent = Intent(this, com.example.techvirtualmuseum.BuyTicket3::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent : Intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
@@ -221,14 +220,14 @@ class buyTicket2 : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent : Intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent: Intent = Intent(this, escanerQR::class.java)
+            val intent: Intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
     }

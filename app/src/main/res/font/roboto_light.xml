@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40a31048ed48b6a0bd46a541539f5567b53ca593633f46b2c776184a6a1bef48
-size 382
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:fontProviderAuthority="com.google.android.gms.fonts"
+        app:fontProviderPackage="com.google.android.gms"
+        app:fontProviderQuery="name=Roboto&amp;weight=300"
+        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+</font-family>

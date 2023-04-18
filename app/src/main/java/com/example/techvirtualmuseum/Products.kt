@@ -8,16 +8,13 @@ import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
 import com.example.techvirtualmuseum.adapter.AdapterProducts
-import com.example.techvirtualmuseum.modal.productModal
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
+import com.example.techvirtualmuseum.modal.ProductModal
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 
-class products : AppCompatActivity() {
+class Products : AppCompatActivity() {
 
     var productosLista: ListView? = null
-    var productModalArrayList: ArrayList<productModal>? = null
+    var productModalArrayList: ArrayList<ProductModal>? = null
     var database: FirebaseFirestore? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +31,7 @@ class products : AppCompatActivity() {
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
@@ -42,26 +39,26 @@ class products : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent : Intent = Intent(this, escanerQR::class.java)
+            val intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
     }
 
     private fun loadDatainListview() {
         database!!.collection("products").get()
-            .addOnSuccessListener(OnSuccessListener<QuerySnapshot> { queryDocumentSnapshots ->
+            .addOnSuccessListener { queryDocumentSnapshots ->
                 if (!queryDocumentSnapshots.isEmpty) {
                     val list = queryDocumentSnapshots.documents
                     for (d in list) {
                         // despues de obtener la lista, la pasamos para nuestra clase objeto
-                        val productModal: productModal? = d.toObject(productModal::class.java)
+                        val productModal: ProductModal? = d.toObject(ProductModal::class.java)
 
                         // despues de obtener los datos de firebase, la guardamos en un arrayList
                         productModalArrayList!!.add(productModal!!)
@@ -70,21 +67,22 @@ class products : AppCompatActivity() {
                     // pasamos el arrayList a la clase adapter que tenemos
                     val adapter =
                         AdapterProducts(
-                            this@products,
+                            this@Products,
                             productModalArrayList
                         )
-                    productosLista!!.setAdapter(adapter)
+                    productosLista!!.adapter = adapter
                 } else {
                     // si el snapshot esta vacio, mostramos un aviso
                     Toast.makeText(
-                        this@products,
+                        this@Products,
                         "No se han encontrado datos",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
                 //si tenemos un error, mostramos un mensaje
-            }).addOnFailureListener(OnFailureListener {
-                Toast.makeText(this@products, "Error al cargar los datos", Toast.LENGTH_SHORT).show()
-            })
+            }.addOnFailureListener {
+                Toast.makeText(this@Products, "Error al cargar los datos", Toast.LENGTH_SHORT)
+                    .show()
+            }
     }
 }

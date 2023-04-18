@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
-class resetPassword : AppCompatActivity() {
+class ResetPassword : AppCompatActivity() {
 
     private lateinit var emailInput : EditText
     private lateinit var resetBtn : Button
@@ -39,7 +39,7 @@ class resetPassword : AppCompatActivity() {
         //listener que nos mandara a la pantalla de inicio para salir de esta actividad
         val backHome : TextView = findViewById(R.id.backHome)
         backHome.setOnClickListener {
-            val intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
     }

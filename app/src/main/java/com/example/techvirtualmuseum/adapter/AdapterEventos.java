@@ -10,18 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.techvirtualmuseum.R;
-import com.example.techvirtualmuseum.modal.dataModal;
-import com.example.techvirtualmuseum.eventDetails;
+import com.example.techvirtualmuseum.modal.DataModal;
+import com.example.techvirtualmuseum.EventDetails;
 import com.squareup.picasso.Picasso;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import java.util.ArrayList;
+import java.util.List;
 
-public class AdapterEventos extends ArrayAdapter<dataModal> {
+public class AdapterEventos extends ArrayAdapter<DataModal> {
 
 
     // constructor for our list view adapter.
-    public AdapterEventos(@NonNull Context context, ArrayList<dataModal> dataModalArrayList) {
+    public AdapterEventos(@NonNull Context context, List<DataModal> dataModalArrayList) {
         super(context, 0, dataModalArrayList);
     }
 
@@ -35,7 +35,7 @@ public class AdapterEventos extends ArrayAdapter<dataModal> {
         }
 
         // obtenemos los datos del array list que tenemos en la clase modelo
-        dataModal dataModal = getItem(position);
+        DataModal dataModal = getItem(position);
 
         // inicializamos el UI de los campos
         TextView nameEvent = listitemView.findViewById(R.id.nameEvent);
@@ -56,19 +56,16 @@ public class AdapterEventos extends ArrayAdapter<dataModal> {
         //obtenemos las imagenes guardadas en firebase
         Picasso.get().load(dataModal.getImgUrl()).into(imageEvent);
 
-        listitemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //al hacer click guardamos los datos del evento al que se lo hemos hecho
-                Intent intent = new Intent(v.getContext(), eventDetails.class);
-                intent.putExtra("name", dataModal.getName());
-                intent.putExtra("date", dataModal.getDate());
-                intent.putExtra("hour", dataModal.getHour());
-                intent.putExtra("pricing", dataModal.getPricing());
-                intent.putExtra("description", dataModal.getDescription());
-                intent.putExtra("imgUrl", dataModal.getImgUrl());
-                v.getContext().startActivity(intent);
-            }
+        listitemView.setOnClickListener(v -> {
+            //al hacer click guardamos los datos del evento al que se lo hemos hecho
+            Intent intent = new Intent(v.getContext(), EventDetails.class);
+            intent.putExtra("name", dataModal.getName());
+            intent.putExtra("date", dataModal.getDate());
+            intent.putExtra("hour", dataModal.getHour());
+            intent.putExtra("pricing", dataModal.getPricing());
+            intent.putExtra("description", dataModal.getDescription());
+            intent.putExtra("imgUrl", dataModal.getImgUrl());
+            v.getContext().startActivity(intent);
         });
         
         return listitemView;

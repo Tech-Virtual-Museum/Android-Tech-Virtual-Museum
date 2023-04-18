@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88a7a47bd645dc6695e2ba474d8c896d2a07c4d965df70c82bdb7064d585aff8
-size 360
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:fontProviderAuthority="com.google.android.gms.fonts"
+        app:fontProviderPackage="com.google.android.gms"
+        app:fontProviderQuery="Lato"
+        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+</font-family>

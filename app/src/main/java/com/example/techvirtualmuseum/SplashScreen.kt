@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
-class splashScreen : AppCompatActivity() {
+@Suppress("DEPRECATION")
+class SplashScreen : AppCompatActivity() {
 
     lateinit var handler: Handler
 
@@ -16,7 +17,7 @@ class splashScreen : AppCompatActivity() {
         handler = Handler()
         handler.postDelayed( {
 
-            val intent = Intent (this,login::class.java)
+            val intent = Intent (this,Login::class.java)
             startActivity(intent)
             finish()
         }, 3000)

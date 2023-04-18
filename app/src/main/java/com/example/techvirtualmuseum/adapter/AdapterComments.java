@@ -11,17 +11,17 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.techvirtualmuseum.R;
-import com.example.techvirtualmuseum.modal.commentModal;
-import com.example.techvirtualmuseum.productDetails;
+import com.example.techvirtualmuseum.modal.CommentModal;
+import com.example.techvirtualmuseum.ProductDetails;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.util.ArrayList;
+import java.util.List;
 
 
-public class AdapterComments extends ArrayAdapter<commentModal> {
+public class AdapterComments extends ArrayAdapter<CommentModal> {
 
-    public AdapterComments(@NonNull Context context, ArrayList<commentModal> commentModalArrayList){
+    public AdapterComments(@NonNull Context context, List<CommentModal> commentModalArrayList){
         super (context, 0, commentModalArrayList);
     }
 
@@ -34,7 +34,7 @@ public class AdapterComments extends ArrayAdapter<commentModal> {
         }
 
         // obtenemos los datos del array list que tenemos en la clase modelo
-        commentModal commentModal = getItem(position);
+        CommentModal commentModal = getItem(position);
 
         // inicializamos el UI de los campos
         TextView commentName = listitemView.findViewById(R.id.commentName);
@@ -43,14 +43,11 @@ public class AdapterComments extends ArrayAdapter<commentModal> {
         commentName.setText(commentModal.getAuthor());
         commentBody.setText(commentModal.getComment());
 
-        listitemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    Intent intent = new Intent(v.getContext(), productDetails.class);
-                    intent.putExtra("author", commentModal.getAuthor());
-                    intent.putExtra("comment", commentModal.getComment());
-                    v.getContext().startActivity(intent);
-                }
+        listitemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), ProductDetails.class);
+            intent.putExtra("author", commentModal.getAuthor());
+            intent.putExtra("comment", commentModal.getComment());
+            v.getContext().startActivity(intent);
         });
         return listitemView;
     }

@@ -8,11 +8,10 @@ import android.widget.ImageButton
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.messaging.Constants.MessageNotificationKeys.COLOR
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
-class buyTicket : AppCompatActivity() {
+class BuyTicket : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,21 +25,21 @@ class buyTicket : AppCompatActivity() {
         //boton que nos llevara a la actvidad anterior
         val backButton : ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton para continuar con la compra
         val continueTicket  : Button = findViewById(R.id.continueTicket)
         continueTicket.setOnClickListener {
-            val intent : Intent = Intent (this, buyTicket2::class.java)
+            val intent = Intent (this, BuyTicket2::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - compra ticket 1
         val calendarioButton : ImageButton = findViewById(R.id.calendarioBtn)
         calendarioButton.setOnClickListener {
-            val intent : Intent = Intent(this, upcomingEvents::class.java)
+            val intent = Intent(this, UpcomingEvents::class.java)
             startActivity(intent)
         }
 
@@ -48,14 +47,14 @@ class buyTicket : AppCompatActivity() {
         //boton de la navigationBar - ir a la pagina inicio
         val homeButton : ImageButton = findViewById(R.id.homeBtn)
         homeButton.setOnClickListener {
-            val intent : Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
 
         //boton de la navigationBar - ir a la pagina de escanear QR
         val scanButton : ImageButton = findViewById(R.id.scanBtn)
         scanButton.setOnClickListener {
-            val intent: Intent = Intent(this, escanerQR::class.java)
+            val intent = Intent(this, EscanerQR::class.java)
             startActivity(intent)
         }
 

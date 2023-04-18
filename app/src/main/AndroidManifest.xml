@@ -32,7 +32,7 @@
         android:theme="@style/Theme.TechVirtualMuseum"
         tools:targetApi="31">
         <activity
-            android:name=".crearComentario"
+            android:name=".CrearComentario"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -40,7 +40,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".displayComments"
+            android:name=".DisplayComments"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -48,7 +48,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".editInformation"
+            android:name=".EditInformation"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -56,7 +56,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".videoPlayer"
+            android:name=".VideoPlayer"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -64,7 +64,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".buyTicket3"
+            android:name=".BuyTicket3"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -72,7 +72,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".productDetails"
+            android:name=".ProductDetails"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -80,7 +80,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".products"
+            android:name=".Products"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -88,7 +88,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".profilePage"
+            android:name=".ProfilePage"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -96,7 +96,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".buyEventTicket"
+            android:name=".BuyEventTicket"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -104,7 +104,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".resetPassword"
+            android:name=".ResetPassword"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -112,7 +112,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".homePage"
+            android:name=".HomePage"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -120,7 +120,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".login"
+            android:name=".Login"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -128,7 +128,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".escanerQR"
+            android:name=".EscanerQR"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -142,7 +142,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".eventDetails"
+            android:name=".EventDetails"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -150,7 +150,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".upcomingEvents"
+            android:name=".UpcomingEvents"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -158,7 +158,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".register"
+            android:name=".Register"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -166,7 +166,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".buyTicket2"
+            android:name=".BuyTicket2"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -174,7 +174,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ticketBought"
+            android:name=".TicketBought"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -182,7 +182,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".buyTicket"
+            android:name=".BuyTicket"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <meta-data
@@ -190,7 +190,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".splashScreen"
+            android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

@@ -1,6 +1,5 @@
 package com.example.techvirtualmuseum
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class login : AppCompatActivity() {
+class Login : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
 
@@ -25,7 +24,7 @@ class login : AppCompatActivity() {
         //listener para cuando se hace click en el boton de registrarse
         val signUpButton: Button = findViewById(R.id.signUpButton)
         signUpButton.setOnClickListener {
-            val intent = Intent(this, register::class.java)
+            val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
 
@@ -38,7 +37,7 @@ class login : AppCompatActivity() {
         //listener que nos redirija si olvidamos la contraseña
         val forgotPassword : TextView = findViewById(R.id.forgotPassword)
         forgotPassword.setOnClickListener {
-            val intent = Intent(this, resetPassword::class.java)
+            val intent = Intent(this, ResetPassword::class.java)
             startActivity(intent)
         }
     }
@@ -49,7 +48,7 @@ class login : AppCompatActivity() {
         super.onResume()
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
-            val intent: Intent = Intent(this, homePage::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         } else {
             performLogin()
@@ -75,7 +74,7 @@ class login : AppCompatActivity() {
         auth.signInWithEmailAndPassword(inputEmail, inputPassword)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent: Intent = Intent(this, homePage::class.java)
+                    val intent: Intent = Intent(this, HomePage::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(

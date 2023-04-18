@@ -2,7 +2,6 @@ package com.example.techvirtualmuseum
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -13,7 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
-class register : AppCompatActivity() {
+class Register : AppCompatActivity() {
 
     //creamos el patron que debe seguir la contraseña para ser considerada valida
     private val PASSWORD_PATTERN: Pattern = Pattern.compile("^" +
@@ -89,7 +88,7 @@ class register : AppCompatActivity() {
 
                     Toast.makeText(baseContext, "Se ha registrado correctamente",
                         Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, homePage::class.java)
+                    val intent = Intent(this, HomePage::class.java)
                     startActivity(intent)
                     finish()
 

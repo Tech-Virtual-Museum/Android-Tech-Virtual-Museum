@@ -12,11 +12,10 @@ import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
-import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import com.google.firebase.firestore.FirebaseFirestore
 
-class escanerQR : AppCompatActivity() {
+class EscanerQR : AppCompatActivity() {
 
     private lateinit var codeScanner: CodeScanner
     var database: FirebaseFirestore? = null
@@ -51,7 +50,7 @@ class escanerQR : AppCompatActivity() {
                 //obtenemos id del producto escaneado
                 val qrText = it.text
 
-                val intent : Intent = Intent(this, productDetails::class.java)
+                val intent = Intent(this, ProductDetails::class.java)
                 //pasamos el id para en la otra actividad mostrar la informacion
                 intent.putExtra("QR_CODE_TEXT", qrText)
                 startActivity(intent)
